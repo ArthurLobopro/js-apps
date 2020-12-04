@@ -1,0 +1,44 @@
+body{
+    text-align: center;
+}
+.res{
+    float: left;
+    border:2px solid blue;
+    width: auto;
+    height: auto;
+    padding: 3px;
+    padding-bottom: 0px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.formas{
+    border: 2px solid black;
+    margin: auto;
+}
+#menu{
+    display: flex;
+    margin: auto;
+    margin-top: 25px;
+    border: 2px solid black;
+    padding: 10px;
+    width: 500px;
+    height: 200px;
+     visibility: hidden;
+}
+#input{
+    justify-content: left;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid blue;
+    line-height: 1.5;
+    width: 300px;
+}
+red{
+    color: red;
+}
+#res{
+     visibility: hidden;
+}
+input{
+    width: 100px;
+}

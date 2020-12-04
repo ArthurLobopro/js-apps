@@ -1,0 +1,71 @@
+#container{
+    border: solid rgba(60,64,67,0.302);
+    border-width: 1px 1px 1px 3px;
+    border-left-color: green;
+    width: 95%;
+    display: block;
+    height: calc(45px * 7 + 247px);
+    padding: 0;
+    margin: auto;
+}
+ul{
+    margin: 0 -1px;
+    width: 250px;
+    padding: 0;
+    float: left;
+    height: calc(45px * 7 + 247px);
+    font-family: 'Literata', serif;
+    font-size: 15px;
+}
+li{
+    border: solid rgba(60,64,67,0.302);
+    border-width: 0 1px 1px 0;
+    border-left: none;
+    margin: 0;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    text-align: left;
+    padding-left: 25px;
+    box-sizing: border-box;
+    float: right;
+    width: 250px;
+}
+li:hover{
+    background-color: #f1f3f4;
+    margin: 0;
+    border-left: 1px solid green;
+}
+#msg{
+    text-align: center;
+    border-bottom: 1px solid rgba(60,64,67,0.302);
+    position: relative;
+    top: 0;
+    right: 0;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+}
+#content{
+    float: right;
+}
+#logo{
+    width: calc(250px - 4px);
+    margin: 0 -3px 0 3px;
+    border-right: 1px solid rgba(60,64,67,0.302);
+}
+li a {
+    color: black;
+    text-decoration: none;
+}
+li a:hover{
+    color: #0a84e9;
+    text-decoration: underline;
+}
+@font-face {
+    font-family: 'Literata';
+    src: url('./Fontes/Literata-Regular-opsz=12.ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
