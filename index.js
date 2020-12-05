@@ -17,11 +17,15 @@ function escreve(nome){
                 escreve_distancia()
             }
             break
+        case "velocidade":
+            if(travado===false){
+                escreve_velocidade()
+            }
+            break
     }
 }
 var nome_backup 
 function trava(nome){
-    
     if(nome_backup==nome){
         travado=(!travado)
     }else{
@@ -35,6 +39,9 @@ function trava(nome){
                     break
                 case "distancia":
                     escreve_distancia()
+                    break
+                case "velocidade":
+                    escreve_velocidade()
                     break
             }
             travado=true
@@ -50,6 +57,9 @@ function trava(nome){
                 case "distancia":
                     escreve_distancia()
                     break
+                    case "velocidade":
+                        escreve_velocidade()
+                        break
             }
             travado=true
         }
@@ -80,9 +90,17 @@ function escreve_binario(){
 function escreve_distancia(){
     let res = `<object data="./distancia/distancia.html" type="text/html" width="100%"  height="100%" ></object>`
     content.innerHTML=res
-
+    document.body.style.minWidth="810px"
     nome.innerText="Conversor de Distância"
     nome.href="./distancia/distancia.html"
+    mostra_msg()
+}
+function escreve_velocidade(){
+    let res = `<object data="./velocidade/velocidade.html" type="text/html" width="100%"  height="100%" ></object>`
+    content.innerHTML=res
+
+    nome.innerText="Conversor de Velocidade"
+    nome.href="./velocidade/velocidade.html"
     mostra_msg()
 }
 function mostra_msg(){

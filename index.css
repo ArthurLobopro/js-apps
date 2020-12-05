@@ -26,7 +26,7 @@ li{
     height: 45px;
     line-height: 45px;
     text-align: left;
-    padding-left: 25px;
+    padding-left: 20px;
     box-sizing: border-box;
     float: right;
     width: 250px;
@@ -49,6 +49,9 @@ li:hover{
     visibility: hidden;
     font-family: 'Roboto Slab', 'Literata' , serif;
     font-size: 15px;
+}
+a{
+    color: #0000EE;
 }
 #content{
     float: right;
