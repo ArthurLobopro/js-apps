@@ -8,10 +8,11 @@
 </head>
 <body>
     <section id="main">
+        <span id="inst">Coloque o mouse em cima do programa que deseja para usá-lo aqui, clique rapidamente duas vezes para travá-lo/destravá-lo ou clique no texto para abri-lo em nova guia (recomendado).</span>
         <div id="container" onload="largura_msg()" onresize="largura_msg()">
             <ul id="lista">
-                <li><a href="./area/area.html">Calculador de Área.</a></li>
-                <li><a href="./Binario/Binario.html">Conversor Binário.</a></li>
+                <li onmousemove="escreve('area')" ondblclick="trava('area')"><a href="./area/area.html">Calculador de Área.</a></li>
+                <li onmousemove="escreve('binario')" ondblclick="trava('binario')"><a href="./binario/binario.html">Conversor Binário.</a></li>
                 <li>Conversor de Distância.</li>
                 <li>Conversor de Velocidade.</li>
                 <li>Equação de Segundo Grau.</li>
