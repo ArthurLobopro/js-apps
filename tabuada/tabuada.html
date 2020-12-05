@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Tabuada</title>
+    <link rel="icon" href="icon-mat.png">
+    <link rel="stylesheet" href="tabuada.css">
+</head>
+<body>
+    <header>
+        <h1>Gerador de Tabuada</h1>
+    </header>
+    <section>
+        <div id="flex">
+            <div style="line-height: 1.5;">
+                Número: <input type="number" id="num"><br>
+                <input type="button" value="Gerar Tabuada" onclick="gerar()">
+            </div>
+            <div id="opcao-2">
+                Início: <input type="number" id="inicio" value="0"><br>
+                Fim: <input type="number" id="fim" value="10">
+            </div>
+        </div>
+        <div id="res"></div>
+    </section><br>
+    <script src="tabuada.js"></script>
+    <footer>&copy;Arthur Lobo</footer>
+</body>
+</html>
