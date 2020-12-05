@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Distância</title>
+    <link rel="stylesheet" href="distancia.css">
+</head>
+<body>
+    <h1>Conversor de Distância</h1>
+    <section id="menu">
+        <div id="dados">
+            Tamanho: <input type="number" id="num"> 
+            <select id="unity" onclick="bloqueia()">
+                <option value="km">Km</option>
+                <option value="hm">Hm</option>
+                <option value="dam">Dam</option>
+                <option value="m">m</option>
+                <option value="dm">dm</option>
+                <option value="cm">cm</option>
+                <option value="mm">mm</option>
+            </select><br>
+            <div id="check">
+                <br>Converter para:<br>
+                <input type="checkbox" id="km" disabled checked>Km 
+                <input type="checkbox" id="hm" checked>Hm 
+                <input type="checkbox" id="dam" checked>Dam 
+                <input type="checkbox" id="m" checked>m 
+                <input type="checkbox" id="dm" checked>dm 
+                <input type="checkbox" id="cm" checked>cm 
+                <input type="checkbox" id="mm" checked>mm 
+            </div>
+            <input type="button" value="Enviar" onclick="calcular()">
+        </div>
+    </section>
+    <section id="historico">
+        <span style="margin: auto;">Para limpar as respostas aperte F5 ou recarregue a página.</span><br>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script src="distancia.js"></script>
+    <footer>&copy; Arthur Lobo</footer>
+</body>
+</html>
