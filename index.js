@@ -35,6 +35,11 @@ function escreve(nome){
                     escreve_tabuada()
                 }
                 break
+            case "potencia":
+                if(travado==false){
+                    escreve_potencia()
+                }
+                break
         }
     nome_backup_escreve=nome
     }
@@ -66,6 +71,9 @@ function trava(nome){
                 case "tabuada":
                     escreve_tabuada()
                     break
+                case "potencia":
+                    escreve_potencia()
+                    break
             }
             travado=true
         }else{
@@ -88,6 +96,9 @@ function trava(nome){
                     break
                 case "tabuada":
                     escreve_tabuada()
+                    break
+                case "potencia":
+                    escreve_potencia()
                     break
             }
             travado=true
@@ -140,9 +151,17 @@ function escreve_bascara(){
 function escreve_tabuada(){
     let res = `<object data="./tabuada/tabuada.html" type="text/html" width="100%"  height="100%" ></object>`
     content.innerHTML=res
-
+    document.body.style.minWidth="810px"
     nome.innerText="Gerador de Tabuada"
     nome.href="./tabuada/tabuada.html"
+    mostra_msg()
+}
+function escreve_potencia(){
+    let res = `<object data="./potencias/potencia.html" type="text/html" width="100%"  height="100%" ></object>`
+    content.innerHTML=res
+
+    nome.innerText="Gerador de Tabuada"
+    nome.href="./potencias/potencia.html"
     mostra_msg()
 }
 function mostra_msg(){
