@@ -22,6 +22,11 @@ function escreve(nome){
                 escreve_velocidade()
             }
             break
+        case "bascara":
+            if(travado===false){
+                escreve_bascara()
+            }
+            break
     }
 }
 var nome_backup 
@@ -43,6 +48,9 @@ function trava(nome){
                 case "velocidade":
                     escreve_velocidade()
                     break
+                case "bascara":
+                    escreve_bascara()
+                    break
             }
             travado=true
         }else{
@@ -57,9 +65,12 @@ function trava(nome){
                 case "distancia":
                     escreve_distancia()
                     break
-                    case "velocidade":
-                        escreve_velocidade()
-                        break
+                case "velocidade":
+                    escreve_velocidade()
+                    break
+                case "bascara":
+                    escreve_bascara()
+                    break
             }
             travado=true
         }
@@ -98,9 +109,17 @@ function escreve_distancia(){
 function escreve_velocidade(){
     let res = `<object data="./velocidade/velocidade.html" type="text/html" width="100%"  height="100%" ></object>`
     content.innerHTML=res
-
+    document.body.style.minWidth="810px"
     nome.innerText="Conversor de Velocidade"
     nome.href="./velocidade/velocidade.html"
+    mostra_msg()
+}
+function escreve_bascara(){
+    let res =`<object data="./bascara/bascara.html" type="text/html" width="100%"  height="100%" ></object>`
+    content.innerHTML=res
+    document.body.style.minWidth="810px"
+    nome.innerText="Equação de 2° Grau"
+    nome.href="./bascara/bascara.html"
     mostra_msg()
 }
 function mostra_msg(){
