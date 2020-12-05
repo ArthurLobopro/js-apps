@@ -1,0 +1,71 @@
+#vel1{
+    border-right: 1px solid black;
+    padding-right: 5px;
+}
+#center{
+    text-align: center;
+}
+body{
+    color: white;
+    background-color: rgb(50, 168, 40);
+    text-align: center;
+}
+section{
+    color: black;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+#menu{
+    display: flex;
+    width: 400px;
+    margin: 30px auto;
+}
+#msg{
+    margin: auto;
+}
+#historico{
+    display: none;
+    width: 80%;
+    text-align: center;
+    padding: 5px 0;
+    margin: 0 auto 15px;
+}
+#res{
+    display: inline-block;
+    float: none;
+}
+.res{
+    border: 2px solid black;
+    width: auto;
+    padding: 5px;
+    float: left;
+    margin: 5px;
+    padding-left: 10px;
+    text-align: left;
+}
+#centro-menu{
+    margin: auto;
+    text-align: center;
+}
+#kmh,#ms{
+    width: 50px;
+}
+h1{
+    width: max-content;
+    margin: auto;
+}
+#input{
+    margin-bottom: 10px;
+}
+footer{
+    text-align: center;
+    font-family: 'Roboto Slab', cursive, Arial;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../Fontes/RobotoSlab-Medium.ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}

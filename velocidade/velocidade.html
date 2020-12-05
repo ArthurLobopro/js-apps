@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="velociade.css">
+    <link rel="icon" href="icon-vel.png">
+    <title>Conversor de Velocidade</title>
+</head>
+<body>
+    <h1>Conversor de Velocidades</h1>
+    <section id="menu">
+        <div id="centro-menu">
+            <div id="input">Km/h: <input type="number" id="kmh"> <input type="button" onclick="km_para_ms()" value="Converter"></div>
+            <div>
+                Converter:<br>
+                <input type="radio" name="função" onclick="troca_convert(1)" id="1" checked><label for="1">De Km/h para m/s</label><br>
+                <input type="radio" name="função" onclick="troca_convert(2)" id="2"><label for="2">De m/s para Km/h</label>
+            </div>
+        </div>
+    </section>
+    <section id="historico">
+        <span id="msg">Para limpar o histórico aperte F5 ou recarregue a página.</span><br>
+        <div id="res"></div>
+    </section>
+    <footer>&copy;Arthur Lobo</footer>
+    <script src="velocidade.js"></script>
+</body>
+</html>
