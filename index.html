@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./midia/home_white.png">
     <title>Home Page</title>
 </head>
 <body>
     <section id="main">
-        <span id="inst">Coloque o mouse em cima do programa que deseja para usá-lo aqui, clique rapidamente duas vezes para travá-lo/destravá-lo ou clique no texto para abri-lo em nova guia (recomendado).</span>
+        <span id="inst">Coloque o mouse em cima do programa que deseja para usá-lo aqui, clique rapidamente duas vezes para travá-lo/destravá-lo ou clique no icone de link para abri-lo em nova guia (recomendado).</span>
         <div id="container" onload="largura_msg()" onresize="largura_msg()">
             <ul id="lista">
-                <li onmousemove="escreve('area')" ondblclick="trava('area')"><a href="./area/area.html">Calculador de Área.</a></li>
-                <li onmousemove="escreve('binario')" ondblclick="trava('binario')"><a href="./binario/binario.html">Conversor Binário.</a></li>
+                <li onmouseenter="escreve('area')" ondblclick="trava('area')">
+                    Calculador de Área.
+                    <a href="./area/area.html" target="_blank"><div class="link"></div></a>
+                </li>
+                <li onmouseenter="escreve('binario')" ondblclick="trava('binario')">
+                    Conversor Binário.
+                    <a href="./binario/binario.html" target="_blank"><div class="link"></div></a>
+                </li>
                 <li>Conversor de Distância.</li>
                 <li>Conversor de Velocidade.</li>
                 <li>Equação de Segundo Grau.</li>
@@ -20,9 +27,9 @@
                 <li>Gerador de Tabuada.</li>
                 <img src="logo-white1.jpg" alt="Logo" id="logo">
             </ul>
-            <div id="msg">Você está vendo <span id="nome"></span></div>
+            <div id="msg">Você está vendo <a href="" id="nome"></a></div>
             <div id="content">
-
+                
             </div>
         </div>
     </section>
