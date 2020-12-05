@@ -160,7 +160,7 @@ function escreve_potencia(){
     let res = `<object data="./potencias/potencia.html" type="text/html" width="100%"  height="100%" ></object>`
     content.innerHTML=res
 
-    nome.innerText="Gerador de Tabuada"
+    nome.innerText="Gerador de Potências"
     nome.href="./potencias/potencia.html"
     mostra_msg()
 }
