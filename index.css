@@ -30,6 +30,7 @@ li{
     box-sizing: border-box;
     float: right;
     width: 250px;
+    user-select: none;
 }
 li:hover{
     background-color: #f1f3f4;
@@ -46,6 +47,8 @@ li:hover{
     height: 30px;
     line-height: 30px;
     visibility: hidden;
+    font-family: 'Roboto Slab', 'Literata' , serif;
+    font-size: 15px;
 }
 #content{
     float: right;
@@ -55,14 +58,6 @@ li:hover{
     width: calc(250px - 7px);
     margin: 0 -3px 0 3px;
     border-right: 1px solid rgba(60,64,67,0.302);
-}
-li a {
-    color: black;
-    text-decoration: none;
-}
-li a:hover{
-    color: #0a84e9;
-    text-decoration: underline;
 }
 #main{
     text-align: center;
@@ -84,8 +79,13 @@ li a:hover{
 }
 @font-face {
     font-family: 'Literata';
-    src: url('./Fontes/Literata-Regular-opsz=12.ttf');
+    src: url('./fontes/Literata-Regular-opsz=12.ttf');
     font-style: normal;
     font-weight: 400;
     font-display: swap;
+}
+@font-face{
+    font-family: 'Roboto Slab';
+    src: url("./fontes/RobotoSlab-Medium.ttf");
+    font-weight: 400;
 }
