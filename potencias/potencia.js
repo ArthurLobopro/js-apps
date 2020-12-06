@@ -31,6 +31,7 @@ function potencia(num, inicio, fim){
     }
     resposta+=`<div>`
     res.innerHTML+=resposta
+    res.style.display="inline-block"
     zerar()
 }
 function zerar(){
