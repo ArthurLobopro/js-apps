@@ -9,7 +9,7 @@ section{
     color: black;
     padding: 20px;
     width: 500px;
-    margin: auto;
+    margin:  auto;
     border-radius: 8px;
     box-sizing: border-box;
     box-shadow: 5px 5px 10px;
@@ -20,6 +20,7 @@ section{
     display: none;
     width: 90%;
     padding: 10px 15px;
+    margin-top: 15px;
 }
 .res{
     border: 2px solid black;
@@ -34,6 +35,7 @@ header, footer{
 }
 footer{
     font-family: 'Roboto Slab',cursive, Arial;
+    margin-top: 15px;
 }
 input{
     width: 100px;
