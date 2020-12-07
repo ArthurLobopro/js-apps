@@ -23,5 +23,6 @@ function gerar(){
         }
         resposta+=`<div>`
         res.innerHTML+=resposta
+        res.style.display="inline-block"
     }
 }
