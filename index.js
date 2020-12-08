@@ -10,6 +10,11 @@ function escreve(nome){
                     escreve_area()
                 }
                 break
+            case "hip":
+                if(travado===false){
+                    escreve_hip()
+                }
+                break
             case "binario":
                 if(travado===false){
                     escreve_binario()
@@ -56,6 +61,9 @@ function trava(nome){
                 case "area":
                     escreve_area()
                     break
+                case "hip":
+                    escreve_hip()
+                    break
                 case "binario":
                     escreve_binario()
                     break
@@ -81,6 +89,9 @@ function trava(nome){
             switch(nome){
                 case "area":
                     escreve_area()
+                    break
+                case "hip":
+                    escreve_hip()
                     break
                 case "binario":
                     escreve_binario()
@@ -109,15 +120,23 @@ function trava(nome){
 // Funções que mostram os outros programas
 var nome= document.getElementById("nome")
 function escreve_area(){
-    let res=`<object data="./area/area.html" type="text/html" width="100%"  height="100%" ></object>`
+    let res=`<object data="./area/area.html" type="text/html"  ></object>`
     content.innerHTML=res
     document.body.style.minWidth="955px"
     nome.innerText="Calculador de Área"
     nome.href="./area/area.html"
     mostra_msg()
 }
+function escreve_hip(){
+    let res = `<object data="./hipotenusa/hipotenusa.html" type="text/html"  ></object>`
+    content.innerHTML=res
+    document.body.style.minWidth="810px"
+    nome.innerText="Calculador de Hipotenusa"
+    nome.href="./hipotenusa/hipotenusa.html"
+    mostra_msg()
+}
 function escreve_binario(){
-    let res = `<object data="./binario/binario.html" type="text/html" width="100%"  height="100%" ></object>`
+    let res = `<object data="./binario/binario.html" type="text/html"  ></object>`
     content.innerHTML=res
     document.body.style.minWidth="955px"
     nome.innerText="Conversor Binário"
@@ -125,7 +144,7 @@ function escreve_binario(){
     mostra_msg()
 }
 function escreve_distancia(){
-    let res = `<object data="./distancia/distancia.html" type="text/html" width="100%"  height="100%" ></object>`
+    let res = `<object data="./distancia/distancia.html" type="text/html"  ></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Conversor de Distância"
@@ -133,7 +152,7 @@ function escreve_distancia(){
     mostra_msg()
 }
 function escreve_velocidade(){
-    let res = `<object data="./velocidade/velocidade.html" type="text/html" width="100%"  height="100%" ></object>`
+    let res = `<object data="./velocidade/velocidade.html" type="text/html"  ></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Conversor de Velocidade"
@@ -141,7 +160,7 @@ function escreve_velocidade(){
     mostra_msg()
 }
 function escreve_bascara(){
-    let res =`<object data="./bascara/bascara.html" type="text/html" width="100%"  height="100%" ></object>`
+    let res =`<object data="./bascara/bascara.html" type="text/html"  ></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Equação de 2° Grau"
@@ -149,7 +168,7 @@ function escreve_bascara(){
     mostra_msg()
 }
 function escreve_tabuada(){
-    let res = `<object data="./tabuada/tabuada.html" type="text/html" width="100%"  height="100%" ></object>`
+    let res = `<object data="./tabuada/tabuada.html" type="text/html"  ></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Gerador de Tabuada"
@@ -157,7 +176,7 @@ function escreve_tabuada(){
     mostra_msg()
 }
 function escreve_potencia(){
-    let res = `<object data="./potencias/potencia.html" type="text/html" width="100%"  height="100%" ></object>`
+    let res = `<object data="./potencias/potencia.html" type="text/html"  ></object>`
     content.innerHTML=res
 
     nome.innerText="Gerador de Potências"
