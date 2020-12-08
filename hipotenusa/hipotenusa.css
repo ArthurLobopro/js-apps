@@ -1,0 +1,92 @@
+body{
+    color: white;
+    background-color:#69bdd2;
+    text-align: center;
+}
+h1{
+    width: max-content;
+    margin: auto;
+}
+section{
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+}
+#menu{
+    display: flex;
+    width: 400px;
+    margin: 30px auto 15px;
+    padding: 15px;
+}
+#res{
+    display: none;
+    width: 85%;
+    min-height: 250px;
+    padding: 5px 10px;
+    margin: 0 auto 15px;
+}
+#dados{
+    padding: 10px 0 0;
+    display: grid;
+    grid-template-areas: 
+        'input1 input2'
+        'input3 input3';
+}
+.input1{
+    grid-area: input1;
+}
+.input2{
+    grid-area: input2;
+}
+.input3{
+    grid-area: input3;
+}
+img{
+    margin: auto;
+}
+input[type="number"]{
+    width: 50px;
+    margin: 0 15px 10px 0;    
+}
+input[type="button"]{
+    margin-top: 10px;
+    padding: 1px 6px;
+}
+input{
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(118, 118, 118);
+}
+select{
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(118, 118, 118);
+}
+.mauto{
+    margin: auto;
+}
+footer{
+    text-align: center;
+    font-family: 'Roboto Slab', cursive, Arial;
+}
+.flright{
+    float: right;
+}
+.res{
+    border: 2px solid black;
+    width: auto;
+    padding: 5px;
+    float: left;
+    margin: 5px;
+    padding-left: 10px;
+    text-align: left;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fontes/RobotoSlab-Medium.ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
