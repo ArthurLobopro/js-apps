@@ -1,6 +1,8 @@
+var id = 0
+var res = document.getElementById("res")
 function binary(){
     let decimal=[], bin=[],num,div
-    let res=""
+    let content=""
     decimal[0]=document.getElementById("decimal")
     if(decimal[0].value.length==0){
          alert("Digite um número para continuar!")
@@ -10,7 +12,8 @@ function binary(){
     }else{
           decimal[0]=decimal[0].value
           if(decimal[0]==0 || decimal[0]==1){
-          res=`<div class="res">
+          content=`<div class="res" id="div${id}">
+          <div class="circle"><img src="close-icon.png" onclick="remove_div(${id})"></div>
           Em Decimal:<br> ${decimal[0]}<br><br>Em Binário: <br>${decimal[0]}</div>`
           }else{
                decimal[1]=decimal[0]
@@ -25,21 +28,33 @@ function binary(){
                     bin[i]=decimal[1]%2
                     decimal[1]=div
                }
-               res=`<div class="res">
+               content=`<div class="res" id="div${id}">
+               <div class="circle"><img src="close-icon.png" onclick="remove_div(${id})"></div>
                Em Decimal:<br> ${decimal[0]}<br><br>Em Binário:<br>`
                for(let i=num-1;i>=0;i--){
-                    res+=bin[i]
+                    content+=bin[i]
                     if(i!=0 && i%8==0){
-                         res+="<br>"
+                         content+="<br>"
                     }
                }
-               res+=`</div>`
+               content+=`</div>`
           }
-          document.getElementById("res").style.display="inline-block"
-          document.getElementById("res").innerHTML+=res
+          res.style.display="inline-block"
+          res.innerHTML+=content
           zerar()
+          id++
      }
 }
 function zerar(){
      document.getElementById("decimal").value=""
+}
+function remove_div(num){
+     let element= document.getElementById(`div${num}`)
+     res.removeChild(element)
+     let string = res.innerHTML
+     let teste = string.indexOf("div")
+     if(teste==-1){
+          res.style.display="none"
+          id=0
+     }
 }

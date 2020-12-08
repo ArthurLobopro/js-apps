@@ -24,7 +24,7 @@ body{
 }
 .res{
     border:2px solid blue;
-    padding: 5px 10px 5px;
+    padding: 5px 0 5px 10px;
     text-align: left;
     margin: 10px 5px;
     width: max-content;
@@ -40,11 +40,30 @@ body{
     position: relative;
     top:5px; 
 }
+.circle{
+    width: 18px;
+    float:right;
+    box-sizing: border-box;
+    height: 18px;
+    border: 1.5px solid black;
+    border-radius: 50%;
+    display: flex;
+    margin: 0 3px auto 5px;
+    user-select: none;
+}
+.circle:hover{
+    background-color: lightgray;
+}
+img{
+    margin: auto;
+    width: 10px;
+    height: 10px;
+}
+footer{
+    font-family: 'Roboto Slab', 'Times New Roman'
+}
 @font-face{
     font-family: 'Roboto Slab';
     src: url("../fontes/RobotoSlab-Medium.ttf");
     font-weight: 400;
-}
-footer{
-    font-family: 'Roboto Slab', 'Times New Roman'
 }
