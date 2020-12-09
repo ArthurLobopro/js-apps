@@ -1,5 +1,5 @@
 var res= document.getElementById("res")
-var historico = document.getElementById("historico")
+var id = 0
 function troca_convert(num){
     let input = document.getElementById("input")
     switch(num){
@@ -18,12 +18,14 @@ function km_para_ms(){
         kmh=Number(kmh.value)
         let ms=kmh/3.6
         res.innerHTML+=`
-        <div class="res">
+        <div class="res" id="div${id}">
+            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
             Km/h: ${kmh} km/h<br>
             M/s: ${ms} m/s
-        </div>
-        `
-        historico.style.display="inherit"
+        </div>`
+        id++
+        res.style.display="inline-block"
+        zerar(1)
     }
 }
 function ms_para_km(){
@@ -34,11 +36,30 @@ function ms_para_km(){
         ms=Number(ms.value)
         let kmh=ms*3.6
         res.innerHTML+=`
-        <div class="res">
+        <div class="res" id="div${id}">
+            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
             M/s: ${ms} m/s <br>
             Km/h: ${kmh} km/h
-        </div>
-        `
-        historico.style.display="inherit"
+        </div>`
+        id++
+        res.style.display="inline-block"
+        zerar(2)
+    }
+}
+function zerar(num){
+    if(num==1){
+        document.getElementById("kmh").value=""
+    }else{
+        document.getElementById("ms").value=""
+    }
+}
+function remove_div(num){
+    let element= document.getElementById(`div${num}`)
+    res.removeChild(element)
+    let string = res.innerHTML
+    let teste = string.indexOf("div")
+    if(teste==-1){
+        res.style.display="none"
+        id=0
     }
 }
