@@ -1,0 +1,75 @@
+/*Botão de fechar - Inicio*/
+.circle{
+    width: 18px;
+    float:right;
+    box-sizing: border-box;
+    height: 18px;
+    border: 1.5px solid black;
+    border-radius: 50%;
+    display: flex;
+    margin: 0 3px auto 5px;
+    user-select: none;
+}
+.circle:hover{
+    background-color: lightgray;
+}
+.circle img{
+    margin: auto;
+    width: 10px;
+    height: 10px;
+}
+/*Botão de fechar - Fim*/
+h1{
+    width: max-content;
+    margin: auto;
+}
+body{
+    color: white;
+    text-align: center;
+}
+section{
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    margin: auto;
+}
+#menu{
+    margin: 20px auto 15px;
+}
+#res{
+    margin: 0 auto 15px;
+    display: none;
+}
+#msg{
+    margin: auto; 
+}
+.res{
+    float: left;
+}
+/*Inputs - Inicio*/
+input{
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(118, 118, 118);
+}
+select{
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(118, 118, 118);
+}
+/*Inputs - Fim*/
+/*Rodapé - Inicio*/
+footer{
+    text-align: center;
+    font-family: 'Roboto Slab', cursive, Arial;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fontes/RobotoSlab-Medium.ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+/*Rodapé - Fim*/
