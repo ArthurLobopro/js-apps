@@ -1,3 +1,5 @@
+var res = document.getElementById("res")
+var id = 0
 function verificar(){
     let num=document.getElementById("num")
     let inicio=document.getElementById("inicio")
@@ -15,7 +17,6 @@ function verificar(){
     }
 }
 function potencia(num, inicio, fim){
-    let res=document.getElementById("res")
     let resposta=""
     num=Number(num.value)
     inicio=Number(inicio.value)
@@ -25,16 +26,28 @@ function potencia(num, inicio, fim){
         fim=inicio
         inicio=ajudante
     }
-    resposta+=`<div class="res">`
+    resposta+=`<div class="res" id="div${id}">
+    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>`
     for(let i=inicio;i<=fim;i++){
         resposta+=`${num}<sup>${i}</sup> = ${num**i}<br>`
     }
     resposta+=`<div>`
     res.innerHTML+=resposta
     res.style.display="inline-block"
+    id++
     zerar()
 }
 function zerar(){
     num=document.getElementById("num")
     num.value=""
+}
+function remove_div(num){
+    let element= document.getElementById(`div${num}`)
+    res.removeChild(element)
+    let string = res.innerHTML
+    let teste = string.indexOf("div")
+    if(teste==-1){
+        res.style.display="none"
+        id=0
+    }
 }
