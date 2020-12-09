@@ -32,8 +32,9 @@ input[type="button"]{
 .circle{
     margin: -8px -13px auto auto;
 }
-#flex{
-    display: flex;
+#grid{
+    display: grid;
+    grid-template-columns: auto auto;
 }
 #opcao-2{
     margin-left: 10%;
