@@ -45,6 +45,7 @@ section{
 }
 .res{
     float: left;
+    text-align: left;
 }
 /*Inputs - Inicio*/
 input{
