@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Tabuada</title>
-    <link rel="icon" href="icon-mat.png">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="tabuada.css">
+    <link rel="icon" href="icon-mat.png">
 </head>
 <body>
-    <header>
-        <h1>Gerador de Tabuada</h1>
-    </header>
-    <section>
-        <div id="flex">
+    <h1>Gerador de Tabuada</h1>
+    <section id="menu">
+        <div id="grid">
             <div style="line-height: 1.5;">
                 Número: <input type="number" id="num"><br>
                 <input type="button" value="Gerar Tabuada" onclick="gerar()">
@@ -24,7 +23,7 @@
         </div>
     </section>
     <section id="res">
-        <span id="msg">Para limpar o histórico aperte F5 ou recarregue a página.</span>
+        <span id="msg">Tabuadas Geradas:</span><br>
     </section>
     <script src="tabuada.js"></script>
     <footer>&copy;Arthur Lobo</footer>

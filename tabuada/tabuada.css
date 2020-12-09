@@ -1,47 +1,33 @@
 body{
-    color:white;
     background-color: rgb( 25, 102, 154);
-    font-family: 'Times New Roman';
-    text-align: center;
 }
 section{
-    background-color: white;
-    color: black;
     padding: 20px;
     width: 500px;
-    margin: 0 auto 15px;
     border-radius: 8px;
     box-sizing: border-box;
     box-shadow: 5px 5px 10px;
 }
 #res{
-    padding: 0;
-    margin: 0 auto 15px;
-    display: none;
-    margin: 15px auto;
     padding: 10px;
     width: 80%;
 }
 .res{
     border: 2px solid black;
-    float: left;
     padding: 10px 10px 10px 15px;
     margin: 10px 10px 0px 0px;
     width: auto;
     height: auto;
-    text-align: left;
 }
-header, footer{
-    text-align: center;
-}
-footer{
-    font-family: 'Roboto Slab',cursive, Arial;
+.circle{
+    margin: -9px -9px auto auto;
 }
 input{
     width: 100px;
 }
-#flex{
-    display: flex;
+#grid{
+    display: grid;
+    grid-template-columns: auto auto;
 }
 #opcao-2{
     margin-left: 10%;
@@ -49,11 +35,4 @@ input{
 #fim{
     margin-left: 12px;
     margin-top: 3px;
-}
-@font-face {
-    font-family: 'Roboto Slab';
-    src: url('../fontes/RobotoSlab-Medium.ttf');
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
 }
