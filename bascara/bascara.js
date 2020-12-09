@@ -15,16 +15,16 @@ function calcular(){
             x1=(-(b)-raiz)/(a*2)
             x2=(-(b)+raiz)/(a*2)
             res.innerHTML+=`<div class="res" id="div${id}">
-            <div class="circle"><img src="../midia/close-icon.png" onclick="remove_div(${id})"></div>
+            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
             A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>Raiz: ${raiz}<br>X: ${x1} ou ${x2} <div>`   
         }else if(raiz==0){
             x1=-(b)/(a*2)
             res.innerHTML+=`<div class="res" id="div${id}">
-            <div class="circle"><img src="../midia/close-icon.png" onclick="remove_div(${id})"></div>
+            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
             A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>Raiz: ${raiz}<br>X: ${x1}`
         }else{
             res.innerHTML+=`<div class="res" id="div${id}">
-            <div class="circle"><img src="../midia/close-icon.png" onclick="remove_div(${id})"></div>
+            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
             A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>Raiz:Inexistente<br>X: Inexistente <div>`
         }
         id++
@@ -42,7 +42,7 @@ function remove_div(num){
     let string = res.innerHTML
     let teste = string.indexOf("div")
     if(teste==-1){
-         res.style.display="none"
-         id=0
+        res.style.display="none"
+        id=0
     }
 }

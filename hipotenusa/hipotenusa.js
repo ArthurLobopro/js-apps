@@ -4,8 +4,8 @@ function troca(num){
     let unity = document.getElementById("unity").value
     let content 
     if(num==1){
-        content=`Cateto 1: <input type="number" id="cat1"><br>
-             Cateto 2: <input type="number" id="cat2">`
+        content=`Cateto 1: <input type="number" id="cat1" min="0"><br>
+             Cateto 2: <input type="number" id="cat2" min="0">`
         input1.innerHTML=content
         content=`Unidade de Medida:
             <select id="unity">
@@ -17,8 +17,8 @@ function troca(num){
         input2.innerHTML=content
     }
     if(num==2){
-        content=`Hipotenusa: <input type="number" id="hip"><br>
-            Cateto: <input type="number" id="cat">`
+        content=`Hipotenusa: <input type="number" id="hip" min="0"><br>
+            Cateto: <input type="number" id="cat" min="0">`
         input1.innerHTML=content
         content=`Unidade de Medida:
             <select id="unity">
@@ -32,6 +32,7 @@ function troca(num){
     document.getElementById("unity").value=unity
 }
 var res= document.getElementById("res")
+var id = 0
 function calcula_hipotenusa() {
     let cateto1 = document.getElementById("cat1").value
     let cateto2 = document.getElementById("cat2").value
@@ -45,13 +46,16 @@ function calcula_hipotenusa() {
         let unity = document.getElementById("unity").value
         let hipotenusa = Math.sqrt(cateto1**2 + cateto2**2)
         let content= `
-                <div class="res">
+                <div class="res" id="div${id}">
+                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
                     Cateto 1: ${cateto1+unity}<br>
                     Cateto 2: ${cateto2+unity}<br>
                     Hipotenusa: ${hipotenusa+unity}
                 </div>`
         res.innerHTML+=content
         res.style.display="inline-block"
+        id++
+        zerar(1)
     }
 }
 function calcula_cateto(){
@@ -67,18 +71,34 @@ function calcula_cateto(){
         let unity = document.getElementById("unity").value
         let cateto2 = Math.sqrt(hipotenusa**2 - cateto**2)
         let content= `
-                <div class="res">
+                <div class="res" id="div${id}">
+                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
                     Cateto fornecido: ${cateto+unity}<br>
                     Hipotenusa: ${hipotenusa+unity}<br>
                     Cateto descoberto: ${cateto2+unity}<br>
                 </div>`
         res.innerHTML+=content
         res.style.display="inline-block"
+        id++
+        zerar(2)
     }
 }
-function zerar(){
-    document.getElementById("cat").value=""
-    document.getElementById("cat1").value=""
-    document.getElementById("cat2").value=""
-    document.getElementById("hip").value=""
+function zerar(num){
+    if(num==1){
+        document.getElementById("cat1").value=""
+        document.getElementById("cat2").value=""
+    }else{
+        document.getElementById("cat").value=""
+        document.getElementById("hip").value=""
+    }
+}
+function remove_div(num){
+    let element= document.getElementById(`div${num}`)
+    res.removeChild(element)
+    let string = res.innerHTML
+    let teste = string.indexOf("div")
+    if(teste==-1){
+        res.style.display="none"
+        id=0
+    }
 }

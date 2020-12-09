@@ -13,7 +13,7 @@ function binary(){
           decimal[0]=decimal[0].value
           if(decimal[0]==0 || decimal[0]==1){
           content=`<div class="res" id="div${id}">
-          <div class="circle"><img src="../midia/close-icon.png" onclick="remove_div(${id})"></div>
+          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
           Em Decimal:<br> ${decimal[0]}<br><br>Em Binário: <br>${decimal[0]}</div>`
           }else{
                decimal[1]=decimal[0]
@@ -29,7 +29,7 @@ function binary(){
                     decimal[1]=div
                }
                content=`<div class="res" id="div${id}">
-               <div class="circle"><img src="../midia/close-icon.png" onclick="remove_div(${id})"></div>
+               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
                Em Decimal:<br> ${decimal[0]}<br><br>Em Binário:<br>`
                for(let i=num-1;i>=0;i--){
                     content+=bin[i]
