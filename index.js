@@ -25,6 +25,11 @@ function escreve(nome){
                     escreve_distancia()
                 }
                 break
+            case "rgb/hex":
+            if(travado===false){
+                escreve_hex_rgb()
+            }
+            break
             case "velocidade":
                 if(travado===false){
                     escreve_velocidade()
@@ -70,6 +75,9 @@ function trava(nome){
                 case "distancia":
                     escreve_distancia()
                     break
+                case "rgb/hex":
+                    escreve_hex_rgb()
+                    break
                 case "velocidade":
                     escreve_velocidade()
                     break
@@ -99,6 +107,9 @@ function trava(nome){
                 case "distancia":
                     escreve_distancia()
                     break
+                case "rgb/hex":
+                    escreve_hex_rgb()
+                    break
                 case "velocidade":
                     escreve_velocidade()
                     break
@@ -120,7 +131,7 @@ function trava(nome){
 // Funções que mostram os outros programas
 var nome= document.getElementById("nome")
 function escreve_area(){
-    let res=`<object data="./area/area.html" type="text/html"  ></object>`
+    let res=`<object data="./area/area.html" type="text/html"></object>`
     content.innerHTML=res
     document.body.style.minWidth="955px"
     nome.innerText="Calculador de Área"
@@ -128,7 +139,7 @@ function escreve_area(){
     mostra_msg()
 }
 function escreve_hip(){
-    let res = `<object data="./hipotenusa/hipotenusa.html" type="text/html"  ></object>`
+    let res = `<object data="./hipotenusa/hipotenusa.html" type="text/html"></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Calculador de Hipotenusa"
@@ -136,7 +147,7 @@ function escreve_hip(){
     mostra_msg()
 }
 function escreve_binario(){
-    let res = `<object data="./binario/binario.html" type="text/html"  ></object>`
+    let res = `<object data="./binario/binario.html" type="text/html"></object>`
     content.innerHTML=res
     document.body.style.minWidth="955px"
     nome.innerText="Conversor Binário"
@@ -144,7 +155,7 @@ function escreve_binario(){
     mostra_msg()
 }
 function escreve_distancia(){
-    let res = `<object data="./distancia/distancia.html" type="text/html"  ></object>`
+    let res = `<object data="./distancia/distancia.html" type="text/html"></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Conversor de Distância"
@@ -152,7 +163,7 @@ function escreve_distancia(){
     mostra_msg()
 }
 function escreve_velocidade(){
-    let res = `<object data="./velocidade/velocidade.html" type="text/html"  ></object>`
+    let res = `<object data="./velocidade/velocidade.html" type="text/html"></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Conversor de Velocidade"
@@ -160,7 +171,7 @@ function escreve_velocidade(){
     mostra_msg()
 }
 function escreve_bascara(){
-    let res =`<object data="./bascara/bascara.html" type="text/html"  ></object>`
+    let res =`<object data="./bascara/bascara.html" type="text/html"></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Equação de 2° Grau"
@@ -168,7 +179,7 @@ function escreve_bascara(){
     mostra_msg()
 }
 function escreve_tabuada(){
-    let res = `<object data="./tabuada/tabuada.html" type="text/html"  ></object>`
+    let res = `<object data="./tabuada/tabuada.html" type="text/html"></object>`
     content.innerHTML=res
     document.body.style.minWidth="810px"
     nome.innerText="Gerador de Tabuada"
@@ -176,11 +187,19 @@ function escreve_tabuada(){
     mostra_msg()
 }
 function escreve_potencia(){
-    let res = `<object data="./potencias/potencia.html" type="text/html"  ></object>`
+    let res = `<object data="./potencias/potencia.html" type="text/html"></object>`
     content.innerHTML=res
-
+    document.body.style.minWidth="810px"
     nome.innerText="Gerador de Potências"
     nome.href="./potencias/potencia.html"
+    mostra_msg()
+}
+function escreve_hex_rgb(){
+    let res = `<object data="./hex_rgb/hex_rgb.html" type="text/html"></object>`
+    content.innerHTML=res
+    document.body.style.minWidth="810px"
+    nome.innerText="Conversor HEX/RGB"
+    nome.href="./hex_rgb/hex_rgb.html"
     mostra_msg()
 }
 function mostra_msg(){
