@@ -24,7 +24,11 @@ function convert_hex(){
         id++
         res.innerHTML+=content
         res.style.display="inline-block"
+        zerar()
     }
+}
+function zerar(){
+    document.getElementById("hex").value=""
 }
 //Converte hexadecimal para números
 function convert_hex_to_num(a){
