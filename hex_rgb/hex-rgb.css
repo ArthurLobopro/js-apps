@@ -3,7 +3,14 @@ body{
 }
 #menu{
     width: 300px;
-    padding: 15px;
+    height: 150px;
+    padding: 20px 0;
+    display: grid;
+    grid-template-rows: auto auto;
+    box-sizing: border-box;
+}
+#menu div{
+    margin: 10px auto;
 }
 input:invalid{
     border:3px solid red;
@@ -28,6 +35,9 @@ input:invalid{
     padding-left: 10px;
     text-align: left;
     border-radius: 3px;
+}
+input[type="number"]{
+    width: 40px;
 }
 .circle{
     margin: -4px -4px auto auto;
