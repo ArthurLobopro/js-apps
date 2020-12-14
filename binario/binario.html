@@ -9,10 +9,14 @@
 <body>
     <header><h1>Conversor Binário</h1></header>
    <section id="menu">
-        <div class="center">
-        <span>Converter de Decimal para Binário:<br>
-        Decimal:<input type="number" id="decimal" value="0"><br>
-        <input type="button" value="Converter" onclick="binary()"></span>
+        Converter Decimal/Binário:
+        <div class="flex">
+        <div>
+            Decimal: <input type="number" min="0" id="decimal" value="">
+            <input type="button" value="Converter" onclick="dec_to_bin()"><br><br>
+            Binário: <input type="number" min="0"  id="binario" value="">
+            <input type="button" value="Converter" onclick="bin_to_dec()">
+        </div>
        </div>
    </section>
     <section id="res">

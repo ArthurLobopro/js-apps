@@ -1,6 +1,6 @@
 var id = 0
 var res = document.getElementById("res")
-function binary(){
+function dec_to_bin(){
     let decimal=[], bin=[],num,div
     let content=""
     decimal[0]=document.getElementById("decimal")
@@ -44,6 +44,27 @@ function binary(){
           zerar()
           id++
      }
+}
+function bin_to_dec(){
+     let String_bin = document.getElementById("binario").value
+     let bin = []
+     for(let i in String_bin){
+          bin[i]= String_bin[(String_bin.length-1)-i]
+     }
+     let decimal = 0
+     for(i in bin){
+          bin[i]*=(2**i)
+          decimal+=bin[i]
+     }
+     content=
+     `<div class="res" id="div${id}">
+          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+          Em binário:<br> ${String_bin}<br>Em decimal:<br> ${decimal}
+     </div>`
+     res.style.display="inline-block"
+     res.innerHTML+=content
+     zerar()
+     id++
 }
 function zerar(){
      document.getElementById("decimal").value=""

@@ -8,13 +8,15 @@ body{
 }
 #menu{
     text-align: center;
-    height: max-content;
-    padding: 30px 40px;
-    display: flex;
+    height: 150px;
+    padding: 10px 40px;
     width: max-content;
 }
-.center{
-    margin: auto;
+.flex{
+    display: flex;
+    height: inherit;
+    text-align: left;
+    align-items: center;
 }
 .res{
     border:2px solid blue;
