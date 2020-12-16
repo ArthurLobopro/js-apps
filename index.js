@@ -15,9 +15,9 @@ function escreve(nome){
                     escreve_hip()
                 }
                 break
-            case "binario":
+            case "bases":
                 if(travado===false){
-                    escreve_binario()
+                    escreve_bases()
                 }
                 break
             case "distancia":
@@ -69,8 +69,8 @@ function trava(nome){
                 case "hip":
                     escreve_hip()
                     break
-                case "binario":
-                    escreve_binario()
+                case "bases":
+                    escreve_bases()
                     break
                 case "distancia":
                     escreve_distancia()
@@ -101,8 +101,8 @@ function trava(nome){
                 case "hip":
                     escreve_hip()
                     break
-                case "binario":
-                    escreve_binario()
+                case "bases":
+                    escreve_bases()
                     break
                 case "distancia":
                     escreve_distancia()
@@ -146,12 +146,12 @@ function escreve_hip(){
     nome.href="./hipotenusa/hipotenusa.html"
     mostra_msg()
 }
-function escreve_binario(){
-    let res = `<object data="./binario/binario.html" type="text/html"></object>`
+function escreve_bases(){
+    let res = `<object data="./bases/bases.html" type="text/html"></object>`
     content.innerHTML=res
     document.body.style.minWidth="955px"
-    nome.innerText="Conversor Binário"
-    nome.href="./binario/binario.html"
+    nome.innerText="Conversor de  Bases"
+    nome.href="./bases/bases.html"
     mostra_msg()
 }
 function escreve_distancia(){
