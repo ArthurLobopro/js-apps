@@ -6,10 +6,26 @@ body{
     padding: 0;
     background-color: rgb(2, 96, 148); 
 }
+label{
+    margin-left: 15px;
+}
 #menu{
-    text-align: center;
-    height: 150px;
+    text-align: left;
+    min-height: 150px;
+    height: max-content;
     padding: 10px 40px;
+    width: max-content;
+}
+#menu-grid{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#input-de{
+    margin: 10px 0;
+}
+#convert{
+    margin: auto;
     width: max-content;
 }
 .flex{
@@ -17,6 +33,12 @@ body{
     height: inherit;
     text-align: left;
     align-items: center;
+}
+.tacenter{
+    text-align: center;
+}
+.ml15px{
+    margin-left: 15px;
 }
 .res{
     border:2px solid blue;

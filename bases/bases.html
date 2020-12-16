@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Conversor Binário</title>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="bases.css">
+</head>
+<body>
+    <header><h1>Conversor de bases</h1></header>
+   <section id="menu">
+        <div class="tacenter">Converter <span id="de">Decimal</span> &rightarrow; <span id="para">Binário</span> :</div>
+        <div class="flex">
+            <div>
+                <div id="input-de">
+                    Decimal: <input type="number" min="0" id="decimal" value="">
+                </div>
+                <div id="convert">
+                    <input type="button" value="Converter" onclick="dec_to_bin(false)">
+                </div>
+            </div>
+       </div>
+       <div id="menu-grid">
+           <div>
+               Converter de: <br>
+               <label>
+                   <input type="radio" name="de" value="decimal" onclick="escreve_de('decimal')" checked>Decimal
+                </label><br>
+               <label>
+                   <input type="radio" name="de" value="binario" onclick="escreve_de('binario')">Binário
+                </label><br>
+                <label>
+                    <input type="radio" name="de" value="octal" onclick="escreve_de('octal')">Octal
+                 </label>
+           </div>
+           <div>
+                Para: <br>
+               <label>
+                   <input type="radio" name="para" value="decimal" onclick="escreve_para('decimal')" disabled>Decimal
+                </label><br>
+               <label>
+                   <input type="radio" name="para" value="binario" onclick="escreve_para('binario')" checked>Binário
+                </label><br>
+                <label>
+                    <input type="radio" name="para" value="octal" onclick="escreve_para('octal')">Octal
+                 </label>
+           </div>
+       </div>
+   </section>
+    <section id="res">
+        <span id="msg">Conversões:</span><br>
+    </section>
+    <footer>&copy;Arthur Lobo</footer>
+	<script src="bases.js"></script>
+</body>
+</html>
