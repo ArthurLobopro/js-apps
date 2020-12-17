@@ -14,8 +14,8 @@
             <img src="./triangulo.png" alt="Triangulo Retangulo"><br>
             <div id="dados">
                 <div class="input1">
-                    Cateto 1: <input type="number" id="cat1" min="0"><br>
-                    Cateto 2: <input type="number" id="cat2" min="0">
+                    Cateto 1: <input type="number" id="cat1" min="0" onkeydown="auto_submit(event)"><br>
+                    Cateto 2: <input type="number" id="cat2" min="0" onkeydown="auto_submit(event)">
                 </div>
                 <div class="input2">
                     Unidade de Medida:
@@ -24,7 +24,7 @@
                         <option value="cm" checked>cm</option>
                         <option value="cm">mm</option>
                     </select><br>
-                    <input type="button" value="Calcular" onclick="calcula_hipotenusa()">
+                    <input type="button" id="submit-button" value="Calcular" onclick="calcula_hipotenusa()">
                 </div>
                 <div class="input3">
                     Conversão: <br>

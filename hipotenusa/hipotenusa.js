@@ -4,8 +4,9 @@ function troca(num){
     let unity = document.getElementById("unity").value
     let content 
     if(num==1){
-        content=`Cateto 1: <input type="number" id="cat1" min="0"><br>
-             Cateto 2: <input type="number" id="cat2" min="0">`
+        content=
+        `Cateto 1: <input type="number" id="cat1" min="0" onkeydown="auto_submit(event)"><br>
+        Cateto 2: <input type="number" id="cat2" min="0" onkeydown="auto_submit(event)">`
         input1.innerHTML=content
         content=`Unidade de Medida:
             <select id="unity">
@@ -13,12 +14,13 @@ function troca(num){
                 <option value="cm">cm</option>
                 <option value="cm">mm</option>
             </select><br>
-            <input type="button" value="Calcular" onclick="calcula_hipotenusa()">`
+            <input type="button" id="submit-button" value="Calcular" onclick="calcula_hipotenusa()">`
         input2.innerHTML=content
     }
     if(num==2){
-        content=`Hipotenusa: <input type="number" id="hip" min="0"><br>
-            Cateto: <input type="number" id="cat" min="0">`
+        content=
+        `Hipotenusa: <input type="number" id="hip" min="0" onkeydown="auto_submit(event)"><br>
+        Cateto: <input type="number" id="cat" min="0" onkeydown="auto_submit(event)">`
         input1.innerHTML=content
         content=`Unidade de Medida:
             <select id="unity">
@@ -26,7 +28,7 @@ function troca(num){
                 <option value="cm">cm</option>
                 <option value="cm">mm</option>
             </select><br>
-            <input type="button" value="Calcular" onclick="calcula_cateto()">` 
+            <input type="button" id="submit-button" value="Calcular" onclick="calcula_cateto()">` 
         input2.innerHTML=content
     }
     document.getElementById("unity").value=unity
@@ -90,6 +92,12 @@ function zerar(num){
     }else{
         document.getElementById("cat").value=""
         document.getElementById("hip").value=""
+    }
+}
+function auto_submit(event){
+    let tecla = event.key
+    if(tecla=="Enter"){
+        document.getElementById("submit-button").click()
     }
 }
 function remove_div(num){
