@@ -1,10 +1,11 @@
 var res = document.getElementById("res")
 var id = 0
 function convert_hex(){
-    let hex_string = String(document.getElementById("hex").value)
-    if (hex.length<6){
+    let hex_string = document.getElementById("hex")
+    if (hex.value.length<6){
         alert("Insira um código hexadecimal inteiro (ffffff) para prosseguir!")
     }else{
+        hex_string=String(hex_string.value)
         let hex = []
         hex_string=hex_string.toUpperCase()
         for(i=0;i<6;i++){
@@ -163,6 +164,15 @@ function convert_hex_to_num(a){
     }
     return a
 }
+function zerar(num){
+    if(num==1){
+        document.getElementById("hex").value=""
+    }else{
+        document.getElementById("r").value=""
+        document.getElementById("g").value=""
+        document.getElementById("b").value=""
+    }
+}
 function remove_div(num){
     let element= document.getElementById(`div${num}`)
     res.removeChild(element)
@@ -173,12 +183,10 @@ function remove_div(num){
         id=0
     }
 }
-function zerar(num){
-    if(num==1){
-        document.getElementById("hex").value=""
-    }else{
-        document.getElementById("r").value=""
-        document.getElementById("g").value=""
-        document.getElementById("b").value=""
+function auto_submit(event, num){
+    let button = `submit-button${num}`
+    let tecla = event.key
+    if(tecla=="Enter"){
+        document.getElementById(button).click()
     }
 }

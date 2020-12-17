@@ -14,7 +14,7 @@ function troca(num){
                 <option value="cm">cm</option>
                 <option value="cm">mm</option>
             </select><br>
-            <input type="button" id="submit-button" value="Calcular" onclick="calcula_hipotenusa()">`
+            <input type="button" ${id_button} value="Calcular" onclick="calcula_hipotenusa()">`
         input2.innerHTML=content
     }
     if(num==2){
@@ -28,7 +28,7 @@ function troca(num){
                 <option value="cm">cm</option>
                 <option value="cm">mm</option>
             </select><br>
-            <input type="button" id="submit-button" value="Calcular" onclick="calcula_cateto()">` 
+            <input type="button" ${id_button} value="Calcular" onclick="calcula_cateto()">` 
         input2.innerHTML=content
     }
     document.getElementById("unity").value=unity
@@ -92,21 +92,5 @@ function zerar(num){
     }else{
         document.getElementById("cat").value=""
         document.getElementById("hip").value=""
-    }
-}
-function auto_submit(event){
-    let tecla = event.key
-    if(tecla=="Enter"){
-        document.getElementById("submit-button").click()
-    }
-}
-function remove_div(num){
-    let element= document.getElementById(`div${num}`)
-    res.removeChild(element)
-    let string = res.innerHTML
-    let teste = string.indexOf("div")
-    if(teste==-1){
-        res.style.display="none"
-        id=0
     }
 }

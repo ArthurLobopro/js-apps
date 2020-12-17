@@ -36,13 +36,3 @@ function zerar(){
     document.getElementById("b").value="0"
     document.getElementById("c").value="0"
 }
-function remove_div(num){
-    let element= document.getElementById(`div${num}`)
-    res.removeChild(element)
-    let string = res.innerHTML
-    let teste = string.indexOf("div")
-    if(teste==-1){
-        res.style.display="none"
-        id=0
-    }
-}

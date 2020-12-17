@@ -11,13 +11,14 @@
     <h1>Conversor Hexadecimal/RGB</h1>
     <section id="menu">
         <div>
-            Hexadecimal: #<input type="text" size="6" maxlength="6" id="hex" pattern="[0-9a-fA-F]{6}"> <input type="button" value="Converter" onclick="convert_hex()"><br>
+            Hexadecimal: #<input type="text" size="6" maxlength="6" id="hex" onkeydown="auto_submit(event, 0)" pattern="[0-9a-fA-F]{6}">
+            <input type="button" id="submit-button0" value="Converter"  onclick="convert_hex()"><br>
         </div>
         <div>
-            R: <input type="number" maxlength="3" min="0" max="255"  id="r">
-            G: <input type="number" maxlength="3" min="0" max="255"  id="g">
-            B: <input type="number" maxlength="3" min="0" max="255"  id="b">
-        <input type="button" value="Converter" onclick="convert_rgb()">
+            R: <input type="number" maxlength="3" min="0" max="255"  id="r" onkeydown="auto_submit(event, 1)">
+            G: <input type="number" maxlength="3" min="0" max="255"  id="g" onkeydown="auto_submit(event, 1)">
+            B: <input type="number" maxlength="3" min="0" max="255"  id="b" onkeydown="auto_submit(event, 1)">
+        <input type="button" id="submit-button1" value="Converter" onclick="convert_rgb()">
         </div>
         <div>
             <select  id="nome" onchange="acha_nome()">

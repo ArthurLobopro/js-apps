@@ -4,10 +4,12 @@ function troca_convert(num){
     let input = document.getElementById("input")
     switch(num){
         case 1:
-            input.innerHTML=`Km/h: <input type="number" id="kmh"> <input type="button" onclick="km_para_ms()" value="Converter">`
+            input.innerHTML=`Km/h: <input type="number" id="kmh" onkeydown="auto_submit(event)">
+            <input type="button" ${id_button}onclick="km_para_ms()" value="Converter">`
             break
         case 2:
-            input.innerHTML=`M/s: <input type="number" id="ms"> <input type="button" onclick="ms_para_km()" value="Converter">`
+            input.innerHTML=`M/s: <input type="number"  id="ms" onkeydown="auto_submit(event)">
+            <input type="button" ${id_button} onclick="ms_para_km()" value="Converter">`
     }
 }
 function km_para_ms(){
@@ -51,15 +53,5 @@ function zerar(num){
         document.getElementById("kmh").value=""
     }else{
         document.getElementById("ms").value=""
-    }
-}
-function remove_div(num){
-    let element= document.getElementById(`div${num}`)
-    res.removeChild(element)
-    let string = res.innerHTML
-    let teste = string.indexOf("div")
-    if(teste==-1){
-        res.style.display="none"
-        id=0
     }
 }

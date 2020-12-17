@@ -12,7 +12,10 @@
     <h1>Conversor de Velocidades</h1>
     <section id="menu">
         <div id="centro-menu">
-            <div id="input">Km/h: <input type="number" id="kmh"> <input type="button" onclick="km_para_ms()" value="Converter"></div>
+            <div id="input">
+                Km/h: <input type="number" id="kmh" onkeydown="auto_submit(event)"> 
+                <input type="button" id="submit-button" onclick="km_para_ms()" value="Converter">
+            </div>
             <div>
                 Converter:<br>
                 <input type="radio" name="função" onclick="troca_convert(1)" id="1" checked><label for="1">De Km/h para m/s</label><br>
@@ -24,6 +27,7 @@
         <span id="msg">Conversões feitas:</span><br>
     </section>
     <footer>&copy;Arthur Lobo</footer>
+    <script src="../js/main.js"></script>
     <script src="velocidade.js"></script>
 </body>
 </html>

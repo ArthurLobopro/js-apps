@@ -10,7 +10,7 @@
     <h1>Conversor de Distância</h1>
     <section id="menu">
         <div id="dados">
-            Tamanho: <input type="number" id="num"> 
+            Tamanho: <input type="number" id="num" onkeydown="auto_submit(event)"> 
             <select id="unity" onclick="bloqueia()">
                 <option value="km">Km</option>
                 <option value="hm">Hm</option>
@@ -30,7 +30,7 @@
                 <input type="checkbox" id="cm" checked>cm 
                 <input type="checkbox" id="mm" checked>mm 
             </div>
-            <input type="button" value="Enviar" onclick="calcular()">
+            <input type="button" id="submit-button" value="Enviar" onclick="calcular()">
         </div>
     </section>
     <section id="historico">
@@ -39,7 +39,8 @@
             
         </div>
     </section>
+    <footer>&copy;Arthur Lobo</footer>
+    <script src="../js/main.js"></script>
     <script src="distancia.js"></script>
-    <footer>&copy; Arthur Lobo</footer>
 </body>
 </html>
