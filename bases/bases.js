@@ -59,22 +59,26 @@ function dec_to_oct(retorne, valor){
           let i = 0
           let num_encontrado =false
           let oct=[]
-          do{
-               if(decimal[0]>=8**i && decimal[0]<8**(i+1)){
-                    num=i+1
-                    num_encontrado=true
+          if(decimal[0]==0){
+               oct[0]=0
+          }else{
+               do{
+                    if(decimal[0]>=8**i && decimal[0]<8**(i+1)){
+                         num=i+1
+                         num_encontrado=true
+                    }
+                    i++
+               }while (num_encontrado==false)
+               for(let i=0;i<num;i++){
+                    div=Math.floor(decimal[1]/8)
+                    oct[i]=decimal[1]%8
+                    decimal[1]=div
                }
-               i++
-          }while (num_encontrado==false)
-          for(let i=0;i<num;i++){
-               div=Math.floor(decimal[1]/8)
-               oct[i]=decimal[1]%8
-               decimal[1]=div
           }
           content=`<div class="res" id="div${id}">
           <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
           Em Decimal:<br> ${decimal[0]}<br>Em Octal:<br>`
-          for(let i=num-1;i>=0;i--){
+          for(let i=oct.length-1;i>=0;i--){
                content+=oct[i]
                if(i%8==0){
                     content+="<br>"
@@ -151,7 +155,7 @@ function bin_to_dec(retorne){
 function hex_to_dec(retorne, valor){
      let teste = (retorne==true) ? true : verifica('hex')
      if(teste==true){
-          let String_hex = (retorne==false)? String(document.getElementById("hexa").value).toUpperCase() : valor
+          let String_hex = String(document.getElementById("hexa").value).toUpperCase()
           let hex = []
           for(let i in String_hex){
                hex[i]=String_hex[(String_hex.length-1)-i]
@@ -251,7 +255,7 @@ function hex_to_oct(retorne){
      if(teste==true){
           let hex = document.getElementById("hexa").value
           let decimal = hex_to_dec(true)
-          let oct = dec_to_oct(true, decimal)
+          let oct = dec_to_oct(true, `${decimal}`)
           content=`<div class="res" id="div${id}">
           <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
           Em hexadecimal:<br> ${hex}<br>Em octal:<br> `
@@ -264,11 +268,11 @@ function hex_to_oct(retorne){
           content+="</div>"
           res.style.display="inline-block"
           res.innerHTML+=content
-          zerar('bin')
+          zerar('hex')
           id++
      }
 }
-function dec_to_hex(retorne, value){
+function dec_to_hex(retorne, valor){
      let teste = (retorne==true) ? true : verifica('dec')
      if(teste==true){
           let decimal = []
@@ -277,38 +281,42 @@ function dec_to_hex(retorne, value){
           let i = 0
           let num_encontrado =false
           let hex=[]
-          do{
-               if(decimal[0]>=16**i && decimal[0]<16**(i+1)){
-                    num=i+1
-                    num_encontrado=true
+          if(decimal[0]==0){
+               hex[0]=0
+          }else{
+               do{
+                    if(decimal[0]>=16**i && decimal[0]<16**(i+1)){
+                         num=i+1
+                         num_encontrado=true
+                    }
+                    i++
+               }while (num_encontrado==false)
+               for(let i=0;i<num;i++){
+                    div=Math.floor(decimal[1]/16)
+                    hex[i]=decimal[1]%16
+                    decimal[1]=div
                }
-               i++
-          }while (num_encontrado==false)
-          for(let i=0;i<num;i++){
-               div=Math.floor(decimal[1]/16)
-               hex[i]=decimal[1]%16
-               decimal[1]=div
-          }
-          for(let i in hex){
-               switch(Number(hex[i])){
-                    case 10:
-                         hex[i]="A"
-                         break
-                    case 11:
-                         hex[i]="B"
-                         break
-                    case 12:
-                         hex[i]="C"
-                         break
-                    case 13:
-                         hex[i]="D"
-                         break
-                    case 14:
-                         hex[i]="E"
-                         break
-                    case 15:
-                         hex[i]="F"
-                         break
+               for(let i in hex){
+                    switch(Number(hex[i])){
+                         case 10:
+                              hex[i]="A"
+                              break
+                         case 11:
+                              hex[i]="B"
+                              break
+                         case 12:
+                              hex[i]="C"
+                              break
+                         case 13:
+                              hex[i]="D"
+                              break
+                         case 14:
+                              hex[i]="E"
+                              break
+                         case 15:
+                              hex[i]="F"
+                              break
+                    }
                }
           }
           if(retorne==true){
@@ -317,7 +325,7 @@ function dec_to_hex(retorne, value){
                content=`<div class="res" id="div${id}">
                <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
                Em Decimal:<br> ${decimal[0]}<br>Em hexadecimal:<br>`
-               for(let i=num-1;i>=0;i--){
+               for(let i=hex.length-1;i>=0;i--){
                     content+=hex[i]
                     if(i%8==0){
                          content+="<br>"
@@ -329,6 +337,50 @@ function dec_to_hex(retorne, value){
                zerar('dec')
                id++
           }
+     }
+}
+function bin_to_hex(retorne){
+     let teste = (retorne==true) ? true : verifica('bin')
+     if(teste==true){
+          let decimal = bin_to_dec(true)
+          let hex = dec_to_hex(true, decimal)
+          let bin = document.getElementById("binario").value
+          content=`<div class="res" id="div${id}">
+               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+               Em Decimal:<br> ${bin}<br>Em hexadecimal:<br>`
+          for(let i=hex.length-1;i>=0;i--){
+               content+=hex[i]
+               if(i%8==0){
+                    content+="<br>"
+               }
+          }
+          content+=`</div>`
+          res.style.display="inline-block"
+          res.innerHTML+=content
+          zerar('bin')
+          id++
+     }
+}
+function oct_to_hex(retorne){
+     let teste = (retorne==true) ? true : verifica('oct')
+     if(teste==true){
+          let oct = document.getElementById("octal").value
+          let decimal = oct_to_dec(true)
+          let hex = dec_to_hex(true, decimal)
+          content=`<div class="res" id="div${id}">
+          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+          Em octal:<br> ${oct}<br>Em hexadecimal:<br>`
+          for(let i=hex.length-1;i>=0;i--){
+               content+=hex[i]
+               if(i%8==0){
+                    content+="<br>"
+               }
+          }
+          content+=`</div>`
+          res.style.display="inline-block"
+          res.innerHTML+=content
+          zerar('oct')
+          id++
      }
 }
 function verifica(valor){
@@ -522,14 +574,4 @@ function zerar(valor){
                document.getElementById("hexa").value=""
                break
      } 
-}
-function remove_div(num){
-     let element= document.getElementById(`div${num}`)
-     res.removeChild(element)
-     let string = res.innerHTML
-     let teste = string.indexOf("div")
-     if(teste==-1){
-          res.style.display="none"
-          id=0
-     }
 }
