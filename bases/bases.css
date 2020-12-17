@@ -8,6 +8,7 @@ body{
 }
 label{
     margin-left: 15px;
+    user-select: none;
 }
 #menu{
     text-align: left;

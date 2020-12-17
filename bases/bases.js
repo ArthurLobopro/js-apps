@@ -112,7 +112,7 @@ function oct_to_dec(retorne){
                </div>`
                res.style.display="inline-block"
                res.innerHTML+=content
-               zerar()
+               zerar('oct')
                id++
           }else{
                return decimal
@@ -141,7 +141,38 @@ function bin_to_dec(retorne){
                </div>`
                res.style.display="inline-block"
                res.innerHTML+=content
-               zerar()
+               zerar('bin')
+               id++
+          }else{
+               return decimal
+          }
+     }
+}
+function hex_to_dec(retorne, valor){
+     let teste = (retorne==true) ? true : verifica('hex')
+     if(teste==true){
+          let String_hex = (retorne==false)? String(document.getElementById("hexa").value).toUpperCase() : valor
+          let hex = []
+          for(let i in String_hex){
+               hex[i]=String_hex[(String_hex.length-1)-i]
+               hex[i] = (Number(hex[i]>=0 && Number(hex[i]<=9))) ? Number(hex[i]) :
+                    (hex[i]=='A') ? 10 : (hex[i]=='B') ? 11 :
+                         (hex[i]=='C') ? 12 : (hex[i]=='D') ? 13 : 
+                              (hex[i]=='E') ? 14 : 15
+          }
+          let decimal = 0
+          for(let i in hex){
+               decimal+= hex[i]*16**i
+          }
+          if(retorne==false){
+               content=
+               `<div class="res" id="div${id}">
+                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+                    Em hexadecimal:<br> ${String_hex}<br>Em decimal:<br> ${decimal}
+               </div>`
+               res.style.display="inline-block"
+               res.innerHTML+=content
+               zerar('hex')
                id++
           }else{
                return decimal
@@ -167,7 +198,7 @@ function bin_to_oct(retorne){
           content+="</div>"
           res.style.display="inline-block"
           res.innerHTML+=content
-          zerar()
+          zerar('bin')
           id++
      }
 }
@@ -189,14 +220,122 @@ function oct_to_bin(retorne){
           content+="</div>"
           res.style.display="inline-block"
           res.innerHTML+=content
+          zerar('oct')
+          id++
+     }
+}
+function hex_to_bin(retorne){
+     let teste = (retorne==true) ? true : verifica('hex')
+     if(teste=true){
+          let hex = document.getElementById("hexa").value
+          let decimal = hex_to_dec(true)
+          let bin = dec_to_bin(true, decimal)
+          content=`<div class="res" id="div${id}">
+          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+          Em hexadecimal:<br> ${hex}<br>Em binário:<br>`
+          for(let i=bin.length-1;i>=0;i--){
+               content+=bin[i]
+               if(i%8==0){
+                    content+="<br>"
+               }
+          }
+          content+="</div>"
+          res.style.display="inline-block"
+          res.innerHTML+=content
           zerar()
           id++
+     }
+}
+function hex_to_oct(retorne){
+     let teste = (retorne==true) ? true : verifica('hex')
+     if(teste==true){
+          let hex = document.getElementById("hexa").value
+          let decimal = hex_to_dec(true)
+          let oct = dec_to_oct(true, decimal)
+          content=`<div class="res" id="div${id}">
+          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+          Em hexadecimal:<br> ${hex}<br>Em octal:<br> `
+          for(let i=oct.length-1;i>=0;i--){
+               content+=oct[i]
+               if(i%8==0){
+                    content+="<br>"
+               }
+          }
+          content+="</div>"
+          res.style.display="inline-block"
+          res.innerHTML+=content
+          zerar('bin')
+          id++
+     }
+}
+function dec_to_hex(retorne, value){
+     let teste = (retorne==true) ? true : verifica('dec')
+     if(teste==true){
+          let decimal = []
+          decimal [0] = (retorne==false)? Number(document.getElementById("decimal").value) : valor
+          decimal [1] = decimal[0]
+          let i = 0
+          let num_encontrado =false
+          let hex=[]
+          do{
+               if(decimal[0]>=16**i && decimal[0]<16**(i+1)){
+                    num=i+1
+                    num_encontrado=true
+               }
+               i++
+          }while (num_encontrado==false)
+          for(let i=0;i<num;i++){
+               div=Math.floor(decimal[1]/16)
+               hex[i]=decimal[1]%16
+               decimal[1]=div
+          }
+          for(let i in hex){
+               switch(Number(hex[i])){
+                    case 10:
+                         hex[i]="A"
+                         break
+                    case 11:
+                         hex[i]="B"
+                         break
+                    case 12:
+                         hex[i]="C"
+                         break
+                    case 13:
+                         hex[i]="D"
+                         break
+                    case 14:
+                         hex[i]="E"
+                         break
+                    case 15:
+                         hex[i]="F"
+                         break
+               }
+          }
+          if(retorne==true){
+               return hex
+          }else{
+               content=`<div class="res" id="div${id}">
+               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+               Em Decimal:<br> ${decimal[0]}<br>Em hexadecimal:<br>`
+               for(let i=num-1;i>=0;i--){
+                    content+=hex[i]
+                    if(i%8==0){
+                         content+="<br>"
+                    }
+               }
+               content+=`</div>`
+               res.style.display="inline-block"
+               res.innerHTML+=content
+               zerar('dec')
+               id++
+          }
      }
 }
 function verifica(valor){
      let decimal = document.getElementById("decimal")
      let binario = document.getElementById("binario")
      let octal = document.getElementById("octal")
+     let hexa = document.getElementById("hexa")
      switch(valor){
           case 'dec':
                if(decimal.value.length==0){
@@ -240,6 +379,22 @@ function verifica(valor){
                     }
                     return !erro
                }
+          case 'hex':
+               if(hexa.value.length==0){
+                    alert("Digite um número para converter")
+                    return false
+               }else{
+                    let hex = String(hexa.value).toUpperCase()
+                    let erro = false
+                    let letras = ["A", "B", "C", "D", "E", "F","0", "1", "2", "3", "4","5","6","7","8","9"]
+                    for(let i in hex){
+                         if(letras.indexOf(hex[i])==-1){
+                              erro = true
+                              alert("Parece que você não digitou o código corretamente! Verifique as informações e tente novamente.")
+                         }
+                    }
+                    return !erro
+               }
      }
 }
 function escreve_de(valor){
@@ -250,17 +405,22 @@ function escreve_de(valor){
                input_de.innerHTML=
                `Decimal: <input type="number" min="0" id="decimal" value="">`
                de.innerText="Decimal"
-          break
+               break
           case "binario":
                input_de.innerHTML=
                `Binário: <input type="text" min="0" pattern="[0-1]{1,}" id="binario" value="">`
                de.innerText="Binário"
-          break
+               break
           case "octal":
                input_de.innerHTML=
                `Octal: <input type="text" min="0" pattern="[0-7]{1,}" id="octal" value="">`
                de.innerText="Octal"
-          break
+               break
+          case 'hexa':
+               input_de.innerHTML=
+               `Hexadecimal: <input type="text" min="0" pattern="[0-9a-fA-F]{1,}" id="hexa" value="">`
+               de.innerText="Hexadecimal"
+               break
 
      }
      escreve_convert()
@@ -277,6 +437,12 @@ function escreve_para(valor){
                break
           case 'octal':
                para.innerText="Octal"
+               break
+          case 'hexa':
+               para.innerText="Hexadecimal"
+               break
+          case "null":
+               para.innerText=""
                break
      }
      escreve_convert()
@@ -300,6 +466,9 @@ function escreve_convert(){
                          case 'octal':
                               de_string= 'oct'
                               break
+                         case 'hexa':
+                              de_string= 'hex'
+                              break
                     }
                     switch (para[j].value){
                          case 'decimal':
@@ -311,8 +480,10 @@ function escreve_convert(){
                          case 'octal':
                               para_string='oct'
                               break
+                         case 'hexa':
+                              para_string= 'hex'
+                              break
                     }
-                    break
                }
           }
      }
@@ -321,12 +492,17 @@ function escreve_convert(){
 
 function desmarca_para(valor){
      let para = document.getElementsByName("para")
+     let marcado = false
      for(let i in para){
           para[i].disabled=false
      }
      for( i in para){
           if(para[i].value==valor){
-               para[i].checked=false
+               if(para[i].checked){
+                    marcado = true
+                    para[i].checked=false
+                    escreve_para("null")
+               }
                para[i].disabled=true
           }
      }
@@ -335,6 +511,15 @@ function zerar(valor){
      switch(valor){
           case 'dec':
                document.getElementById("decimal").value=""
+               break
+          case 'bin':
+               document.getElementById("binario").value=""
+               break
+          case 'oct':
+               document.getElementById("octal").value=""
+               break
+          case 'hex':
+               document.getElementById("hexa").value=""
                break
      } 
 }
