@@ -26,7 +26,14 @@ function gerar(){
         resposta+=`<div>`
         res.innerHTML+=resposta
         res.style.display="inline-block"
+        num=document.getElementById("num").value=""
         id++
+    }
+}
+function auto_submit(event){
+    let tecla = event.key
+    if(tecla=="Enter"){
+        document.getElementById("submit-button").click()
     }
 }
 function remove_div(num){
