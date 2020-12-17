@@ -15,12 +15,12 @@
     <section id="menu">
         <div id="grid">
             <div style="line-height: 1.5;">
-                Número: <input type="number" id="num" autofocus><br>
+                Número: <input type="number" id="num" autofocus onkeydown="auto_submit(event)"><br>
                 <input type="button" value="Gerar Potências" onclick="verificar()">
             </div>
             <div id="opcao-2">
-                Início: <input type="number" id="inicio" value="0"><br>
-                Fim: <input type="number" id="fim" value="10">
+                Início: <input type="number" id="inicio" value="0" onkeydown="auto_submit(event)"><br>
+                Fim: <input type="number" id="fim" value="10" onkeydown="auto_submit(event)">
             </div>
         </div>
     </section>
