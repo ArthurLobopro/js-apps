@@ -13,10 +13,10 @@
         <div class="flex">
             <div>
                 <div id="input-de">
-                    Decimal: <input type="number" min="0" id="decimal" value="">
+                    Decimal: <input type="number" min="0" id="decimal"  onkeydown="auto_submit(event)">
                 </div>
                 <div id="convert">
-                    <input type="button" value="Converter" onclick="dec_to_bin(false)">
+                    <input type="button" id="submit-button" value="Converter" onclick="dec_to_bin(false)">
                 </div>
             </div>
        </div>

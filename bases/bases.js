@@ -385,22 +385,22 @@ function escreve_de(valor){
      switch(valor){
           case "decimal":
                input_de.innerHTML=
-               `Decimal: <input type="number" min="0" id="decimal" value="">`
+               `Decimal: <input type="number" min="0" id="decimal" onkeydown="auto_submit(event)">`
                de.innerText="Decimal"
                break
           case "binario":
                input_de.innerHTML=
-               `Binário: <input type="text" min="0" pattern="[0-1]{1,}" id="binario" value="">`
+               `Binário: <input type="text" min="0" pattern="[0-1]{1,}" id="binario" onkeydown="auto_submit(event)">`
                de.innerText="Binário"
                break
           case "octal":
                input_de.innerHTML=
-               `Octal: <input type="text" min="0" pattern="[0-7]{1,}" id="octal" value="">`
+               `Octal: <input type="text" min="0" pattern="[0-7]{1,}" id="octal" onkeydown="auto_submit(event)">`
                de.innerText="Octal"
                break
           case 'hexa':
                input_de.innerHTML=
-               `Hexadecimal: <input type="text" min="0" pattern="[0-9a-fA-F]{1,}" id="hexa" value="">`
+               `Hexadecimal: <input type="text" min="0" pattern="[0-9a-fA-F]{1,}" id="hexa" onkeydown="auto_submit(event)">`
                de.innerText="Hexadecimal"
                break
 
@@ -470,7 +470,7 @@ function escreve_convert(){
                }
           }
      }
-     convert.innerHTML=`<input type="button" value="Converter" onclick="${de_string}_to_${para_string}(false)">`
+     convert.innerHTML=`<input type="button" ${id_button} value="Converter" onclick="${de_string}_to_${para_string}(false)">`
 }
 function desmarca_para(valor){
      let para = document.getElementsByName("para")
