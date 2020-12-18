@@ -1,54 +1,44 @@
 var id = 0
-var res = document.getElementById("res")
 //Conversão decimal para binário
 function dec_to_bin(retorne, valor){
-    let teste = (retorne==true) ? true : verifica('dec')
-    if(teste==true){
-          let decimal=[], bin=[],num,div
-          let content = ""
-          decimal[0] = (retorne==false) ? Number(document.getElementById("decimal").value) : valor
-          if(decimal[0]==0 || decimal[0]==1){
+     let teste = (retorne==true) ? true : verifica('dec')
+     if(teste==true){
+           let decimal=[], bin=[],num,div
+           let content = ""
+           decimal[0] = (retorne==false) ? Number(document.getElementById("decimal").value) : valor
+           if(decimal[0]==0 || decimal[0]==1){
+               //gambiarra funcional
+               bin=[",",decimal[0]]
+           }else{
+                decimal[1]=decimal[0]
+                let i = 0
+                let num_encontrado =false
+                do{
+                     if(decimal[0]>=2**i && decimal[0]<2**(i+1)){
+                          num=i+1
+                          num_encontrado=true
+                     }
+                     i++
+                }while (num_encontrado==false)
+                for(let i=0;i<num;i++){
+                     div=Math.floor(decimal[1]/2)
+                     bin[i]=decimal[1]%2
+                     decimal[1]=div
+                }
+                
+           }
+           if(retorne==true){
+                return bin
+           }else{
+               bin.reverse()
+               bin=String(bin).replaceAll(",","")
                content=`<div class="res" id="div${id}">
                <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-               Em Decimal:<br> ${decimal[0]}<br><br>Em Binário: <br>${decimal[0]}</div>`
-          }else{
-               decimal[1]=decimal[0]
-               let i = 0
-               let num_encontrado =false
-               do{
-                    if(decimal[0]>=2**i && decimal[0]<2**(i+1)){
-                         num=i+1
-                         num_encontrado=true
-                    }
-                    i++
-               }while (num_encontrado==false)
-               for(let i=0;i<num;i++){
-                    div=Math.floor(decimal[1]/2)
-                    bin[i]=decimal[1]%2
-                    decimal[1]=div
-               }
-               
-               content=`<div class="res" id="div${id}">
-               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-               Em Decimal:<br> ${decimal[0]}<br>Em Binário:<br>`
-               for(let i=num-1;i>=0;i--){
-                    content+=bin[i]
-                    if(i%8==0){
-                         content+="<br>"
-                    }
-               }
-               content+=`</div>`
-          }
-          if(retorne==true){
-               return bin
-          }else{
-               res.style.display="inline-block"
-               res.innerHTML+=content
-               zerar('dec')
-               id++
-          }
-    }
-}
+               Em Decimal:<br> ${decimal[0]}<br>Em Binário:<br>${bin}</div>`
+               escreve_res(content, 'dec')
+           }
+     }
+ }
 //Conversão decimal para octal
 function dec_to_oct(retorne, valor){
      let teste = (retorne==true) ? true : verifica('dec')
@@ -75,23 +65,15 @@ function dec_to_oct(retorne, valor){
                     decimal[1]=div
                }
           }
-          content=`<div class="res" id="div${id}">
-          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em Decimal:<br> ${decimal[0]}<br>Em Octal:<br>`
-          for(let i=oct.length-1;i>=0;i--){
-               content+=oct[i]
-               if(i%8==0){
-                    content+="<br>"
-               }
-          }
           if(retorne==true){
                return oct
           }else{
-               content+=`</div>`
-               res.style.display="inline-block"
-               res.innerHTML+=content
-               zerar('dec')
-               id++
+               oct.reverse()
+               oct=String(oct).replaceAll(",","")
+               content=`<div class="res" id="div${id}">
+               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+               Em Decimal:<br> ${decimal[0]}<br>Em Octal:<br>${oct}</div>`
+               escreve_res(content, 'dec')
           }
      }
 }
@@ -114,10 +96,7 @@ function oct_to_dec(retorne){
                     <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
                     Em Octal:<br> ${String_oct}<br>Em decimal:<br> ${decimal}
                </div>`
-               res.style.display="inline-block"
-               res.innerHTML+=content
-               zerar('oct')
-               id++
+               escreve_res(content, 'oct')
           }else{
                return decimal
           }
@@ -143,10 +122,7 @@ function bin_to_dec(retorne){
                     <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
                     Em binário:<br> ${String_bin}<br>Em decimal:<br> ${decimal}
                </div>`
-               res.style.display="inline-block"
-               res.innerHTML+=content
-               zerar('bin')
-               id++
+               escreve_res(content, 'bin')
           }else{
                return decimal
           }
@@ -174,10 +150,7 @@ function hex_to_dec(retorne, valor){
                     <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
                     Em hexadecimal:<br> ${String_hex}<br>Em decimal:<br> ${decimal}
                </div>`
-               res.style.display="inline-block"
-               res.innerHTML+=content
-               zerar('hex')
-               id++
+               escreve_res(content, 'hex')
           }else{
                return decimal
           }
@@ -189,21 +162,13 @@ function bin_to_oct(retorne){
           let decimal = bin_to_dec(true)
           let octal = dec_to_oct(true, decimal)
           let String_bin = document.getElementById("binario").value
+          octal.reverse()
+          octal=String(octal).replaceAll(",","")
           content=
           `<div class="res" id="div${id}">
-                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-                    Em binário:<br> ${String_bin}<br>Em octal:<br> `
-          for(let i=octal.length-1;i>=0;i--){
-               content+=octal[i]
-               if(i%8==0){
-                    content+="<br>"
-               }
-          }
-          content+="</div>"
-          res.style.display="inline-block"
-          res.innerHTML+=content
-          zerar('bin')
-          id++
+          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+          Em binário:<br> ${String_bin}<br>Em octal:<br>${octal}</div>`
+          escreve_res(content, 'bin')
      }
 }
 function oct_to_bin(retorne){
@@ -212,42 +177,26 @@ function oct_to_bin(retorne){
           let decimal = oct_to_dec(true)
           let bin = dec_to_bin(true, decimal)
           let octal = document.getElementById("octal").value
+          bin.reverse()
+          bin=String(bin).replaceAll(",","")
           content=`<div class="res" id="div${id}">
           <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em octal:<br> ${octal}<br>Em binário:<br> `
-          for(let i=bin.length-1;i>=0;i--){
-               content+=bin[i]
-               if(i%8==0){
-                    content+="<br>"
-               }
-          }
-          content+="</div>"
-          res.style.display="inline-block"
-          res.innerHTML+=content
-          zerar('oct')
-          id++
+          Em octal:<br> ${octal}<br>Em binário:<br>${bin}</div>`
+          escreve_res(content, 'oct')
      }
 }
 function hex_to_bin(retorne){
      let teste = (retorne==true) ? true : verifica('hex')
-     if(teste=true){
+     if(teste==true){
           let hex = document.getElementById("hexa").value
           let decimal = hex_to_dec(true)
           let bin = dec_to_bin(true, decimal)
+          bin.reverse()
+          bin=String(bin).replaceAll(",","")
           content=`<div class="res" id="div${id}">
           <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em hexadecimal:<br> ${hex}<br>Em binário:<br>`
-          for(let i=bin.length-1;i>=0;i--){
-               content+=bin[i]
-               if(i%8==0){
-                    content+="<br>"
-               }
-          }
-          content+="</div>"
-          res.style.display="inline-block"
-          res.innerHTML+=content
-          zerar()
-          id++
+          Em hexadecimal:<br> ${hex}<br>Em binário:<br>${bin}</div>`
+          escreve_res(content, 'hex')
      }
 }
 function hex_to_oct(retorne){
@@ -261,15 +210,12 @@ function hex_to_oct(retorne){
           Em hexadecimal:<br> ${hex}<br>Em octal:<br> `
           for(let i=oct.length-1;i>=0;i--){
                content+=oct[i]
-               if(i%8==0){
+               if(i!=0 && i%8==0){
                     content+="<br>"
                }
           }
           content+="</div>"
-          res.style.display="inline-block"
-          res.innerHTML+=content
-          zerar('hex')
-          id++
+          escreve_res(content, 'hex')
      }
 }
 function dec_to_hex(retorne, valor){
@@ -322,20 +268,12 @@ function dec_to_hex(retorne, valor){
           if(retorne==true){
                return hex
           }else{
+               hex.reverse()
+               hex=String(hex).replaceAll(",","")
                content=`<div class="res" id="div${id}">
                <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-               Em Decimal:<br> ${decimal[0]}<br>Em hexadecimal:<br>`
-               for(let i=hex.length-1;i>=0;i--){
-                    content+=hex[i]
-                    if(i%8==0){
-                         content+="<br>"
-                    }
-               }
-               content+=`</div>`
-               res.style.display="inline-block"
-               res.innerHTML+=content
-               zerar('dec')
-               id++
+               Em Decimal:<br> ${decimal[0]}<br>Em hexadecimal:<br>${hex}</div>`
+               escreve_res(content, 'dec')
           }
      }
 }
@@ -345,20 +283,12 @@ function bin_to_hex(retorne){
           let decimal = bin_to_dec(true)
           let hex = dec_to_hex(true, decimal)
           let bin = document.getElementById("binario").value
+          hex.reverse()
+          hex=String(hex).replaceAll(",","")
           content=`<div class="res" id="div${id}">
-               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-               Em Decimal:<br> ${bin}<br>Em hexadecimal:<br>`
-          for(let i=hex.length-1;i>=0;i--){
-               content+=hex[i]
-               if(i%8==0){
-                    content+="<br>"
-               }
-          }
-          content+=`</div>`
-          res.style.display="inline-block"
-          res.innerHTML+=content
-          zerar('bin')
-          id++
+          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+          Em Decimal:<br> ${bin}<br>Em hexadecimal:<br>${hex}</div>`
+          escreve_res(content, 'bin')
      }
 }
 function oct_to_hex(retorne){
@@ -367,21 +297,21 @@ function oct_to_hex(retorne){
           let oct = document.getElementById("octal").value
           let decimal = oct_to_dec(true)
           let hex = dec_to_hex(true, decimal)
+          hex.reverse()
+          hex=String(hex).replaceAll(",","")
           content=`<div class="res" id="div${id}">
           <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em octal:<br> ${oct}<br>Em hexadecimal:<br>`
-          for(let i=hex.length-1;i>=0;i--){
-               content+=hex[i]
-               if(i%8==0){
-                    content+="<br>"
-               }
-          }
-          content+=`</div>`
-          res.style.display="inline-block"
-          res.innerHTML+=content
-          zerar('oct')
-          id++
+          Em octal:<br> ${oct}<br>Em hexadecimal:<br>${hex}</div>`
+          escreve_res(content, 'oct')
      }
+}
+function escreve_res(content, sigla){
+     let res = document.getElementById("res")
+     res.style.display="inline-block"
+     res.innerHTML+=content
+     zerar(sigla)
+     id++
+
 }
 function verifica(valor){
      let decimal = document.getElementById("decimal")
@@ -499,6 +429,7 @@ function escreve_para(valor){
      }
      escreve_convert()
 }
+//Muda o botão de conversão conforme o que o usuário seleciona
 function escreve_convert(){
      let convert = document.getElementById("convert")
      let de = document.getElementsByName("de")
@@ -541,7 +472,6 @@ function escreve_convert(){
      }
      convert.innerHTML=`<input type="button" value="Converter" onclick="${de_string}_to_${para_string}(false)">`
 }
-
 function desmarca_para(valor){
      let para = document.getElementsByName("para")
      let marcado = false
@@ -559,6 +489,7 @@ function desmarca_para(valor){
           }
      }
 }
+//Apaga os valores fornecidos após a execução
 function zerar(valor){
      switch(valor){
           case 'dec':
