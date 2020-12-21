@@ -11,45 +11,49 @@
     <section id="main">
         <span id="inst">Coloque o mouse em cima do programa que deseja para usá-lo aqui, clique rapidamente duas vezes para travá-lo/destravá-lo ou clique no icone de link para abri-lo em nova guia (recomendado).</span>
         <div id="container" onload="largura_msg()" onresize="largura_msg()">
-            <ul id="lista">
-                <li onmouseenter="escreve('area')" ondblclick="trava('area')">
-                    Calculador de Área.
-                    <a href="./area/area.html" target="_blank"><div class="link"></div></a>
-                </li>
-                <li onmouseenter="escreve('hip')" ondblclick="trava('hip')">
-                    Calculador de Hipotenusa
-                    <a href="./hipotenusa/hipotenusa.html" target="_blank"><div class="link"></div></a>
-                </li>
-                <li onmouseenter="escreve('bases')" ondblclick="trava('bases')">
-                    Conversor de Bases.
-                    <a href="./bases/bases.html" target="_blank"><div class="link"></div></a>
-                </li>
-                <li onmouseenter="escreve('distancia')" ondblclick="trava('distancia')">
-                    Conversor de Distância.
-                    <a href="./distancia/distancia.html" target="_blank"><div class="link"></div></a>
-                </li>
-                <li onmouseenter="escreve('rgb/hex')" ondblclick="trava('rgb/hex')">
-                    Conversor HEX/RGB
-                    <a href="./hex_rgb/hex_rgb.html" target="_blank"><div class="link"></div></a>
-                </li>
-                <li onmouseenter="escreve('velocidade')" ondblclick="trava('velocidade')">
-                    Conversor de Velocidade.
-                    <a href="./velocidade/velocidade.html" target="_blank"><div class="link"></div></a>
-                </li>
-                <li onmouseenter="escreve('bascara')" ondblclick="trava('bascara')">
-                    Equação de 2º Grau.
-                    <a href="./bascara/bascara.html" target="_blank"><div class="link"></div></a>
-                </li>
-                <li onmouseenter="escreve('potencia')" ondblclick="trava('potencia')">
-                    Gerador de Potências.
-                    <a href="./potencias/potencia.html" target="_blank"><div class="link"></div></a>
-                </li>
-                <li onmouseenter="escreve('tabuada')" ondblclick="trava('tabuada')">
-                    Gerador de Tabuada.
-                    <a href="./tabuada/tabuada.html" target="_blank"><div class="link"></div></a>
-                </li>
+            
+            <div id="menu-lateral">
+                <ul id="lista">
+                    <li onmouseenter="escreve('area')" ondblclick="trava('area')">
+                        Calculador de Área.
+                        <a href="./area/area.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('hip')" ondblclick="trava('hip')">
+                        Calculador de Hipotenusa
+                        <a href="./hipotenusa/hipotenusa.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('bases')" ondblclick="trava('bases')">
+                        Conversor de Bases.
+                        <a href="./bases/bases.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('distancia')" ondblclick="trava('distancia')">
+                        Conversor de Distância.
+                        <a href="./distancia/distancia.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('rgb/hex')" ondblclick="trava('rgb/hex')">
+                        Conversor HEX/RGB
+                        <a href="./hex_rgb/hex_rgb.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('velocidade')" ondblclick="trava('velocidade')">
+                        Conversor de Velocidade.
+                        <a href="./velocidade/velocidade.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('bascara')" ondblclick="trava('bascara')">
+                        Equação de 2º Grau.
+                        <a href="./bascara/bascara.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('potencia')" ondblclick="trava('potencia')">
+                        Gerador de Potências.
+                        <a href="./potencias/potencia.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('tabuada')" ondblclick="trava('tabuada')">
+                        Gerador de Tabuada.
+                        <a href="./tabuada/tabuada.html" target="_blank"><div class="link"></div></a>
+                    </li>
+                </ul>
                 <img src="midia/logo-white.jpg" alt="Logo" id="logo">
-            </ul>
+            </div>
+            
             <div id="msg">Você está vendo <a href="" id="nome"></a></div>
             <div id="content">
                 
@@ -60,18 +64,18 @@
     <script>
         var container = document.getElementById("container")
         var content = document.getElementById("content")
-        var lista = document.getElementById("lista")
+        var menu = document.getElementById("menu-lateral")
         var msg = document.getElementById("msg")
         window.onload=function(){
             //Redimensiona o elemento #msg
-            msg.style.width=`calc(${container.clientWidth}px - ${lista.clientWidth}px + 1px)`
+            msg.style.width=`calc(${container.clientWidth}px - 251px )`
             //Redimensiona o elemento #content
             content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
             content.style.width=`${msg.clientWidth}px`
         }
         window.onresize=function(){
             //Redimensiona o elemento #msg
-            msg.style.width=`calc(${container.clientWidth}px - ${lista.clientWidth}px + 1px)`
+            msg.style.width=`calc(${container.clientWidth}px - 251px )`
             //Redimensiona o elemento #content
             content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
             content.style.width=`${msg.clientWidth}px`

@@ -4,18 +4,28 @@
     border-left-color: green;
     width: calc(100% - 20px);
     display: block;
-    height: calc(45px * 9 + 247px);
-    padding: 0;
+    height: calc(45px * 9 + 248px);
+    padding: 0 0 0 0;
     margin: 10px 0;
 }
-ul{
-    margin: 0 -1px;
+#menu-lateral{
+    height: inherit;
     width: 250px;
+    float: left;
+    border: solid rgba(60,64,67,0.302);
+    border-width: 0 1px 0 0;
+    padding: 0 -2px 0 0;
+}
+ul{
+    margin: 0;
+    width: inherit;
+    height: calc(100% - 247px);
     padding: 0;
     float: left;
-    height: calc(45px * 9 + 247px);
     font-family: 'Literata', serif;
     font-size: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 object{
     width: 100%;
@@ -23,7 +33,7 @@ object{
 }
 li{
     border: solid rgba(60,64,67,0.302);
-    border-width: 0 1px 1px 0;
+    border-width: 0 0 1px 0;
     border-left: none;
     margin: 0;
     list-style: none;
@@ -38,7 +48,6 @@ li{
 }
 li:hover{
     background-color: #f1f3f4;
-    margin: 0;
     border-left: 1px solid green;
 }
 #msg{
@@ -46,8 +55,10 @@ li:hover{
     border-bottom: 1px solid rgba(60,64,67,0.302);
     position: relative;
     top: 0;
-    right: 0;
+    right: -1px;
+    left: 0px;
     float: right;
+    margin:  auto auto auto -2px;
     height: 30px;
     line-height: 30px;
     visibility: hidden;
@@ -62,12 +73,8 @@ a{
     text-align: left;
 }
 #logo{
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-    width: calc(250px - 7px);
-    margin: 0 -3px 0 3px;
-    border-right: 1px solid rgba(60,64,67,0.302);
+    width: calc(250px - 3px);
+    margin: -1px 0 0 0;
 }
 #main{
     text-align: center;
@@ -78,14 +85,14 @@ a{
     margin: 10px auto;
 }
 .link{
-    background-image: url(./midia/hyperlink.png);
+    background-image: url('./midia/hyperlink.png');
     width: 30px;
     height: 30px;
     float: right;
     margin: 6px 5px 4px;
 }
 .link:hover{
-    background-image: url(./midia/hyperlink-bold.png);
+    background-image: url('./midia/hyperlink-bold.png');
 }
 @font-face {
     font-family: 'Literata';
