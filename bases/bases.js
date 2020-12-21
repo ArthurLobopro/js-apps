@@ -202,7 +202,7 @@ function hex_to_bin(retorne){
 function hex_to_oct(retorne){
      let teste = (retorne==true) ? true : verifica('hex')
      if(teste==true){
-          let hex = document.getElementById("hexa").value
+          let hex = String(document.getElementById("hexa").value).toLocaleUpperCase()
           let decimal = hex_to_dec(true)
           let oct = dec_to_oct(true, `${decimal}`)
           content=`<div class="res" id="div${id}">
