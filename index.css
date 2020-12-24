@@ -48,7 +48,6 @@ li{
 }
 li:hover{
     background-color: #f1f3f4;
-    border-left: 1px solid green;
 }
 #msg{
     text-align: center;
