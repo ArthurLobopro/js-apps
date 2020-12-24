@@ -53,6 +53,9 @@ label{
     width: 90%;
     box-sizing: border-box;
 }
+.mg-auto{
+    margin: auto;
+}
 .circle{
     margin: -2px 3px auto 5px;
 }
