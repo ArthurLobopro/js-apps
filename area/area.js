@@ -1,103 +1,93 @@
 
 var res= document.getElementById("res")
-var menu=document.getElementById("menu")
-function triangulo(){
-    menu.innerHTML=`
-    <div id="input">
-        Fórmula: Base*Altura/2<br>
-        Medida da base:<input type="number" id="base"><br>
-        Medida da altura:<input type="number" id="altura"><br>
-        Unidade de Medida:
-        <select id="medida">
-            <option value="mm" >mm</option>
-            <option value="cm">cm</option>
-            <option value="m">m</option>
-            <option value="km">km</option>
-        </select><br>
-        <input type="button" value="Enviar" onclick="calcular_triangulo()" ><br>
-        <span id="mensagem"><red><b>Atenção!</b></red>Informe os valores na mesma unidade de medida para não ocorrerem erros.</span>
-    </div><br>`
-    menu.style.visibility="visible"
-}
-function quadrado(){
-    menu.innerHTML=` 
-    <div id="input">
-        Fórmula: Lado<sup>2</sup><br>
-        Medida do lado:<input type="number" id="lado"><br>
-        Unidade de Medida:
-        <select id="medida">
-            <option value="mm" >mm</option>
-            <option value="cm">cm</option>
-            <option value="m">m</option>
-            <option value="km">km</option>
-        </select><br>
-        <input type="button" value="Enviar" onclick="calcular_quadrado()" ><br>
-        <span id="mensagem"><red><b>Atenção!</b></red>Informe os valores na mesma unidade de medida para não ocorrerem erros.</span>
-    </div><br>`
-    menu.style.visibility="visible"
-}
-function retangulo(){
-    menu.innerHTML=`
-    <div id="input">
-    Fórmula: Base*Altura<br>
-        Medida da base:<input type="number" id="base"><br>
-        Medida da altura:<input type="number" id="altura"><br>
-        Unidade de Medida:
-        <select id="medida">
-            <option value="mm" >mm</option>
-            <option value="cm">cm</option>
-            <option value="m">m</option>
-            <option value="km">km</option>
-        </select><br>
-        <input type="button" value="Enviar" onclick="calcular_retangulo()" ><br>
-        <span id="mensagem"><red><b>Atenção!</b></red>Informe os valores na mesma unidade de medida para não ocorrerem erros.</span>
-    </div><br>`
-    menu.style.visibility="visible"
-}
-function circulo(){
-    menu.innerHTML=`
-    <div id="input">
+var menu=document.getElementById("menu") 
+const functions = {
+    triangulo(){
+        return `
+        <div id="input">
+            Fórmula: Base*Altura/2<br>
+            Medida da base:<input type="number" id="base"><br>
+            Medida da altura:<input type="number" id="altura"><br>
+            ${this.select}
+            <input type="button" value="Enviar" onclick="calcular_triangulo()"><br>
+            ${this.mensagem}
+        </div><br>`
+    },
+    quadrado(){
+        return `
+        <div id="input">
+            Fórmula: Lado<sup>2</sup><br>
+            Medida do lado:<input type="number" id="lado"><br>
+            ${this.select}
+            <input type="button" value="Enviar" onclick="calcular_quadrado()"><br>
+            ${this.mensagem}
+        </div><br>`
+    },
+    retangulo(){
+        return `
+        <div id="input">
+            Fórmula: Base*Altura<br>
+            Medida da base:<input type="number" id="base"><br>
+            Medida da altura:<input type="number" id="altura"><br>
+            ${this.select}
+            <input type="button" value="Enviar" onclick="calcular_retangulo()"><br>
+            ${this.mensagem}
+        </div><br>`
+    },
+    circulo(){
+        return `
+        <div id="input">
             Fórmula: &pi;*raio<sup>2</sup><br>
             Medida do raio:<input type="number" id="raio"><br>
             Pi:<input type="number" id="pi" value="3.14"><br>
-            Unidade de Medida:
-            <select id="medida">
-            <option value="mm" >mm</option>
-            <option value="cm">cm</option>
-            <option value="m">m</option>
-            <option value="km">km</option>
-            </select><br>
-            <input type="button" value="Enviar" onclick="calcular_circulo()" ><br>
-            <span id="mensagem"><red><b>Atenção!</b></red>Informe os valores na mesma unidade de medida para não ocorrerem erros.</span>
-    </div><br>
-    `
-    menu.style.visibility="visible"
-}
-function losango(){
-    menu.innerHTML=`
-    <div id="input">
-        Fórmula: D*d/2<br>
-        Medida da diagonal maior:<input type="number" id="D"><br>
-        Medida da diagonal menor:<input type="number" id="d"><br>
-        Unidade de Medida:
-        <select id="medida">
-        <option value="mm" >mm</option>
+            ${this.select}
+            <input type="button" value="Enviar" onclick="calcular_circulo()"><br>
+            ${this.mensagem}
+        </div><br>`
+    },
+    losango(){
+        return `
+        <div id="input">
+            Fórmula: D*d/2<br>
+            Medida da diagonal maior:<input type="number" id="D"><br>
+            Medida da diagonal menor:<input type="number" id="d"><br>
+            ${this.select}
+            <input type="button" value="Enviar" onclick="calcular_circulo()"><br>
+            ${this.mensagem}
+        </div><br>`
+    },
+    mensagem : `<span id="mensagem"><span class="red">Atenção!</span> Informe os valores na mesma unidade de medida para não ocorrerem erros.</span>`,
+    select: `Unidade de Medida:
+    <select id="medida">
+    <option value="mm" >mm</option>
         <option value="cm">cm</option>
         <option value="m">m</option>
         <option value="km">km</option>
-        </select><br>
-        <input type="button" value="Enviar" onclick="calcular_losango()" ><br>
-        <span id="mensagem"><red><b>Atenção!</b></red>Informe os valores na mesma unidade de medida para não ocorrerem erros.</span>
-    </div><br>
-    `
+    </select><br>`
+}
+function triangulo(){
+    menu.innerHTML=functions.triangulo()
+    mostra_menu()
+}
+function quadrado(){
+    menu.innerHTML=functions.quadrado()
+    mostra_menu()
+}
+function retangulo(){
+    menu.innerHTML=functions.retangulo()
+    mostra_menu()
+}
+function circulo(){
+    menu.innerHTML=functions.circulo()
+    mostra_menu()
+}
+function losango(){
+    menu.innerHTML=functions.losango()
+    mostra_menu()
+}
+function mostra_menu(){
     menu.style.visibility="visible"
 }
-/*
-    let selecao = document.getElementById("medida")
-    let medida = selecao.options[selecao.selectedIndex].value
-    para descobrir qual elemento do select foi selecionado.
-    */
-
 function calcular_quadrado(){
     let lado, area
     let selecao = document.getElementById("medida")
