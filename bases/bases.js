@@ -32,9 +32,7 @@ function dec_to_bin(retorne, valor){
            }else{
                bin.reverse()
                bin=String(bin).replaceAll(",","")
-               content=`<div class="res" id="div${id}">
-               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-               Em Decimal:<br> ${decimal[0]}<br>Em Binário:<br>${bin}</div>`
+               content=`Em Decimal:<br> ${decimal[0]}<br>Em Binário:<br>${bin}`
                escreve_res(content, 'dec')
            }
      }
@@ -70,9 +68,7 @@ function dec_to_oct(retorne, valor){
           }else{
                oct.reverse()
                oct=String(oct).replaceAll(",","")
-               content=`<div class="res" id="div${id}">
-               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-               Em Decimal:<br> ${decimal[0]}<br>Em Octal:<br>${oct}</div>`
+               content=`Em Decimal:<br> ${decimal[0]}<br>Em Octal:<br>${oct}`
                escreve_res(content, 'dec')
           }
      }
@@ -91,11 +87,7 @@ function oct_to_dec(retorne){
                decimal+=oct[i]
           }
           if(retorne==false){
-               content=
-               `<div class="res" id="div${id}">
-                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-                    Em Octal:<br> ${String_oct}<br>Em decimal:<br> ${decimal}
-               </div>`
+               content=`Em Octal:<br> ${String_oct}<br>Em decimal:<br> ${decimal}`
                escreve_res(content, 'oct')
           }else{
                return decimal
@@ -117,11 +109,7 @@ function bin_to_dec(retorne){
                decimal+=bin[i]
           }
           if(retorne==false){
-               content=
-               `<div class="res" id="div${id}">
-                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-                    Em binário:<br> ${String_bin}<br>Em decimal:<br> ${decimal}
-               </div>`
+               content=`Em binário:<br> ${String_bin}<br>Em decimal:<br> ${decimal}`
                escreve_res(content, 'bin')
           }else{
                return decimal
@@ -145,11 +133,7 @@ function hex_to_dec(retorne, valor){
                decimal+= hex[i]*16**i
           }
           if(retorne==false){
-               content=
-               `<div class="res" id="div${id}">
-                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-                    Em hexadecimal:<br> ${String_hex}<br>Em decimal:<br> ${decimal}
-               </div>`
+               content=`Em hexadecimal:<br> ${String_hex}<br>Em decimal:<br> ${decimal}`
                escreve_res(content, 'hex')
           }else{
                return decimal
@@ -164,10 +148,7 @@ function bin_to_oct(retorne){
           let String_bin = document.getElementById("binario").value
           octal.reverse()
           octal=String(octal).replaceAll(",","")
-          content=
-          `<div class="res" id="div${id}">
-          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em binário:<br> ${String_bin}<br>Em octal:<br>${octal}</div>`
+          content=`Em binário:<br> ${String_bin}<br>Em octal:<br>${octal}`
           escreve_res(content, 'bin')
      }
 }
@@ -179,9 +160,7 @@ function oct_to_bin(retorne){
           let octal = document.getElementById("octal").value
           bin.reverse()
           bin=String(bin).replaceAll(",","")
-          content=`<div class="res" id="div${id}">
-          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em octal:<br> ${octal}<br>Em binário:<br>${bin}</div>`
+          content=`Em octal:<br> ${octal}<br>Em binário:<br>${bin}`
           escreve_res(content, 'oct')
      }
 }
@@ -193,9 +172,7 @@ function hex_to_bin(retorne){
           let bin = dec_to_bin(true, decimal)
           bin.reverse()
           bin=String(bin).replaceAll(",","")
-          content=`<div class="res" id="div${id}">
-          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em hexadecimal:<br> ${hex}<br>Em binário:<br>${bin}</div>`
+          content=`Em hexadecimal:<br> ${hex}<br>Em binário:<br>${bin}`
           escreve_res(content, 'hex')
      }
 }
@@ -205,16 +182,13 @@ function hex_to_oct(retorne){
           let hex = String(document.getElementById("hexa").value).toLocaleUpperCase()
           let decimal = hex_to_dec(true)
           let oct = dec_to_oct(true, `${decimal}`)
-          content=`<div class="res" id="div${id}">
-          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em hexadecimal:<br> ${hex}<br>Em octal:<br> `
+          content=`Em hexadecimal:<br> ${hex}<br>Em octal:<br>`
           for(let i=oct.length-1;i>=0;i--){
                content+=oct[i]
                if(i!=0 && i%8==0){
                     content+="<br>"
                }
           }
-          content+="</div>"
           escreve_res(content, 'hex')
      }
 }
@@ -270,9 +244,7 @@ function dec_to_hex(retorne, valor){
           }else{
                hex.reverse()
                hex=String(hex).replaceAll(",","")
-               content=`<div class="res" id="div${id}">
-               <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-               Em Decimal:<br> ${decimal[0]}<br>Em hexadecimal:<br>${hex}</div>`
+               content=`Em Decimal:<br> ${decimal[0]}<br>Em hexadecimal:<br>${hex}`
                escreve_res(content, 'dec')
           }
      }
@@ -285,9 +257,7 @@ function bin_to_hex(retorne){
           let bin = document.getElementById("binario").value
           hex.reverse()
           hex=String(hex).replaceAll(",","")
-          content=`<div class="res" id="div${id}">
-          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em Decimal:<br> ${bin}<br>Em hexadecimal:<br>${hex}</div>`
+          content=`Em Decimal:<br> ${bin}<br>Em hexadecimal:<br>${hex}`
           escreve_res(content, 'bin')
      }
 }
@@ -299,16 +269,16 @@ function oct_to_hex(retorne){
           let hex = dec_to_hex(true, decimal)
           hex.reverse()
           hex=String(hex).replaceAll(",","")
-          content=`<div class="res" id="div${id}">
-          <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-          Em octal:<br> ${oct}<br>Em hexadecimal:<br>${hex}</div>`
+          content=`Em octal:<br> ${oct}<br>Em hexadecimal:<br>${hex}`
           escreve_res(content, 'oct')
      }
 }
 function escreve_res(content, sigla){
      let res = document.getElementById("res")
      res.style.display="inline-block"
-     res.innerHTML+=content
+     res.innerHTML+=`<div class="res" id="div${id}">
+     <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+     ${content}</div>`
      zerar(sigla)
      id++
 
