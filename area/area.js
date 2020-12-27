@@ -1,159 +1,96 @@
-
-var res= document.getElementById("res")
-var menu=document.getElementById("menu") 
+const res= document.getElementById("res")
+const menu=document.getElementById("menu") 
+var  medida
+function atualizaMedida(value='mm'){
+    medida=value
+}
 const functions = {
-    triangulo(){
-        return `
-        <div id="input">
-            Fórmula: Base*Altura/2<br>
-            Medida da base:<input type="number" id="base"><br>
-            Medida da altura:<input type="number" id="altura"><br>
-            ${this.select}
-            <input type="button" value="Enviar" onclick="calcular_triangulo()"><br>
-            ${this.mensagem}
-        </div><br>`
+    construtorInput(nome){
+        let string = this.string(nome)
+        return `<div id="input">
+                    ${string}
+                    Unidade de Medida:
+                    <select id="medida" onchange="atualizaMedida(this.value)">
+                        <option value="mm" >mm</option>
+                        <option value="cm">cm</option>
+                        <option value="m">m</option>
+                        <option value="km">km</option>
+                    </select><br>
+                    <input type="button" value="Enviar" onclick="calcular_${nome}()"><br>
+                    <span id="mensagem"><span class="red">Atenção!</span> Informe os valores na mesma unidade de medida para não ocorrerem erros.</span>
+                </div><br>`
     },
-    quadrado(){
-        return `
-        <div id="input">
-            Fórmula: Lado<sup>2</sup><br>
-            Medida do lado:<input type="number" id="lado"><br>
-            ${this.select}
-            <input type="button" value="Enviar" onclick="calcular_quadrado()"><br>
-            ${this.mensagem}
-        </div><br>`
+    string(nome){
+        switch(nome){
+            case 'losango':
+                return this.losango
+            case 'circulo':
+                return this.circulo
+            case 'retangulo':
+                return this.retangulo
+            case 'quadrado':
+                return this.quadrado
+            case 'triangulo':
+                return this.triangulo
+        }
     },
-    retangulo(){
-        return `
-        <div id="input">
-            Fórmula: Base*Altura<br>
-            Medida da base:<input type="number" id="base"><br>
-            Medida da altura:<input type="number" id="altura"><br>
-            ${this.select}
-            <input type="button" value="Enviar" onclick="calcular_retangulo()"><br>
-            ${this.mensagem}
-        </div><br>`
+    contrutorRes(nome,string,largura=50){
+        res.innerHTML+=`<div class="res"><img src="img/${nome}.png" width="${largura}px" heigth="50px"><br>${string}<sup>2</sup></div>`
+        res.style.display='block'
+        zerar(nome)
     },
-    circulo(){
-        return `
-        <div id="input">
-            Fórmula: &pi;*raio<sup>2</sup><br>
-            Medida do raio:<input type="number" id="raio"><br>
-            Pi:<input type="number" id="pi" value="3.14"><br>
-            ${this.select}
-            <input type="button" value="Enviar" onclick="calcular_circulo()"><br>
-            ${this.mensagem}
-        </div><br>`
-    },
-    losango(){
-        return `
-        <div id="input">
-            Fórmula: D*d/2<br>
-            Medida da diagonal maior:<input type="number" id="D"><br>
-            Medida da diagonal menor:<input type="number" id="d"><br>
-            ${this.select}
-            <input type="button" value="Enviar" onclick="calcular_circulo()"><br>
-            ${this.mensagem}
-        </div><br>`
-    },
-    mensagem : `<span id="mensagem"><span class="red">Atenção!</span> Informe os valores na mesma unidade de medida para não ocorrerem erros.</span>`,
-    select: `Unidade de Medida:
-    <select id="medida">
-    <option value="mm" >mm</option>
-        <option value="cm">cm</option>
-        <option value="m">m</option>
-        <option value="km">km</option>
-    </select><br>`
+    triangulo: `Fórmula: Base*Altura/2<br>
+    Medida da base: <input type="number" id="base"><br>
+    Medida da altura: <input type="number" id="altura"><br>`,
+    quadrado: `Fórmula: Lado<sup>2</sup><br>
+    Medida do lado: <input type="number" id="lado"><br>`,
+    retangulo: `Fórmula: Base*Altura<br>
+    Medida da base: <input type="number" id="base"><br>
+    Medida da altura: <input type="number" id="altura"><br>`,
+    circulo: `Fórmula: &pi;*raio<sup>2</sup><br>
+    Medida do raio: <input type="number" id="raio"><br>
+    Pi: <input type="number" id="pi" value="3.14"><br>`,
+    losango: `Fórmula: D*d/2<br>
+    Medida da diagonal maior: <input type="number" id="D"><br>
+    Medida da diagonal menor: <input type="number" id="d"><br>`,
 }
-function triangulo(){
-    menu.innerHTML=functions.triangulo()
+function formas(nome){
+    menu.innerHTML=functions.construtorInput(nome)
     mostra_menu()
-}
-function quadrado(){
-    menu.innerHTML=functions.quadrado()
-    mostra_menu()
-}
-function retangulo(){
-    menu.innerHTML=functions.retangulo()
-    mostra_menu()
-}
-function circulo(){
-    menu.innerHTML=functions.circulo()
-    mostra_menu()
-}
-function losango(){
-    menu.innerHTML=functions.losango()
-    mostra_menu()
+    atualizaMedida()
 }
 function mostra_menu(){
     menu.style.visibility="visible"
 }
 function calcular_quadrado(){
-    let lado, area
-    let selecao = document.getElementById("medida")
-    let medida = selecao.options[selecao.selectedIndex].value
-    //Forma de adquirir o valor de uma tag select
-    lado=Number(document.getElementById("lado").value)
-    area=lado**2
-    res.innerHTML +=
-    (`<div class="res"><img src="img/quadrado.png" width="50px" heigth="50px"> <br> Lado: ${lado+medida}<br>Área: ${area+medida}<sup>2</sup><div>`)
-    res.style.visibility="visible"
-    zerar("quadrado")
+    let lado = Number(document.getElementById("lado").value)
+    let string = `Lado: ${lado+medida}<br>Área: ${(lado**2)+medida}`
+    functions.contrutorRes('quadrado',string)
 }
 function calcular_triangulo(){
     let base=Number(document.getElementById("base").value)
     let altura=Number(document.getElementById("altura").value)
-    let area=base*altura/2
-    let selecao = document.getElementById("medida")
-    let medida = selecao.options[selecao.selectedIndex].value
-    res.innerHTML +=
-    (`<div class="res">
-    <img src="img/triangulo.png" width="50px" heigth="50px"> <br>
-    Base: ${base+medida}<br>Altura: ${altura+medida}<br>Área: ${area+medida}²<div>`)
-    res.style.visibility="visible"
-    zerar("triangulo")
+    let string = `Base: ${base+medida}<br>Altura: ${altura+medida}<br>Área: ${(base*altura/2)+medida}`
+    functions.contrutorRes('triangulo',string)
 }
 function calcular_retangulo(){
     let base=Number(document.getElementById("base").value)
     let altura=Number(document.getElementById("altura").value)
-    let area=base*altura
-    let selecao = document.getElementById("medida")
-    let medida = selecao.options[selecao.selectedIndex].value
-    res.innerHTML +=
-    (`<div class="res">
-    <img src="img/retangulo.png" width="100px" heigth="50px"> <br>
-    Base: ${base+medida}<br>Altura: ${altura+medida}<br>Área: ${area+medida}²<div>`)
-    res.style.visibility="visible"
-    zerar("retangulo")
+    let string = `Base: ${base+medida}<br>Altura: ${altura+medida}<br>Área: ${(base*altura)+medida}`
+    functions.contrutorRes('retangulo',string,80)
 }
 function calcular_circulo(){
     let raio=Number(document.getElementById("raio").value)
-    let pi=String(document.getElementById("pi").value)
-    pi= pi.replace(",", ".")
+    let pi=String(document.getElementById("pi").value).replace(",", ".")
     pi=Number(pi)
-    let selecao = document.getElementById("medida")
-    let medida = selecao.options[selecao.selectedIndex].value
-    let area=pi*raio**2
-    res.innerHTML +=
-    (`<div class="res">
-    <img src="img/circulo.png" width="50px" heigth="50px"><br>
-    Pi: ${pi}<br>Raio: ${raio+medida}<br>Área: ${area+medida}²<div>`)
-    res.style.visibility="visible"
-    zerar("circulo")
-
+    let string = `Pi: ${pi}<br>Raio: ${raio+medida}<br>Área: ${(pi*raio**2)+medida}`
+    functions.contrutorRes('circulo',string)
 }
 function calcular_losango(){
     let d=Number(document.getElementById("d").value)
     let D=Number(document.getElementById("D").value)
-    let area=d*D/2
-    let selecao = document.getElementById("medida")
-    let medida = selecao.options[selecao.selectedIndex].value
-    res.innerHTML+=
-    `<div class="res">
-    <img src="img/losango.png" width="50px" heigth="50px"><br>
-    D: ${D+medida}<br>d: ${d+medida}<br>Área: ${area+medida}²<div>`
-    res.style.visibility="visible"
-    zerar("losango")
+    let string = `D: ${D+medida}<br>d: ${d+medida}<br>Área: ${(d*D/2)+medida}`
+    functions.contrutorRes('losango',string)
 }
 function zerar(forma){
     if(forma=="quadrado"){
@@ -171,5 +108,4 @@ function zerar(forma){
         document.getElementById("d").value=""
         document.getElementById("D").value=""
     }
-    
 }
