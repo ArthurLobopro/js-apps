@@ -11,24 +11,22 @@ function calcular(){
         let raiz=Math.sqrt(delta)
         let x1,x2
         res.style="background-color: white;box-shadow: 5px 5px 10px black;display: inline-block;"
+        let string
         if (raiz>0){
             x1=(-(b)-raiz)/(a*2)
             x2=(-(b)+raiz)/(a*2)
-            res.innerHTML+=`<div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-            A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>Raiz: ${raiz}<br>X: ${x1} ou ${x2} <div>`   
+            string =`Raiz: ${raiz}<br>X: ${x1} ou ${x2}`   
         }else if(raiz==0){
             x1=-(b)/(a*2)
-            res.innerHTML+=`<div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-            A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>Raiz: ${raiz}<br>X: ${x1}`
+            string=`Raiz: ${raiz}<br>X: ${x1}`
         }else{
-            res.innerHTML+=`<div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
-            A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>Raiz:Inexistente<br>X: Inexistente <div>`
+            string=`Raiz:Inexistente<br>X: Inexistente`
         }
+        res.innerHTML+=`<div class="res" id="div${id}">
+            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+            A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>${string}</div>`
         id++
-        zerar()
+        zerar()   
     }
 }
 function zerar(){
