@@ -1,6 +1,7 @@
 const res= document.getElementById("res")
 const menu=document.getElementById("menu") 
 var  medida
+var id = 0
 function atualizaMedida(value='mm'){
     medida=value
 }
@@ -34,9 +35,13 @@ const functions = {
                 return this.triangulo
         }
     },
-    contrutorRes(nome,string,largura=50){
-        res.innerHTML+=`<div class="res"><img src="img/${nome}.png" width="${largura}px" heigth="50px"><br>${string}<sup>2</sup></div>`
+    contrutorRes(nome,string,largura=50,infoAdImg=""){
+        res.innerHTML+=`<div class="res" id="div${id}">
+        <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+        <div class="ac"><img src="img/${nome}.png" width="${largura}px" heigth="50px" ${infoAdImg}></div>
+        ${string}<sup>2</sup></div>`
         res.style.display='block'
+        id++
         zerar(nome)
     },
     triangulo: `Fórmula: Base*Altura/2<br>
@@ -77,14 +82,14 @@ function calcular_retangulo(){
     let base=Number(document.getElementById("base").value)
     let altura=Number(document.getElementById("altura").value)
     let string = `Base: ${base+medida}<br>Altura: ${altura+medida}<br>Área: ${(base*altura)+medida}`
-    functions.contrutorRes('retangulo',string,80)
+    functions.contrutorRes('retangulo',string,80,'style="margin: 2px 0 auto -18px;"')
 }
 function calcular_circulo(){
     let raio=Number(document.getElementById("raio").value)
     let pi=String(document.getElementById("pi").value).replace(",", ".")
     pi=Number(pi)
-    let string = `Pi: ${pi}<br>Raio: ${raio+medida}<br>Área: ${(pi*raio**2)+medida}`
-    functions.contrutorRes('circulo',string)
+    let string = `Valor de Pi: ${pi}<br>Raio: ${raio+medida}<br>Área: ${(pi*raio**2)+medida}`
+    functions.contrutorRes('circulo',string,50,'style="width:55px;"')
 }
 function calcular_losango(){
     let d=Number(document.getElementById("d").value)

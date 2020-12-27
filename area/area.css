@@ -3,6 +3,7 @@ body{
     width: auto;
     min-width: 630px;
     background-color: #00CED1;
+    color: black;
 }
 sup{
     font-size: 9px;
@@ -17,6 +18,10 @@ sup{
     padding-bottom: 0px;
     margin: 5px;
     border-radius: 5px;
+    text-align: justify;
+}
+.ac img{
+    margin: auto;
 }
 .formas{
     border: 2px solid black;
@@ -57,4 +62,13 @@ input[type="number"]{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+}
+.ac{
+    width: calc(100% - 36px);
+    display: flex;
+    height: 55px;
+    padding: 0 0 0 18px;
+}
+.circle{
+    margin: -2px -2px auto auto;
 }
