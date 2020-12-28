@@ -24,8 +24,7 @@ function dec_to_bin(retorne, valor){
                      div=Math.floor(decimal[1]/2)
                      bin[i]=decimal[1]%2
                      decimal[1]=div
-                }
-                
+                }       
            }
            if(retorne==true){
                 return bin
