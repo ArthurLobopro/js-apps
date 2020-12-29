@@ -15,6 +15,11 @@ function escreve(nome){
                     escreve_hip()
                 }
                 break
+            case "media":
+                if(travado===false){
+                    escreve_media()
+                }
+                break
             case "bases":
                 if(travado===false){
                     escreve_bases()
@@ -26,10 +31,10 @@ function escreve(nome){
                 }
                 break
             case "rgb/hex":
-            if(travado===false){
-                escreve_hex_rgb()
-            }
-            break
+                if(travado===false){
+                    escreve_hex_rgb()
+                }
+                break
             case "velocidade":
                 if(travado===false){
                     escreve_velocidade()
@@ -62,68 +67,46 @@ function trava(nome){
         travado=(!travado)
     }else{
         if(travado==false){
-            switch(nome){
-                case "area":
-                    escreve_area()
-                    break
-                case "hip":
-                    escreve_hip()
-                    break
-                case "bases":
-                    escreve_bases()
-                    break
-                case "distancia":
-                    escreve_distancia()
-                    break
-                case "rgb/hex":
-                    escreve_hex_rgb()
-                    break
-                case "velocidade":
-                    escreve_velocidade()
-                    break
-                case "bascara":
-                    escreve_bascara()
-                    break
-                case "tabuada":
-                    escreve_tabuada()
-                    break
-                case "potencia":
-                    escreve_potencia()
-                    break
-            }
+            cadeia_switch()
             travado=true
         }else{
             travado=false
-            switch(nome){
-                case "area":
-                    escreve_area()
-                    break
-                case "hip":
-                    escreve_hip()
-                    break
-                case "bases":
-                    escreve_bases()
-                    break
-                case "distancia":
-                    escreve_distancia()
-                    break
-                case "rgb/hex":
-                    escreve_hex_rgb()
-                    break
-                case "velocidade":
-                    escreve_velocidade()
-                    break
-                case "bascara":
-                    escreve_bascara()
-                    break
-                case "tabuada":
-                    escreve_tabuada()
-                    break
-                case "potencia":
-                    escreve_potencia()
-                    break
-            }
+            cadeia_switch()
             travado=true
+        }
+    }
+    function cadeia_switch(){
+        switch(nome){
+            case "area":
+                escreve_area()
+                break
+            case "hip":
+                escreve_hip()
+                break
+            case "media":
+                escreve_media()
+                break
+            case "bases":
+                escreve_bases()
+                break
+            case "distancia":
+                escreve_distancia()
+                break
+            case "rgb/hex":
+                escreve_hex_rgb()
+                break
+            case "velocidade":
+                escreve_velocidade()
+                break
+            case "bascara":
+                escreve_bascara()
+                break
+            case "tabuada":
+                escreve_tabuada()
+                break
+            case "potencia":
+                escreve_potencia()
+                break
         }
     }
     nome_backup_trava=nome
@@ -144,6 +127,14 @@ function escreve_hip(){
     document.body.style.minWidth="810px"
     nome.innerText="Calculador de Hipotenusa"
     nome.href="./hipotenusa/hipotenusa.html"
+    mostra_msg()
+}
+function escreve_media(){
+    let res = `<object data="./media/media.html" type="text/html"></object>`
+    content.innerHTML=res
+    document.body.style.minWidth="955px"
+    nome.innerText="Calculadora de Média"
+    nome.href="./media/media.html"
     mostra_msg()
 }
 function escreve_bases(){

@@ -4,7 +4,7 @@
     border-left-color: green;
     width: calc(100% - 20px);
     display: block;
-    height: calc(45px * 9 + 248px);
+    height: calc(45px * 10 + 248px);
     padding: 0 0 0 0;
     margin: 10px 0;
 }
