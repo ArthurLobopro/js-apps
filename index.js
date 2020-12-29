@@ -1,61 +1,73 @@
 var travado =false
 var content = document.getElementById("content")
-
+const nome= document.getElementById("nome")
+const functions= {
+    area: function escreve(){
+            const caminho = "./area/area.html"
+            const text = 'Calculador de Área'
+            this.escreve_res(caminho,text,955)
+        },
+    hip: function escreve(){
+            const caminho = "./hipotenusa/hipotenusa.html"
+            const text = "Calculador de Hipotenusa"
+            this.escreve_res(caminho,text)
+    },
+    media: function escreve(){
+            const caminho = "./media/media.html"
+            const text = "Calculadora de Média"
+            this.escreve_res(caminho,text)
+    },
+    bases: function escreve(){
+        const caminho = "./bases/bases.html"
+        const text = "Conversor de  Bases"
+        this.escreve_res(caminho,text,955)
+    },
+    escreve_res(caminho,texto,minWid=810){
+        const text = `<object data="${caminho}" type="text/html"></object>`
+        content.innerHTML= text
+        document.body.style.minWidth=`${minWid}px`
+        nome.innerText=texto
+        nome.href=caminho
+    },
+}
 var nome_backup_escreve
 function escreve(nome){
     if(nome_backup_escreve!=nome){
-        switch(nome){
-            case "area":
-                if(travado===false){
-                    escreve_area()
-                }
-                break
-            case "hip":
-                if(travado===false){
-                    escreve_hip()
-                }
-                break
-            case "media":
-                if(travado===false){
-                    escreve_media()
-                }
-                break
-            case "bases":
-                if(travado===false){
-                    escreve_bases()
-                }
-                break
-            case "distancia":
-                if(travado===false){
-                    escreve_distancia()
-                }
-                break
-            case "rgb/hex":
-                if(travado===false){
-                    escreve_hex_rgb()
-                }
-                break
-            case "velocidade":
-                if(travado===false){
-                    escreve_velocidade()
-                }
-                break
-            case "bascara":
-                if(travado===false){
-                    escreve_bascara()
-                }
-                break
-            case "tabuada":
-                if(travado==false){
-                    escreve_tabuada()
-                }
-                break
-            case "potencia":
-                if(travado==false){
-                    escreve_potencia()
-                }
-                break
+        if(travado===false){
+            functions[nome]()
         }
+        // switch(nome){
+        //     case "distancia":
+        //         if(travado===false){
+        //             escreve_distancia()
+        //         }
+        //         break
+        //     case "rgb/hex":
+        //         if(travado===false){
+        //             escreve_hex_rgb()
+        //         }
+        //         break
+        //     case "velocidade":
+        //         if(travado===false){
+        //             escreve_velocidade()
+        //         }
+        //         break
+        //     case "bascara":
+        //         if(travado===false){
+        //             escreve_bascara()
+        //         }
+        //         break
+        //     case "tabuada":
+        //         if(travado==false){
+        //             escreve_tabuada()
+        //         }
+        //         break
+        //     case "potencia":
+        //         if(travado==false){
+        //             escreve_potencia()
+        //         }
+        //         break
+        // }
     nome_backup_escreve=nome
     }
     
@@ -67,84 +79,17 @@ function trava(nome){
         travado=(!travado)
     }else{
         if(travado==false){
-            cadeia_switch()
+            functions[nome]()
             travado=true
         }else{
             travado=false
-            cadeia_switch()
+            functions[nome]()
             travado=true
-        }
-    }
-    function cadeia_switch(){
-        switch(nome){
-            case "area":
-                escreve_area()
-                break
-            case "hip":
-                escreve_hip()
-                break
-            case "media":
-                escreve_media()
-                break
-            case "bases":
-                escreve_bases()
-                break
-            case "distancia":
-                escreve_distancia()
-                break
-            case "rgb/hex":
-                escreve_hex_rgb()
-                break
-            case "velocidade":
-                escreve_velocidade()
-                break
-            case "bascara":
-                escreve_bascara()
-                break
-            case "tabuada":
-                escreve_tabuada()
-                break
-            case "potencia":
-                escreve_potencia()
-                break
         }
     }
     nome_backup_trava=nome
 }
 // Funções que mostram os outros programas
-var nome= document.getElementById("nome")
-function escreve_area(){
-    let res=`<object data="./area/area.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="955px"
-    nome.innerText="Calculador de Área"
-    nome.href="./area/area.html"
-    mostra_msg()
-}
-function escreve_hip(){
-    let res = `<object data="./hipotenusa/hipotenusa.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="810px"
-    nome.innerText="Calculador de Hipotenusa"
-    nome.href="./hipotenusa/hipotenusa.html"
-    mostra_msg()
-}
-function escreve_media(){
-    let res = `<object data="./media/media.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="955px"
-    nome.innerText="Calculadora de Média"
-    nome.href="./media/media.html"
-    mostra_msg()
-}
-function escreve_bases(){
-    let res = `<object data="./bases/bases.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="955px"
-    nome.innerText="Conversor de  Bases"
-    nome.href="./bases/bases.html"
-    mostra_msg()
-}
 function escreve_distancia(){
     let res = `<object data="./distancia/distancia.html" type="text/html"></object>`
     content.innerHTML=res
