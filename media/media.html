@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="media.css">
+    <title>Calculador de média.</title>
+</head>
+<body>
+    <h1>Calculador de Média</h1>
+    <section id="menu">
+        <div id="input">
+            Digite um número:<input type="number" id="num" onkeydown="autoAdd(event)"> 
+            <input type="button" value="Adicionar" id="add" onclick="(num.value.length==0)? alert('Digite um número para adicionar!') : adiciona()">
+        </div>
+        <div id="left">
+            <select  id="numbers" size="10"></select><br>
+            <input type="button" value="Calcular Média" onclick="calculaMedia()">
+        </div>
+        <div id="preview"></div>
+    </section>
+    <section id="res"><span id="msg">Médias Calculadas:</span><br></section>
+    <script src="../js/main.js"></script>
+    <script src="media.js"></script>
+</body>
+</html>
