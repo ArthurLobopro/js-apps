@@ -18,9 +18,39 @@ const functions= {
             this.escreve_res(caminho,text)
     },
     bases: function escreve(){
-        const caminho = "./bases/bases.html"
-        const text = "Conversor de  Bases"
-        this.escreve_res(caminho,text,955)
+            const caminho = "./bases/bases.html"
+            const text = "Conversor de  Bases"
+            this.escreve_res(caminho,text,955)
+    },
+    distancia: function escreve(){
+            const caminho = "./distancia/distancia.html"
+            const text = "Conversor de Distância"
+            this.escreve_res(caminho,text)
+    },
+    rgb_hex: function escreve(){
+            const caminho = "./hex_rgb/hex_rgb.html"
+            const text = "Conversor HEX/RGB"
+            this.escreve_res(caminho,text)
+    },
+    velocidade: function escreve(){
+            const caminho = "./velocidade/velocidade.html"
+            const text = "Conversor de Velocidade"
+            this.escreve_res(caminho,text)
+    },
+    bascara: function escreve(){
+            const caminho = "./bascara/bascara.html"
+            const text = "Equação de 2° Grau"
+            this.escreve_res(caminho,text)
+    },
+    potencia: function escreve(){
+            const caminho = "./potencias/potencia.html"
+            const text = "Gerador de Potências"
+            this.escreve_res(caminho,text)
+    },
+    tabuada: function escreve(){
+            const caminho = "./tabuada/tabuada.html"
+            const text = "Gerador de Tabuada"
+            this.escreve_res(caminho,text)
     },
     escreve_res(caminho,texto,minWid=810){
         const text = `<object data="${caminho}" type="text/html"></object>`
@@ -28,6 +58,7 @@ const functions= {
         document.body.style.minWidth=`${minWid}px`
         nome.innerText=texto
         nome.href=caminho
+        mostra_msg()
     },
 }
 var nome_backup_escreve
@@ -36,38 +67,6 @@ function escreve(nome){
         if(travado===false){
             functions[nome]()
         }
-        // switch(nome){
-        //     case "distancia":
-        //         if(travado===false){
-        //             escreve_distancia()
-        //         }
-        //         break
-        //     case "rgb/hex":
-        //         if(travado===false){
-        //             escreve_hex_rgb()
-        //         }
-        //         break
-        //     case "velocidade":
-        //         if(travado===false){
-        //             escreve_velocidade()
-        //         }
-        //         break
-        //     case "bascara":
-        //         if(travado===false){
-        //             escreve_bascara()
-        //         }
-        //         break
-        //     case "tabuada":
-        //         if(travado==false){
-        //             escreve_tabuada()
-        //         }
-        //         break
-        //     case "potencia":
-        //         if(travado==false){
-        //             escreve_potencia()
-        //         }
-        //         break
-        // }
     nome_backup_escreve=nome
     }
     
@@ -88,55 +87,6 @@ function trava(nome){
         }
     }
     nome_backup_trava=nome
-}
-// Funções que mostram os outros programas
-function escreve_distancia(){
-    let res = `<object data="./distancia/distancia.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="810px"
-    nome.innerText="Conversor de Distância"
-    nome.href="./distancia/distancia.html"
-    mostra_msg()
-}
-function escreve_velocidade(){
-    let res = `<object data="./velocidade/velocidade.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="810px"
-    nome.innerText="Conversor de Velocidade"
-    nome.href="./velocidade/velocidade.html"
-    mostra_msg()
-}
-function escreve_bascara(){
-    let res =`<object data="./bascara/bascara.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="810px"
-    nome.innerText="Equação de 2° Grau"
-    nome.href="./bascara/bascara.html"
-    mostra_msg()
-}
-function escreve_tabuada(){
-    let res = `<object data="./tabuada/tabuada.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="810px"
-    nome.innerText="Gerador de Tabuada"
-    nome.href="./tabuada/tabuada.html"
-    mostra_msg()
-}
-function escreve_potencia(){
-    let res = `<object data="./potencias/potencia.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="810px"
-    nome.innerText="Gerador de Potências"
-    nome.href="./potencias/potencia.html"
-    mostra_msg()
-}
-function escreve_hex_rgb(){
-    let res = `<object data="./hex_rgb/hex_rgb.html" type="text/html"></object>`
-    content.innerHTML=res
-    document.body.style.minWidth="810px"
-    nome.innerText="Conversor HEX/RGB"
-    nome.href="./hex_rgb/hex_rgb.html"
-    mostra_msg()
 }
 function mostra_msg(){
     let msg= document.getElementById("msg")
