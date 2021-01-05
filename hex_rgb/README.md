@@ -1,5 +1,6 @@
 # Conversor HEX/REB
 
-Basicamente faz as conversões de RGB para Hexadecimal e Hexadecimal para RGB, além de também ter um mini banco de dados que identifica se esta cor tem um 'nome' no padrão html.
+Basicamente faz as conversões entre RGB e Hexadecimal e o padrão de cores html (nome de algumas cores do html).
 
-* Para ver em forma de site, [clique aqui]()
+* Para ver em forma de site, [clique aqui](https://arthurlobopro.github.io/js-apps/hex_rgb/).
+* Fique a vontade para analizar o código.
