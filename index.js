@@ -28,7 +28,7 @@ const functions= {
             this.escreve_res(caminho,text)
     },
     rgb_hex: function escreve(){
-            const caminho = "./hex_rgb/hex_rgb.html"
+            const caminho = "./hex_rgb/"
             const text = "Conversor HEX/RGB"
             this.escreve_res(caminho,text)
     },
