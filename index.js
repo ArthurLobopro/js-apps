@@ -38,7 +38,7 @@ const functions= {
             this.escreve_res(caminho,text)
     },
     bascara: function escreve(){
-            const caminho = "./bascara/bascara.html"
+            const caminho = "./bascara/"
             const text = "Equação de 2° Grau"
             this.escreve_res(caminho,text)
     },
