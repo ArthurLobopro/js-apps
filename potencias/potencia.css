@@ -8,6 +8,9 @@ section{
     box-sizing: border-box;
     box-shadow: 5px 5px 10px;
 }
+sup{
+    font-size: 10px;
+}
 #res{
     width: 90%;
     padding: 10px 15px;
