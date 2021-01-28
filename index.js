@@ -22,6 +22,11 @@ const functions= {
             const text = "Conversor de  Bases"
             this.escreve_res(caminho,text,955)
     },
+    desconto: function name(params) {
+        const caminho = './desconto/'
+        const text = 'Calculador de Desconto.'
+        this.escreve_res(caminho,text)
+    },
     distancia: function escreve(){
             const caminho = "./distancia/distancia.html"
             const text = "Conversor de Distância"
