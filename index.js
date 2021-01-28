@@ -3,22 +3,22 @@ var content = document.getElementById("content")
 const nome= document.getElementById("nome")
 const functions= {
     area: function escreve(){
-            const caminho = "./area/area.html"
+            const caminho = "./area/"
             const text = 'Calculador de Área'
             this.escreve_res(caminho,text,955)
         },
     hip: function escreve(){
-            const caminho = "./hipotenusa/hipotenusa.html"
+            const caminho = "./hipotenusa/"
             const text = "Calculador de Hipotenusa"
             this.escreve_res(caminho,text)
     },
     media: function escreve(){
-            const caminho = "./media/media.html"
+            const caminho = "./media/"
             const text = "Calculadora de Média"
             this.escreve_res(caminho,text)
     },
     bases: function escreve(){
-            const caminho = "./bases/bases.html"
+            const caminho = "./bases/"
             const text = "Conversor de  Bases"
             this.escreve_res(caminho,text,955)
     },
@@ -28,7 +28,7 @@ const functions= {
         this.escreve_res(caminho,text)
     },
     distancia: function escreve(){
-            const caminho = "./distancia/distancia.html"
+            const caminho = "./distancia/"
             const text = "Conversor de Distância"
             this.escreve_res(caminho,text)
     },
@@ -38,7 +38,7 @@ const functions= {
             this.escreve_res(caminho,text)
     },
     velocidade: function escreve(){
-            const caminho = "./velocidade/velocidade.html"
+            const caminho = "./velocidade/"
             const text = "Conversor de Velocidade"
             this.escreve_res(caminho,text)
     },
@@ -48,12 +48,12 @@ const functions= {
             this.escreve_res(caminho,text)
     },
     potencia: function escreve(){
-            const caminho = "./potencias/potencia.html"
+            const caminho = "./potencias/"
             const text = "Gerador de Potências"
             this.escreve_res(caminho,text)
     },
     tabuada: function escreve(){
-            const caminho = "./tabuada/tabuada.html"
+            const caminho = "./tabuada/"
             const text = "Gerador de Tabuada"
             this.escreve_res(caminho,text)
     },

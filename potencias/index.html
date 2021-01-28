@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Tabuada</title>
+    <title>Gerador de Potências</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="tabuada.css">
-    <link rel="icon" href="icon-mat.png">
+    <link rel="icon" href="icon-pot.png">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Gerador de Tabuada</h1>
+    <header>
+        <h1>Gerador de Potências</h1>
+    </header>
     <section id="menu">
         <div id="grid">
             <div style="line-height: 1.5;">
                 Número: <input type="number" id="num" autofocus onkeydown="auto_submit(event)"><br>
-                <input type="button" id="submit-button" value="Gerar Tabuada" onclick="gerar()">
+                <input type="button" id="submit-button" value="Gerar Potências" onclick="verificar()">
             </div>
             <div id="opcao-2">
                 Início: <input type="number" id="inicio" value="0" onkeydown="auto_submit(event)"><br>
@@ -23,10 +25,10 @@
         </div>
     </section>
     <section id="res">
-        <span id="msg">Tabuadas Geradas:</span><br>
+        <span id="msg">Para limpar o histórico aperte F5 ou recarregue a página</span><br>
     </section>
     <footer>&copy;Arthur Lobo</footer>
+    <script src="index.js"></script>
     <script src="../js/main.js"></script>
-    <script src="tabuada.js"></script>
 </body>
 </html>
