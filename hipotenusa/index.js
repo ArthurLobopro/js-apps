@@ -49,7 +49,7 @@ function calcula_hipotenusa() {
         let hipotenusa = Math.sqrt(cateto1**2 + cateto2**2)
         let content= `
                 <div class="res" id="div${id}">
-                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+                    <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
                     Cateto 1: ${cateto1+unity}<br>
                     Cateto 2: ${cateto2+unity}<br>
                     Hipotenusa: ${hipotenusa+unity}
@@ -74,7 +74,7 @@ function calcula_cateto(){
         let cateto2 = Math.sqrt(hipotenusa**2 - cateto**2)
         let content= `
                 <div class="res" id="div${id}">
-                    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+                    <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
                     Cateto fornecido: ${cateto+unity}<br>
                     Hipotenusa: ${hipotenusa+unity}<br>
                     Cateto descoberto: ${cateto2+unity}<br>

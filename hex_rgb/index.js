@@ -65,7 +65,7 @@ function acha_nome(){
 function construtorRes(cor,string,num){
     res.innerHTML+=`
     <div class="res" id="div${id}">
-        <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+        <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
         <div class="color" style="background-color: ${cor};"></div><br>
         ${string}</div>`
     id++

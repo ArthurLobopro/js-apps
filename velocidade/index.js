@@ -21,7 +21,7 @@ function km_para_ms(){
         let ms=kmh/3.6
         res.innerHTML+=`
         <div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+            <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
             Km/h: ${kmh} km/h<br>
             M/s: ${ms} m/s
         </div>`
@@ -39,7 +39,7 @@ function ms_para_km(){
         let kmh=ms*3.6
         res.innerHTML+=`
         <div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+            <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
             M/s: ${ms} m/s <br>
             Km/h: ${kmh} km/h
         </div>`

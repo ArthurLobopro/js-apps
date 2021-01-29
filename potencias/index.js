@@ -27,7 +27,7 @@ function potencia(num, inicio, fim){
         inicio=ajudante
     }
     resposta+=`<div class="res" id="div${id}">
-    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>`
+    <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>`
     for(let i=inicio;i<=fim;i++){
         resposta+=`${num}<sup>${i}</sup> = ${num**i}<br>`
     }

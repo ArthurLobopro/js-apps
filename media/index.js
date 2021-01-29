@@ -37,7 +37,7 @@ function calculaMedia(){
 function addToHistory(){
     let string = document.querySelector('.preview').innerHTML
     let content = `<div class="res" id="div${id}">
-    <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>${string}</div>`
+    <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>${string}</div>`
     res.innerHTML+=content
     res.style.display='inline-block'
     id++

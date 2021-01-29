@@ -276,7 +276,7 @@ function escreve_res(content, sigla){
      let res = document.getElementById("res")
      res.style.display="inline-block"
      res.innerHTML+=`<div class="res" id="div${id}">
-     <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+     <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
      ${content}</div>`
      zerar(sigla)
      id++
