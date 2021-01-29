@@ -1,5 +1,4 @@
 let id_button = `id="submit-button"`
-
 function remove_div(num){
     let element= document.getElementById(`div${num}`)
     res.removeChild(element)
