@@ -84,24 +84,24 @@ a{
     margin: 10px auto;
 }
 .link{
-    background-image: url('./midia/hyperlink.png');
+    background-image: url('./public/midia/hyperlink.png');
     width: 30px;
     height: 30px;
     float: right;
     margin: 6px 5px 4px;
 }
 .link:hover{
-    background-image: url('./midia/hyperlink-bold.png');
+    background-image: url('./public/midia/hyperlink-bold.png');
 }
 @font-face {
     font-family: 'Literata';
-    src: url('./fontes/Literata-Regular-opsz=12.ttf');
+    src: url('./public/fontes/Literata-Regular-opsz=12.ttf');
     font-style: normal;
     font-weight: 400;
     font-display: swap;
 }
 @font-face{
     font-family: 'Roboto Slab';
-    src: url("./fontes/RobotoSlab-Medium.ttf");
+    src: url("./public/fontes/RobotoSlab-Medium.ttf");
     font-weight: 400;
 }
