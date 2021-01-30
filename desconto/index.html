@@ -12,8 +12,8 @@
     <section id="menu">
         <div class="input">
             <span class="wspw">Valor: R$  <input type="text" pattern="[0-9.,]{0,}" id="num"></span><br>
-            Desconto: <input type="number" id="desc">% <br>
-            <input type="button" value="Calcular" onclick="desconto()">
+            Desconto: <input type="number" id="desc" onkeydown="auto_submit(event)">% <br>
+            <input type="button" value="Calcular" onclick="desconto()" id="submit-button">
         </div>
     </section>
     <section id="res"></section>
