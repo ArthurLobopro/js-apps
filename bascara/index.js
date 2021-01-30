@@ -23,7 +23,7 @@ function calcular(){
             string=`Raiz:Inexistente<br>X: Inexistente`
         }
         res.innerHTML+=`<div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+            <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
             A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>${string}</div>`
         id++
         zerar()   

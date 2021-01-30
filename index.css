@@ -10,7 +10,7 @@
 }
 #menu-lateral{
     height: inherit;
-    width: 260px;
+    width: 270px;
     float: left;
     border: solid rgba(60,64,67,0.302);
     border-width: 0 1px 0 0;
@@ -19,7 +19,7 @@
 ul{
     margin: 0;
     width: inherit;
-    height: calc(100% - 257px);
+    height: calc(100% - 273px);
     padding: 0;
     float: left;
     font-family: 'Literata', serif;
@@ -49,6 +49,9 @@ li{
 li:hover{
     background-color: #f1f3f4;
 }
+li:last-child{
+    border-bottom: none;
+}
 #msg{
     text-align: center;
     border-bottom: 1px solid rgba(60,64,67,0.302);
@@ -72,8 +75,9 @@ a{
     text-align: left;
 }
 #logo{
-    width: calc(260px - 3px);
-    margin: -1px 0 0 0;
+    width: calc(270px);
+    margin: 1px -1px 0 -2px;
+    border-top: 1px solid rgba(60,64,67,0.302);
 }
 #main{
     text-align: center;
@@ -84,24 +88,24 @@ a{
     margin: 10px auto;
 }
 .link{
-    background-image: url('./midia/hyperlink.png');
+    background-image: url('./public/midia/hyperlink.png');
     width: 30px;
     height: 30px;
     float: right;
     margin: 6px 5px 4px;
 }
 .link:hover{
-    background-image: url('./midia/hyperlink-bold.png');
+    background-image: url('./public/midia/hyperlink-bold.png');
 }
 @font-face {
     font-family: 'Literata';
-    src: url('./fontes/Literata-Regular-opsz=12.ttf');
+    src: url('./public/fontes/Literata-Regular-opsz=12.ttf');
     font-style: normal;
     font-weight: 400;
     font-display: swap;
 }
 @font-face{
     font-family: 'Roboto Slab';
-    src: url("./fontes/RobotoSlab-Medium.ttf");
+    src: url("./public/fontes/RobotoSlab-Medium.ttf");
     font-weight: 400;
 }

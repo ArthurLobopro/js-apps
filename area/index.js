@@ -37,7 +37,7 @@ const functions = {
     },
     contrutorRes(nome,string,largura=50,infoAdImg=""){
         res.innerHTML+=`<div class="res" id="div${id}">
-        <div class="circle" onclick="remove_div(${id})"><img src="../midia/close-icon.png"></div>
+        <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
         <div class="ac"><img src="img/${nome}.png" width="${largura}px" heigth="50px" ${infoAdImg}></div>
         ${string}<sup>2</sup></div>`
         res.style.display='block'
