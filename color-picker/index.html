@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Piker</title>
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="../public/css/main.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <h1>Selecionador de Cores</h1>
     <section id="main">
         <button>Selecionar Imagem</button>
-        <input type="file" id="upimg" accept="image/png, image/jpg"> <br>
+        <input type="file" id="upimg" accept="image/*"> <br>
         <div id="canvasDiv">
             <canvas id="mycanvas" width="100px" height="100px"></canvas>
         </div>
         <img src="" alt="" id="invi">
-        <input type="color" id="teste" oninput="document.body.style.backgroundColor=`${this.value}`">
+        <div id="preview">
+            <div class="color"></div><br>
+            <span id="rgb"></span>
+        </div>
     </section>
     <script src="index.js"></script>
 </body>

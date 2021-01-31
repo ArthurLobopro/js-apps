@@ -29,14 +29,22 @@ function getImage() {
         console.log('erro')
     }
     reader.onload = function (event){ 
+        console.log('loaded')
         img = new Image()
         img.src=event.target.result
         invi.src=img.src
-        canvas.width = (invi.width<=500)? invi.width : Math.ceil(invi.width/3)
-        canvas.height = (invi.height<=500)? invi.height : Math.ceil(invi.height/3)
-        ctx.clearRect(0,0,canvas.width,canvas.height)
-        drawImage(img.src,canvas.width,canvas.height)
-        console.log('loaded')
+        let w
+        let h
+        img.onload = function () {
+            w=this.width
+            h=this.height
+            console.log(w + 'x' + h)
+            canvas.width = (w<=500)? w : Math.ceil(w/3)
+            canvas.height = (h<=500)? h : Math.ceil(h/3)
+            ctx.clearRect(0,0,canvas.width,canvas.height)
+            drawImage(img.src,canvas.width,canvas.height)
+        }
+        
     }
     canvas.style.display='block'
 }
@@ -47,7 +55,9 @@ canvas.onclick = function(event){
     console.log(color(event))
 }
 canvas.onmousemove = function(event){
-    console.log(color(event))
+    [r,g,b] = color(event)
+    document.querySelectorAll('.color')[0].style.backgroundColor=`rgb(${r}, ${g}, ${b})`
+    document.getElementById('rgb').innerText=`rgb(${r}, ${g}, ${b})`
 }
 window.addEventListener('DOMContentLoaded',() => {
     document.querySelector('button').onclick = () => upimg.click()
