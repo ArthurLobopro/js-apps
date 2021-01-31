@@ -32,7 +32,6 @@ function getImage() {
         console.log('loaded')
         img = new Image()
         img.src=event.target.result
-        invi.src=img.src
         let w
         let h
         img.onload = function () {
@@ -41,7 +40,8 @@ function getImage() {
             console.log(w + 'x' + h)
             canvas.width = (w<=500)? w : Math.ceil(w/3)
             canvas.height = (h<=500)? h : Math.ceil(h/3)
-            ctx.clearRect(0,0,canvas.width,canvas.height)
+            ctx.fillStyle='#FFFFFF'
+            ctx.fillRect(0,0,canvas.width,canvas.height)
             drawImage(img.src,canvas.width,canvas.height)
         }
         
@@ -52,15 +52,27 @@ upimg.onchange = function(){
     getImage()
 }
 canvas.onclick = function(event){
-    console.log(color(event))
+    [r,g,b] = color(event)
 }
 canvas.onmousemove = function(event){
     [r,g,b] = color(event)
     document.querySelectorAll('.color')[0].style.backgroundColor=`rgb(${r}, ${g}, ${b})`
-    document.getElementById('rgb').innerText=`rgb(${r}, ${g}, ${b})`
+    document.getElementById('rgb').innerHTML=`rgb(${r}, ${g}, ${b})<br>#${acha_hex(r)}${acha_hex(g)}${acha_hex(b)}`
 }
 window.addEventListener('DOMContentLoaded',() => {
     document.querySelector('button').onclick = () => upimg.click()
     ctx.fillStyle='#FFFFFF'
     ctx.fillRect(0,0,100,100)
 })
+function acha_hex(num){
+    const hex = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+    for(i=0;i<16;i++){
+        for(j=0;j<16;j++){
+            if((i*16+j*1)==num){
+                i = hex[i]
+                j = hex[j]
+                return String(i+j)
+            }
+        }
+    }
+}
