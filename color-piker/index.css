@@ -1,0 +1,34 @@
+canvas{
+    border: 1px solid black;
+    background-color: white;
+    margin: 10px auto 0;
+    cursor: crosshair;
+    display: none;
+}
+#upimg{
+    display: none;
+}
+button{
+    background-color: #0D6EFD;
+    color: white;
+    font-family: 'Nunito';
+    font-size: 20px;
+    grid-area: button;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: max-content;
+    padding: auto 10px;
+    margin: auto;
+}
+#main{
+    margin: auto;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#invi{
+    display: none;
+    width: auto;
+    height: auto;
+}

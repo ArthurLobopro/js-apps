@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Piker</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section id="main">
+        <button>Selecionar Imagem</button>
+        <input type="file" id="upimg" accept="image/png, image/jpg"> <br>
+        <div id="canvasDiv">
+            <canvas id="mycanvas" width="100px" height="100px"></canvas>
+        </div>
+        <img src="" alt="" id="invi">
+        <input type="color" id="teste" oninput="document.body.style.backgroundColor=`${this.value}`">
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
