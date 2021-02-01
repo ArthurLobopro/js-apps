@@ -86,31 +86,8 @@ function acha_hex(num){
 }
 //Converte hexadecimal para números
 function convert_hex_to_num(a){
-    if(Number(a)>=0 && Number(a)<=9){
-        a=Number(a)
-    }else{
-        switch(a){
-            case 'A':
-                a=10
-                break
-            case 'B':
-                a=11
-                break
-            case 'C':
-                a=12
-                break
-            case 'D':
-                a=13
-                break
-            case 'E':
-                a=14
-                break
-            case 'F':
-                a=15
-                break
-        }
-    }
-    return a
+    const numbers = { A: 10, B: 11, C: 12, D:13, E: 14, F: 15 }
+    return (Number(a)>=0 && Number(a)<=9) ? Number(a) : numbers[a] 
 }
 function zerar(num){
     if(num==1){
