@@ -73,57 +73,12 @@ function construtorRes(cor,string,num){
     zerar(num)
 }
 function acha_hex(num){
+    const hex = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
     for(i=0;i<16;i++){
         for(j=0;j<16;j++){
             if((i*16+j*1)==num){
-                if(i>=0 && i<=9){
-                    i=String(i)
-                }else{
-                    switch(i){
-                        case 10:
-                            i="a"
-                            break
-                        case 11:
-                            i="b"
-                            break
-                        case 12:
-                            i="c"
-                            break
-                        case 13: 
-                            i="d"
-                            break
-                        case 14:
-                            i="e"
-                            break
-                        case 15:
-                            i="f"
-                            break                           
-                    }
-                }
-                if(j>=0 && j<=9){
-                    j=String(j)
-                }else{
-                    switch(j){
-                        case 10:
-                            j="a"
-                            break
-                        case 11:
-                            j="b"
-                            break
-                        case 12:
-                            j="c"
-                            break
-                        case 13: 
-                            j="d"
-                            break
-                        case 14:
-                            j="e"
-                            break
-                        case 15:
-                            j="f"
-                            break                           
-                    }
-                }
+                i = hex[i]
+                j = hex[j]
                 return String(i+j)
             }
         }
