@@ -122,10 +122,11 @@ function hex_to_dec(retorne, valor){
           let hex = []
           for(let i in String_hex){
                hex[i]=String_hex[(String_hex.length-1)-i]
-               hex[i] = (Number(hex[i]>=0 && Number(hex[i]<=9))) ? Number(hex[i]) :
-                    (hex[i]=='A') ? 10 : (hex[i]=='B') ? 11 :
-                         (hex[i]=='C') ? 12 : (hex[i]=='D') ? 13 : 
-                              (hex[i]=='E') ? 14 : 15
+               hex[i] = htn(hex[i])
+          }
+          function htn(n){
+               const numbers = { A: 10, B: 11, C: 12, D:13, E: 14, F: 15 }
+               return (Number(n)>=0 && Number(n)<=9) ? Number(a) : numbers[n] 
           }
           let decimal = 0
           for(let i in hex){
@@ -200,6 +201,7 @@ function dec_to_hex(retorne, valor){
           let i = 0
           let num_encontrado =false
           let hex=[]
+          const hexn = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
           if(decimal[0]==0){
                hex[0]=0
           }else{
@@ -210,32 +212,14 @@ function dec_to_hex(retorne, valor){
                     }
                     i++
                }while (num_encontrado==false)
+
                for(let i=0;i<num;i++){
                     div=Math.floor(decimal[1]/16)
                     hex[i]=decimal[1]%16
                     decimal[1]=div
                }
                for(let i in hex){
-                    switch(Number(hex[i])){
-                         case 10:
-                              hex[i]="A"
-                              break
-                         case 11:
-                              hex[i]="B"
-                              break
-                         case 12:
-                              hex[i]="C"
-                              break
-                         case 13:
-                              hex[i]="D"
-                              break
-                         case 14:
-                              hex[i]="E"
-                              break
-                         case 15:
-                              hex[i]="F"
-                              break
-                    }
+                    hex[i]=hexn[hex[i]]
                }
           }
           if(retorne==true){
