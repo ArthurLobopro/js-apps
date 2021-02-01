@@ -57,6 +57,11 @@ const functions= {
             const text = "Gerador de Tabuada"
             this.escreve_res(caminho,text)
     },
+    picker: function escreve() {
+        const caminho = "./color-picker/"
+            const text = "Seletor de cores"
+            this.escreve_res(caminho,text)
+    },
     escreve_res(caminho,texto,minWid=810){
         const text = `<object data="${caminho}" type="text/html"></object>`
         content.innerHTML= text

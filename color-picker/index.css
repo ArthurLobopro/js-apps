@@ -30,6 +30,9 @@ button{
     justify-content: center;
     flex-direction: column;
     min-width: 300px;
+    width: max-content;
+    padding: 0 20px 0;
+    box-sizing: border-box;
 }
 #preview{
     display: flex;
@@ -43,7 +46,32 @@ button{
     height: auto;
 }
 .color{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     margin: auto;
+    border: 1px solid black;
+}
+.res{
+    border: 2px solid blue;
+    width: auto;
+    padding: 5px;
+    float: left;
+    margin: 5px;
+    padding-left: 10px;
+    text-align: left;
+    border-radius: 3px;
+}
+.circle{
+    margin: -4px -4px auto auto;
+}
+#color{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+#res{
+    display: none;
+    width: 85%;
+    height: auto;
+    margin: 10px auto;
 }
