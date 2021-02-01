@@ -4,9 +4,11 @@ Aplicações simples feitas com HTML, CSS e JavaScript.
 Para visualizar em formato de site, [clique aqui.](https://arthurlobopro.github.io/js-apps/)
 
 Atualmente são essas as aplicações feitas e hospedadas aqui:
+
 * Calculadora de Área.
 * Calculadora de Hipotenusa (e catetos).
 * Calculadora de Média.
+* Color Picker.
 * Conversor de Bases Numéricas.
 * Conversor de Distância.
 * Conversor Hexadecimal/RGB.
