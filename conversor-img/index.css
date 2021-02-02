@@ -1,11 +1,10 @@
 body{
-    background-color: rgb(92, 71, 71);
+    background-color:#2EB8B5;
 }
 canvas{
     border: 1px solid black;
     background-color: white;
-    margin: 10px auto 0;
-    cursor: crosshair;
+    margin: 10px auto 10px;
     display: none;
 }
 #upimg{
@@ -15,13 +14,14 @@ button{
     background-color: #0D6EFD;
     color: white;
     font-family: 'Nunito';
-    font-size: 20px;
+    font-size: 18px;
     grid-area: button;
     border: 1px solid black;
     border-radius: 3px;
     width: max-content;
     padding: auto 10px;
     margin: 10px auto 0;
+    font-family: 'Roboto Slab';
 }
 #main{
     margin: auto;
@@ -31,47 +31,16 @@ button{
     flex-direction: column;
     min-width: 300px;
     width: max-content;
-    padding: 0 20px 0;
+    padding: 0 20px 10px;
     box-sizing: border-box;
 }
-#preview{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 10px auto;
-}
-#invi{
+#download{
     display: none;
     width: auto;
     height: auto;
+    justify-content: space-around;
 }
-.color{
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    border: 1px solid black;
-}
-.res{
-    border: 2px solid blue;
-    width: auto;
-    padding: 5px;
-    float: left;
-    margin: 5px;
-    padding-left: 10px;
-    text-align: left;
-    border-radius: 3px;
-}
-.circle{
-    margin: -4px -4px auto auto;
-}
-#color{
-    width: 50px;
-    height: 50px;
-    margin: auto;
-}
-#res{
-    display: none;
-    width: 85%;
-    height: auto;
-    margin: 10px auto;
+button.download{
+    font-size: 15px;
+    font-family: 'Roboto Slab';
 }
