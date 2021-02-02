@@ -22,6 +22,11 @@ const functions= {
             const text = "Conversor de  Bases"
             this.escreve_res(caminho,text,955)
     },
+    conversorImg: function escreve(){
+        const caminho = './conversor-img/'
+        const text = 'Conversor de Imagens'
+        this.escreve_res(caminho,text)
+    },
     desconto: function name(params) {
         const caminho = './desconto/'
         const text = 'Calculador de Desconto.'
