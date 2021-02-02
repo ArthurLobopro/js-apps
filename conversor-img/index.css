@@ -1,0 +1,77 @@
+body{
+    background-color: rgb(92, 71, 71);
+}
+canvas{
+    border: 1px solid black;
+    background-color: white;
+    margin: 10px auto 0;
+    cursor: crosshair;
+    display: none;
+}
+#upimg{
+    display: none;
+}
+button{
+    background-color: #0D6EFD;
+    color: white;
+    font-family: 'Nunito';
+    font-size: 20px;
+    grid-area: button;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: max-content;
+    padding: auto 10px;
+    margin: 10px auto 0;
+}
+#main{
+    margin: auto;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 300px;
+    width: max-content;
+    padding: 0 20px 0;
+    box-sizing: border-box;
+}
+#preview{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px auto;
+}
+#invi{
+    display: none;
+    width: auto;
+    height: auto;
+}
+.color{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border: 1px solid black;
+}
+.res{
+    border: 2px solid blue;
+    width: auto;
+    padding: 5px;
+    float: left;
+    margin: 5px;
+    padding-left: 10px;
+    text-align: left;
+    border-radius: 3px;
+}
+.circle{
+    margin: -4px -4px auto auto;
+}
+#color{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+#res{
+    display: none;
+    width: 85%;
+    height: auto;
+    margin: 10px auto;
+}

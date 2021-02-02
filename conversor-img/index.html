@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="../public/js/main.js"></script>
+</head>
+<body>
+    <h1>Selecionador de Cores</h1>
+    <section id="main">
+        <button>Selecionar Imagem</button>
+        <input type="file" id="upimg" accept="image/*"> <br>
+        <div id="canvasDiv">
+            <canvas id="mycanvas" width="100px" height="100px"></canvas>
+        </div>
+        <div id="preview">
+            <div id='color'></div><br>
+            <span id="rgb"></span>
+        </div>
+    </section>
+    <section id="res">
+        <span>Cores selecionadas.</span><br>
+    </section>
+    <footer>&copy;Arthur Lobo</footer>
+    <script src="index.js"></script>
+</body>
+</html>
