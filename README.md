@@ -10,16 +10,18 @@ Atualmente são essas as aplicações feitas e hospedadas aqui:
     <ul>
         <li>Conversor de Bases Numéricas.
         <li>Conversor de Distância.
-        <li>Conversor Hexadecimal/RGB.
+        <li>Conversor de Cores Hexadecimal/RGB.
+        <li>Conversor de Imagens.
+        <li>Conversor de Velocidade.
     </ul>
 </details>
 <details>
     <summary>Calculadoras</summary>
     <ul>
         <li>Calculadora de Área.
+        <li>Calculadora de Equação de 2° Grau.
         <li>Calculadora de Hipotenusa (e catetos).
         <li>Calculadora de Média.
-        <li>Calculadora de Equação de 2° Grau.
     </ul>
 </details>
 
