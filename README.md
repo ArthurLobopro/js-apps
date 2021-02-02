@@ -5,13 +5,24 @@ Para visualizar em formato de site, [clique aqui.](https://arthurlobopro.github.
 
 Atualmente são essas as aplicações feitas e hospedadas aqui:
 
-* Calculadora de Área.
-* Calculadora de Hipotenusa (e catetos).
-* Calculadora de Média.
+<details>
+    <summary>Conversores</summary>
+    <ul>
+        <li>Conversor de Bases Numéricas.
+        <li>Conversor de Distância.
+        <li>Conversor Hexadecimal/RGB.
+    </ul>
+</details>
+<details>
+    <summary>Calculadoras</summary>
+    <ul>
+        <li>Calculadora de Área.
+        <li>Calculadora de Hipotenusa (e catetos).
+        <li>Calculadora de Média.
+        <li>Calculadora de Equação de 2° Grau.
+    </ul>
+</details>
+
 * Color Picker.
-* Conversor de Bases Numéricas.
-* Conversor de Distância.
-* Conversor Hexadecimal/RGB.
-* Calculadora de Equação de 2° Grau.
 * Gerador de Potências.
 * Gerador de Tabuada.
