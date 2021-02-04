@@ -29,7 +29,7 @@ const functions= {
     },
     desconto: function name(params) {
         const caminho = './desconto/'
-        const text = 'Calculador de Desconto.'
+        const text = 'Calculadora de Desconto.'
         this.escreve_res(caminho,text)
     },
     distancia: function escreve(){
