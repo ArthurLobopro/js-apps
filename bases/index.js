@@ -126,7 +126,7 @@ function hex_to_dec(retorne, valor){
           }
           function htn(n){
                const numbers = { A: 10, B: 11, C: 12, D:13, E: 14, F: 15 }
-               return (Number(n)>=0 && Number(n)<=9) ? Number(a) : numbers[n] 
+               return (Number(n)>=0 && Number(n)<=9) ? Number(n) : numbers[n] 
           }
           let decimal = 0
           for(let i in hex){
@@ -294,7 +294,6 @@ function verifica(valor){
                          if(bin[i]!=0 && bin[i] != 1){
                               erro = true
                               alert("Parece que você não digitou o código corretamente! Verifique as informações e tente novamente.")
-                              
                          }
                     }
                     return !erro
