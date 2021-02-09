@@ -2,67 +2,67 @@ var travado =false
 var content = document.getElementById("content")
 const nome= document.getElementById("nome")
 const functions= {
-    area: function escreve(){
+    area: function (){
             const caminho = "./area/"
             const text = 'Calculador de Área'
             this.escreve_res(caminho,text,955)
         },
-    hip: function escreve(){
+    hip: function (){
             const caminho = "./hipotenusa/"
             const text = "Calculador de Hipotenusa"
             this.escreve_res(caminho,text)
     },
-    media: function escreve(){
+    media: function (){
             const caminho = "./media/"
             const text = "Calculadora de Média"
             this.escreve_res(caminho,text)
     },
-    bases: function escreve(){
+    bases: function (){
             const caminho = "./bases/"
             const text = "Conversor de  Bases"
             this.escreve_res(caminho,text,955)
     },
-    conversorImg: function escreve(){
+    conversorImg: function (){
         const caminho = './conversor-img/'
         const text = 'Conversor de Imagens'
         this.escreve_res(caminho,text)
     },
-    desconto: function name(params) {
+    desconto: function() {
         const caminho = './desconto/'
-        const text = 'Calculador de Desconto.'
+        const text = 'Calculadora de Desconto.'
         this.escreve_res(caminho,text)
     },
-    distancia: function escreve(){
+    distancia: function (){
             const caminho = "./distancia/"
             const text = "Conversor de Distância"
             this.escreve_res(caminho,text)
     },
-    rgb_hex: function escreve(){
+    rgb_hex: function (){
             const caminho = "./hex_rgb/"
             const text = "Conversor HEX/RGB"
             this.escreve_res(caminho,text)
     },
-    velocidade: function escreve(){
+    velocidade: function (){
             const caminho = "./velocidade/"
             const text = "Conversor de Velocidade"
             this.escreve_res(caminho,text)
     },
-    bascara: function escreve(){
+    bascara: function (){
             const caminho = "./bascara/"
             const text = "Equação de 2° Grau"
             this.escreve_res(caminho,text)
     },
-    potencia: function escreve(){
+    potencia: function (){
             const caminho = "./potencias/"
             const text = "Gerador de Potências"
             this.escreve_res(caminho,text)
     },
-    tabuada: function escreve(){
+    tabuada: function (){
             const caminho = "./tabuada/"
             const text = "Gerador de Tabuada"
             this.escreve_res(caminho,text)
     },
-    picker: function escreve() {
+    picker: function () {
         const caminho = "./color-picker/"
             const text = "Seletor de cores"
             this.escreve_res(caminho,text)
