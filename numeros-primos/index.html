@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="index.css">
     <title>Gerador de Números Primos</title>
 </head>
 <body>
-    
+    <h1>Gerador de Números primos</h1>
+    <section id="menu">
+        <label>
+            Início: <input type="number" id="inicio">
+        </label>
+        <label>
+            Fim: <input type="number" value="100" id="fim">
+        </label>
+        <input type="button" value="Gerar" onclick="gerar()">
+    </section>
+    <section id="res"></section>
     <script src="index.js"></script>
 </body>
 </html>

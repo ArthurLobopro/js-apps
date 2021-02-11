@@ -1,0 +1,19 @@
+#menu{
+    height: 200px;
+    width: 300px;
+    padding: 20´x;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+input[type='number']{
+    width: 100px;
+}
+input{
+    margin-bottom: 10px;
+}
+body{
+    background-color: rgb(127, 34, 170);
+}

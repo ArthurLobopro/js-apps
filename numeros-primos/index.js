@@ -10,8 +10,12 @@ const isPrimo = (n) => {
     for(i of range(1,n+1)){ divs+= (n % i == 0)? 1 : 0 }
     return divs == 2 ? true : false
 }
-primos = []
-for( i of range(0,100)){
-    if(isPrimo(i)){ primos.push(i)}
+function gerar() {
+    let inicio = Number(document.getElementById('inicio').value)
+    let fim = Number(document.getElementById('fim').value)
+    primos = []
+    for( i of range(inicio,fim)){
+        if(isPrimo(i)){ primos.push(i) }
+    }
+    console.log(primos)
 }
-console.log(primos)
