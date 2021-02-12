@@ -383,42 +383,22 @@ function escreve_para(valor){
 }
 //Muda o botão de conversão conforme o que o usuário seleciona
 function escreve_convert(){
+     const strings = {
+          decimal: "dec",
+          binario: 'bin',
+          octal: 'oct',
+          hexa: 'hex'
+     }
      let convert = document.getElementById("convert")
      let de = document.getElementsByName("de")
      let para = document.getElementsByName("para")
      let de_string
      let para_string
-     for(let i in de){
-          for(let j in para){
-               if(de[i].checked && para[j].checked){
-                    switch (de[i].value){
-                         case 'decimal':
-                              de_string = "dec"
-                              break
-                         case 'binario':
-                              de_string = 'bin'
-                              break
-                         case 'octal':
-                              de_string= 'oct'
-                              break
-                         case 'hexa':
-                              de_string= 'hex'
-                              break
-                    }
-                    switch (para[j].value){
-                         case 'decimal':
-                              para_string = 'dec'
-                              break
-                         case 'binario':
-                              para_string= 'bin'
-                              break
-                         case 'octal':
-                              para_string='oct'
-                              break
-                         case 'hexa':
-                              para_string= 'hex'
-                              break
-                    }
+     for(let i of de){
+          for(let j of para){
+               if(i.checked && j.checked){
+                    de_string=strings[i.value]
+                    para_string=strings[j.value]
                }
           }
      }
@@ -427,34 +407,25 @@ function escreve_convert(){
 function desmarca_para(valor){
      let para = document.getElementsByName("para")
      let marcado = false
-     for(let i in para){
-          para[i].disabled=false
-     }
-     for( i in para){
-          if(para[i].value==valor){
-               if(para[i].checked){
+     for(let i of para){ i.disabled=false }
+     for(let i of para){
+          if(i.value==valor){
+               if(i.checked){
                     marcado = true
-                    para[i].checked=false
+                    i.checked=false
                     escreve_para("null")
                }
-               para[i].disabled=true
+               i.disabled=true
           }
      }
 }
 //Apaga os valores fornecidos após a execução
 function zerar(valor){
-     switch(valor){
-          case 'dec':
-               document.getElementById("decimal").value=""
-               break
-          case 'bin':
-               document.getElementById("binario").value=""
-               break
-          case 'oct':
-               document.getElementById("octal").value=""
-               break
-          case 'hex':
-               document.getElementById("hexa").value=""
-               break
-     } 
+     const ids = {
+          dec: 'decimal',
+          bin: 'binario',
+          oct: 'octal',
+          hex: 'hexa'
+     }
+     document.getElementById(ids[valor]).value=''
 }
