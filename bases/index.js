@@ -1,4 +1,5 @@
 var id = 0
+const hexn = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
 //Conversão decimal para binário
 function dec_to_bin(retorne, valor){
      let teste = (retorne==true) ? true : verifica('dec')
@@ -201,7 +202,6 @@ function dec_to_hex(retorne, valor){
           let i = 0
           let num_encontrado =false
           let hex=[]
-          const hexn = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
           if(decimal[0]==0){
                hex[0]=0
           }else{
@@ -264,7 +264,6 @@ function escreve_res(content, sigla){
      ${content}</div>`
      zerar(sigla)
      id++
-
 }
 function verifica(valor){
      let decimal = document.getElementById("decimal")
@@ -290,8 +289,8 @@ function verifica(valor){
                }else{
                     let bin = binario.value
                     let erro = false
-                    for(let i in bin){
-                         if(bin[i]!=0 && bin[i] != 1){
+                    for(let i of bin){
+                         if(i !=0 && i != 1){
                               erro = true
                               alert("Parece que você não digitou o código corretamente! Verifique as informações e tente novamente.")
                          }
@@ -305,8 +304,8 @@ function verifica(valor){
                }else{
                     let oct = octal.value
                     let erro = false
-                    for(let i in oct){
-                         if(Number(oct[i]>7) || Number(oct[i]<0)){
+                    for(let i of oct){
+                         if(Number(i)>7 || Number(i)<0){
                               erro = true
                               alert("Parece que você não digitou o código corretamente! Verifique as informações e tente novamente.")
                          }
@@ -320,9 +319,8 @@ function verifica(valor){
                }else{
                     let hex = String(hexa.value).toUpperCase()
                     let erro = false
-                    let letras = ["A", "B", "C", "D", "E", "F","0", "1", "2", "3", "4","5","6","7","8","9"]
-                    for(let i in hex){
-                         if(letras.indexOf(hex[i])==-1){
+                    for(let i of hex){
+                         if(hexn.indexOf(i)==-1){
                               erro = true
                               alert("Parece que você não digitou o código corretamente! Verifique as informações e tente novamente.")
                          }
@@ -331,54 +329,30 @@ function verifica(valor){
                }
      }
 }
+const texts = {
+     decimal: "Decimal",
+     binario: 'Binário',
+     octal: 'Octal',
+     hexa: 'Hexadecimal',
+     null: ''
+}
 function escreve_de(valor){
      let input_de = document.getElementById("input-de")
      let de = document.getElementById("de")
-     switch(valor){
-          case "decimal":
-               input_de.innerHTML=
-               `Decimal: <input type="number" min="0" id="decimal" onkeydown="auto_submit(event)">`
-               de.innerText="Decimal"
-               break
-          case "binario":
-               input_de.innerHTML=
-               `Binário: <input type="text" min="0" pattern="[0-1]{1,}" id="binario" onkeydown="auto_submit(event)">`
-               de.innerText="Binário"
-               break
-          case "octal":
-               input_de.innerHTML=
-               `Octal: <input type="text" min="0" pattern="[0-7]{1,}" id="octal" onkeydown="auto_submit(event)">`
-               de.innerText="Octal"
-               break
-          case 'hexa':
-               input_de.innerHTML=
-               `Hexadecimal: <input type="text" min="0" pattern="[0-9a-fA-F]{1,}" id="hexa" onkeydown="auto_submit(event)">`
-               de.innerText="Hexadecimal"
-               break
-
+     const inputs = {
+          decimal: `Decimal: <input type="number" min="0" id="decimal" onkeydown="auto_submit(event)">`,
+          binario: `Binário: <input type="text" min="0" pattern="[0-1]{1,}" id="binario" onkeydown="auto_submit(event)">`,
+          octal: `Octal: <input type="text" min="0" pattern="[0-7]{1,}" id="octal" onkeydown="auto_submit(event)">`,
+          hexa: `Hexadecimal: <input type="text" min="0" pattern="[0-9a-fA-F]{1,}" id="hexa" onkeydown="auto_submit(event)">`
      }
+     input_de.innerHTML=inputs[valor]
+     de.innerText=texts[valor]
      escreve_convert()
      desmarca_para(valor)
 }
 function escreve_para(valor){
      let para = document.getElementById("para")
-     switch(valor){
-          case "decimal":
-               para.innerText="Decimal"
-               break
-          case "binario":
-               para.innerText="Binário"
-               break
-          case 'octal':
-               para.innerText="Octal"
-               break
-          case 'hexa':
-               para.innerText="Hexadecimal"
-               break
-          case "null":
-               para.innerText=""
-               break
-     }
+     para.innerText= valor == 'null' ? '' : texts[valor]
      escreve_convert()
 }
 //Muda o botão de conversão conforme o que o usuário seleciona
