@@ -74,6 +74,8 @@ const functions= {
         nome.innerText=texto
         nome.href=caminho
         mostra_msg()
+        content.style.opacity='1'
+        content.style.backgroundImage='none'
     },
 }
 var nome_backup_escreve

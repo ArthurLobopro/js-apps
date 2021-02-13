@@ -79,6 +79,10 @@ a{
 #content{
     float: right;
     text-align: left;
+    background-image: url('public/midia/preview.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
 }
 #logo{
     width: calc(270px);
