@@ -1,148 +1,180 @@
-/* *{
-    padding: 0;
-    margin: 0;
-} */
-#container{
-    border: solid rgba(60,64,67,0.302);
-    border-width: 1px 1px 1px 3px;
-    border-left-color: green;
-    width: calc(100% - 20px);
-    display: block;
-    height: calc(45px * 10 + 258px);
-    padding: 0 0 0 0;
-    margin: 10px 0;
+#container {
+  border: solid rgba(60, 64, 67, 0.302);
+  border-width: 1px 1px 1px 3px;
+  border-left-color: green;
+  width: calc(100% - 20px);
+  display: block;
+  height: calc(45px * 10 + 258px);
+  padding: 0 0 0 0;
+  margin: 10px 0;
 }
-#menu-lateral{
-    height: inherit;
-    width: 270px;
-    float: left;
-    border: solid rgba(60,64,67,0.302);
-    border-width: 0 1px 0 0;
-    padding: 0 0 0 0;
+
+#menu-lateral {
+  height: inherit;
+  width: 270px;
+  float: left;
+  border: solid rgba(60, 64, 67, 0.302);
+  border-width: 0 1px 0 0;
+  padding: 0 0 0 0;
 }
-ul{
-    margin: 0;
-    width: inherit;
-    height: calc(100% - 273px);
-    padding: 0;
-    float: left;
-    font-family: 'Literata', serif;
-    font-size: 15px;
-    overflow-y: auto;
-    overflow-x: hidden;
+
+ul {
+  margin: 0;
+  width: inherit;
+  height: calc(100% - 273px);
+  padding: 0;
+  float: left;
+  font-family: 'Literata', serif;
+  font-size: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-object{
-    width: 100%;
-    height:calc(100% - 1px);
+
+object {
+  width: 100%;
+  height: calc(100% - 1px);
 }
-li{
-    border: solid rgba(60,64,67,0.302);
-    border-width: 0 0 1px 0;
-    border-left: none;
-    margin: 0;
-    list-style: none;
-    height: 45px;
-    line-height: 45px;
-    text-align: left;
-    padding-left: 20px;
-    box-sizing: border-box;
-    float: right;
-    max-width: 270px;
-    min-width: 260px;
-    width: 100%;
-    user-select: none;
+
+li {
+  border: solid rgba(60, 64, 67, 0.302);
+  border-width: 0 0 1px 0;
+  border-left: none;
+  margin: 0;
+  list-style: none;
+  height: 45px;
+  line-height: 45px;
+  text-align: left;
+  padding-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: right;
+  max-width: 270px;
+  min-width: 260px;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-li:hover{
-    background-color: #f1f3f4;
+
+li:hover {
+  background-color: #f1f3f4;
 }
-ul > li:last-child{
-    border-bottom: none;
+
+ul > li:last-child {
+  border-bottom: none;
 }
-#msg{
-    text-align: center;
-    border-bottom: 1px solid rgba(60,64,67,0.302);
-    position: relative;
-    top: 0;
-    right: -1px;
-    left: 0px;
-    float: right;
-    margin:  auto auto auto -2px;
-    height: 30px;
-    line-height: 30px;
-    visibility: hidden;
-    font-family: 'Roboto Slab', 'Literata' , serif;
-    font-size: 15px;
+
+#msg {
+  text-align: center;
+  border-bottom: 1px solid rgba(60, 64, 67, 0.302);
+  position: relative;
+  top: 0;
+  right: -1px;
+  left: 0px;
+  float: right;
+  margin: auto auto auto -2px;
+  height: 30px;
+  line-height: 30px;
+  visibility: hidden;
+  font-family: 'Roboto Slab', 'Literata' , serif;
+  font-size: 15px;
 }
-a{
-    color: #0000EE;
+
+a {
+  color: #0000EE;
 }
-#content{
-    float: right;
-    text-align: left;
-    background-image: url('public/midia/preview.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5;
+
+#content {
+  float: right;
+  text-align: left;
+  background-image: url("public/midia/preview.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
 }
-#logo{
-    width: calc(270px);
-    margin: 1px -1px 0 -2px;
-    border-top: 1px solid rgba(60,64,67,0.302);
+
+#logo {
+  width: calc(270px);
+  margin: 1px -1px 0 -2px;
+  border-top: 1px solid rgba(60, 64, 67, 0.302);
 }
-#main{
-    text-align: center;
-    padding: 0 10px;
+
+#main {
+  text-align: center;
+  padding: 0 10px;
 }
-#inst{
-    width: max-content;
-    margin: 10px auto;
+
+#inst {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 10px auto;
 }
-.link{
-    background-image: url('./public/midia/hyperlink.png');
-    width: 30px;
-    height: 30px;
-    float: right;
-    margin: 6px 5px 4px;
+
+.link {
+  background-image: url("./public/midia/hyperlink.png");
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin: 6px 5px 4px;
 }
-.link:hover{
-    background-image: url('./public/midia/hyperlink-bold.png');
+
+.link:hover {
+  background-image: url("./public/midia/hyperlink-bold.png");
 }
-summary{ 
-    list-style: none; 
-    height: 45px;
-    display: flex;
-    align-items: center;
-    font-size: 19px;
-    padding-left: 15px;
+
+summary {
+  list-style: none;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 19px;
+  padding-left: 15px;
 }
-summary::-webkit-details-marker { display: none; }
-details{
-    width: 100%;
-    border-bottom: 1px solid rgba(60,64,67,0.302);
-    cursor: pointer;
+
+summary::-webkit-details-marker {
+  display: none;
 }
-summary:focus{
-    outline: none;
+
+summary:focus {
+  outline: none;
 }
-details summary::before { 
-    content:url('public/midia/rigth-arrow.png');
-    width: 16px;
-    height: 28px;
+
+details {
+  width: 100%;
+  border-bottom: 1px solid rgba(60, 64, 67, 0.302);
+  cursor: pointer;
 }
-details[open] summary::before { 
-    transform: rotate(90deg); 
-    width: 16px;
-    height: 19px;
-  }
+
+detailssummary::before {
+  content: url("public/midia/rigth-arrow.png");
+  width: 16px;
+  height: 28px;
+}
+
+details[open] {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  width: 16px;
+  height: 19px;
+}
+
 @font-face {
-    font-family: 'Literata';
-    src: url('./public/fontes/Literata-Regular-opsz=12.ttf');
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
+  font-family: 'Literata';
+  src: url("./public/fontes/Literata-Regular-opsz=12.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
-@font-face{
-    font-family: 'Roboto Slab';
-    src: url("./public/fontes/RobotoSlab-Medium.ttf");
-    font-weight: 400;
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url("./public/fontes/RobotoSlab-Medium.ttf");
+  font-weight: 400;
 }
+/*# sourceMappingURL=index.css.map */
