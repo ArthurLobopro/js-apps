@@ -1,3 +1,5 @@
+@import url("public/css/Roboto-Slab.css");
+@import url("public/css/literatta.css");
 #container {
   border: solid rgba(60, 64, 67, 0.302);
   border-width: 1px 1px 1px 3px;
@@ -162,19 +164,5 @@ details[open] {
           transform: rotate(90deg);
   width: 16px;
   height: 19px;
-}
-
-@font-face {
-  font-family: 'Literata';
-  src: url("./public/fontes/Literata-Regular-opsz=12.ttf");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Roboto Slab';
-  src: url("./public/fontes/RobotoSlab-Medium.ttf");
-  font-weight: 400;
 }
 /*# sourceMappingURL=index.css.map */
