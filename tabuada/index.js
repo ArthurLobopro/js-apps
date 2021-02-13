@@ -1,18 +1,26 @@
-var res=document.getElementById("res")
-var id = 0
+const numero=document.getElementById("num")
+const inicio=document.getElementById("inicio")
+const fim=document.getElementById("fim")
+const res=document.getElementById("res")
+const button = document.getElementById('submit-button')
+const call = (event)=>{
+    if(event.key == 'Enter'){ gerar() }
+}
+numero.onkeydown = call
+inicio.onkeydown = call
+fim.onkeydown = call
+button.onclick = () => gerar()
+let id = 0
 function gerar(){
-    let num=document.getElementById("num")
-    let inicio=document.getElementById("inicio")
-    let fim=document.getElementById("fim")
     let resposta=""
-    if(num.value.length == 0){
+    if(numero.value.length == 0){
         alert("Por favor insira um número para continuar")
     }else if(inicio.value.length == 0 || fim.value.length == 0){
         alert("Por favor insira um início e fim para continuar")
     }else{
-        num=Number(num.value)
-        inicio=Number(inicio.value)
-        fim=Number(fim.value)
+        let num=Number(numero.value)
+        let i=Number(inicio.value)
+        let f=Number(fim.value)
         if(inicio>fim){
             let ajudante=fim
             fim=inicio
@@ -20,13 +28,13 @@ function gerar(){
         }
         resposta+=`<div class="res" id="div${id}">
         <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>`
-        for(let i=inicio;i<=fim;i++){
+        for(i;i<=f;i++){
             resposta+=`${num} x ${i} = ${num*i}<br>`
         }
         resposta+=`<div>`
         res.innerHTML+=resposta
         res.style.display="inline-block"
-        num=document.getElementById("num").value=""
+        numero.value=""
         id++
     }
 }
