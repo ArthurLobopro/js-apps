@@ -1,4 +1,4 @@
-#menu {
+#menu{
     height: 200px;
     width: 300px;
     padding: 20´x;
@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
 }
-input[type='number'] {
+input[type='number']{
     width: 100px;
 }
 input {
@@ -16,4 +16,11 @@ input {
 }
 body {
     background-color: rgb(127, 34, 170);
+}
+#res{
+    width: 95%;
+    padding: 10px;
+}
+.res{
+    width: 100%;
 }
