@@ -1,23 +1,58 @@
 @import url("public/css/Roboto-Slab.css");
 @import url("public/css/literatta.css");
+body {
+  height: 100vh;
+  padding: 20px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+@media screen and (max-width: 999px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 #container {
   border: solid rgba(60, 64, 67, 0.302);
   border-width: 1px 1px 1px 3px;
   border-left-color: green;
-  width: calc(100% - 20px);
+  width: 100%;
   display: block;
-  height: calc(45px * 10 + 258px);
+  min-height: calc(45px * 6 + 275px);
+  height: 100%;
   padding: 0 0 0 0;
-  margin: 10px 0;
+  margin: 0 0 0 0;
+}
+
+@media screen and (max-width: 999px) {
+  #container {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border-right: none;
+  }
 }
 
 #menu-lateral {
-  height: inherit;
+  height: 1em;
   width: 270px;
   float: left;
   border: solid rgba(60, 64, 67, 0.302);
   border-width: 0 1px 0 0;
   padding: 0 0 0 0;
+}
+
+@media screen and (max-width: 999px) {
+  #menu-lateral {
+    width: 300px;
+  }
 }
 
 ul {
@@ -40,7 +75,6 @@ object {
 li {
   border: solid rgba(60, 64, 67, 0.302);
   border-width: 0 0 1px 0;
-  border-left: none;
   margin: 0;
   list-style: none;
   height: 45px;
@@ -50,7 +84,7 @@ li {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   float: right;
-  max-width: 270px;
+  max-width: 300px;
   min-width: 260px;
   width: 100%;
   -webkit-user-select: none;
@@ -67,6 +101,12 @@ ul > li:last-child {
   border-bottom: none;
 }
 
+@media screen and (max-width: 999px) {
+  ul > li:last-child {
+    border-bottom: 1px solid rgba(60, 64, 67, 0.302);
+  }
+}
+
 #msg {
   text-align: center;
   border-bottom: 1px solid rgba(60, 64, 67, 0.302);
@@ -76,11 +116,17 @@ ul > li:last-child {
   left: 0px;
   float: right;
   margin: auto auto auto -2px;
-  height: 30px;
+  min-height: 30px;
+  height: auto;
   line-height: 30px;
-  visibility: hidden;
   font-family: 'Roboto Slab', 'Literata' , serif;
   font-size: 15px;
+}
+
+@media screen and (max-width: 999px) {
+  #msg {
+    display: none;
+  }
 }
 
 a {
@@ -96,10 +142,22 @@ a {
   opacity: 0.5;
 }
 
+@media screen and (max-width: 999px) {
+  #content {
+    display: none;
+  }
+}
+
 #logo {
-  width: calc(270px);
-  margin: 1px -1px 0 -2px;
+  width: 270px;
+  margin: 1px -1px 0 0;
   border-top: 1px solid rgba(60, 64, 67, 0.302);
+}
+
+@media screen and (max-width: 999px) {
+  #logo {
+    border-top: none;
+  }
 }
 
 #main {
@@ -153,16 +211,20 @@ details {
   cursor: pointer;
 }
 
-detailssummary::before {
+details summary::before {
   content: url("public/midia/rigth-arrow.png");
   width: 16px;
   height: 28px;
 }
 
-details[open] {
+details[open] summary::before {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   width: 16px;
   height: 19px;
+}
+
+details li:last-child {
+  border-bottom: 1px solid rgba(60, 64, 67, 0.302);
 }
 /*# sourceMappingURL=index.css.map */

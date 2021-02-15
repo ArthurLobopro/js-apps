@@ -1,6 +1,7 @@
 var travado =false
 var content = document.getElementById("content")
 const nome= document.getElementById("nome")
+const msg = document.getElementById("msg")
 const functions= {
     area: function (){
             const caminho = "./area/"
@@ -68,14 +69,14 @@ const functions= {
             this.escreve_res(caminho,text)
     },
     escreve_res(caminho,texto,minWid=810){
-        const text = `<object data="${caminho}" type="text/html"></object>`
-        content.innerHTML= text
-        document.body.style.minWidth=`${minWid}px`
-        nome.innerText=texto
-        nome.href=caminho
-        mostra_msg()
-        content.style.opacity='1'
-        content.style.backgroundImage='none'
+        if (document.body.clientWidth>=1000) {
+            const text = `<object data="${caminho}" type="text/html"></object>`
+            content.innerHTML= text
+            document.body.style.minWidth=`${minWid}px`
+            msg.innerHTML=`Você está vendo <a href='${caminho}'>${texto}</a>`
+            content.style.opacity='1'
+            content.style.backgroundImage='none'
+        }
     },
 }
 var nome_backup_escreve
@@ -86,7 +87,6 @@ function escreve(nome){
         }
     nome_backup_escreve=nome
     }
-    
 }
 var nome_backup_trava
 //Usada apenas na função trava
@@ -104,8 +104,4 @@ function trava(nome){
         }
     }
     nome_backup_trava=nome
-}
-function mostra_msg(){
-    let msg= document.getElementById("msg")
-    msg.style.visibility="visible"
 }

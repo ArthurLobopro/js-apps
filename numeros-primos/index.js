@@ -1,5 +1,7 @@
+const res = document.getElementById('res')
 let min = 0 
 let max = 100
+let primos
 const range = (min,max,pass=1) => {
     let array = []
     for(i = min;i<max;i+=pass){ array.push(i) }
@@ -17,5 +19,6 @@ function gerar() {
     for( i of range(inicio,fim)){
         if(isPrimo(i)){ primos.push(i) }
     }
-    console.log(primos)
+    res.innerHTML=`${primos.join(', ')}.`
+    res.style.display='flex'
 }

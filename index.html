@@ -8,99 +8,96 @@
     <title>Home Page</title>
 </head>
 <body>
-    <section id="main">
-        <span id="inst">Coloque o mouse em cima do programa que deseja para usá-lo aqui, clique rapidamente duas vezes para travá-lo/destravá-lo ou clique no icone de link para abri-lo em nova guia (recomendado).</span>
-        <div id="container">
-            
-            <div id="menu-lateral">
-                <ul id="lista">
-                    <details>
-                        <summary>Calculadoras</summary>
-                        <li onmouseenter="escreve('area')" ondblclick="trava('area')">
-                            Calculador de Área.
-                            <a href="./area/" target="_blank"><div class="link"></div></a>
-                        </li>
-                        <li onmouseenter="escreve('desconto')" ondblclick="trava('desconto')">
-                            Calculadora de desconto.
-                            <a href="./desconto/" target="_blank"><div class="link"></div></a>
-                        </li>
-                        <li onmouseenter="escreve('hip')" ondblclick="trava('hip')">
-                            Calculadora de Hipotenusa.
-                            <a href="./hipotenusa/" target="_blank"><div class="link"></div></a>
-                        </li>
-                        <li onmouseenter="escreve('media')" ondblclick="trava('media')">
-                            Calculadora de Média.
-                            <a href="./media/" target="_blank"><div class="link"></div></a>
-                        </li>
-                    </details>
-                    <details>
-                        <summary>Conversores</summary>
-                        <li onmouseenter="escreve('bases')" ondblclick="trava('bases')">
-                        Conversor de Bases.
-                        <a href="./bases/" target="_blank"><div class="link"></div></a>
-                        </li>
-                        <li onmouseenter="escreve('conversorImg')" ondblclick="trava('conversorImg')">
-                            Conversor de Imagens.
-                            <a href="./conversor-img/" target="_blank"><div class="link"></div></a>
-                        </li>
-                        <li onmouseenter="escreve('distancia')" ondblclick="trava('distancia')">
-                            Conversor de Distância.
-                            <a href="./distancia/" target="_blank"><div class="link"></div></a>
-                        </li>
-                        <li onmouseenter="escreve('rgb_hex')" ondblclick="trava('rgb_hex')">
-                            Conversor HEX/RGB.
-                            <a href="./hex_rgb/" target="_blank"><div class="link"></div></a>
-                        </li>
-                        <li onmouseenter="escreve('velocidade')" ondblclick="trava('velocidade')">
-                            Conversor de Velocidade.
-                            <a href="./velocidade/" target="_blank"><div class="link"></div></a>
-                        </li>
-                    </details>
-                    <li onmouseenter="escreve('picker')" ondblclick="trava('picker')">
-                        Color Picker.
-                        <a href="./color-picker/" target="_blank"><div class="link"></div></a>
+    <div id="container">
+        <div id="menu-lateral">
+            <ul id="lista">
+                <details>
+                    <summary>Calculadoras</summary>
+                    <li onmouseenter="escreve('area')" ondblclick="trava('area')">
+                        Calculador de Área.
+                        <a href="./area/" target="_blank"><div class="link"></div></a>
                     </li>
-                    <li onmouseenter="escreve('bascara')" ondblclick="trava('bascara')">
-                        Equação de 2º Grau.
-                        <a href="./bascara/" target="_blank"><div class="link"></div></a>
+                    <li onmouseenter="escreve('desconto')" ondblclick="trava('desconto')">
+                        Calculadora de desconto.
+                        <a href="./desconto/" target="_blank"><div class="link"></div></a>
                     </li>
-                    <li onmouseenter="escreve('potencia')" ondblclick="trava('potencia')">
-                        Gerador de Potências.
-                        <a href="./potencias/" target="_blank"><div class="link"></div></a>
+                    <li onmouseenter="escreve('hip')" ondblclick="trava('hip')">
+                        Calculadora de Hipotenusa.
+                        <a href="./hipotenusa/" target="_blank"><div class="link"></div></a>
                     </li>
-                    <li onmouseenter="escreve('tabuada')" ondblclick="trava('tabuada')">
-                        Gerador de Tabuada.
-                        <a href="./tabuada/" target="_blank"><div class="link"></div></a>
+                    <li onmouseenter="escreve('media')" ondblclick="trava('media')">
+                        Calculadora de Média.
+                        <a href="./media/" target="_blank"><div class="link"></div></a>
                     </li>
-                </ul>
-                <img src="public/midia/logo-white.jpg" alt="Logo" id="logo">
-            </div>
-            
-            <div id="msg">Você está vendo <a href="" id="nome"></a></div>
-            <div id="content">
-                
-            </div>
+                </details>
+                <details>
+                    <summary>Conversores</summary>
+                    <li onmouseenter="escreve('bases')" ondblclick="trava('bases')">
+                    Conversor de Bases.
+                    <a href="./bases/" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('conversorImg')" ondblclick="trava('conversorImg')">
+                        Conversor de Imagens.
+                        <a href="./conversor-img/" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('distancia')" ondblclick="trava('distancia')">
+                        Conversor de Distância.
+                        <a href="./distancia/" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('rgb_hex')" ondblclick="trava('rgb_hex')">
+                        Conversor HEX/RGB.
+                        <a href="./hex_rgb/" target="_blank"><div class="link"></div></a>
+                    </li>
+                    <li onmouseenter="escreve('velocidade')" ondblclick="trava('velocidade')">
+                        Conversor de Velocidade.
+                        <a href="./velocidade/" target="_blank"><div class="link"></div></a>
+                    </li>
+                </details>
+                <li onmouseenter="escreve('picker')" ondblclick="trava('picker')">
+                    Color Picker.
+                    <a href="./color-picker/" target="_blank"><div class="link"></div></a>
+                </li>
+                <li onmouseenter="escreve('bascara')" ondblclick="trava('bascara')">
+                    Equação de 2º Grau.
+                    <a href="./bascara/" target="_blank"><div class="link"></div></a>
+                </li>
+                <li onmouseenter="escreve('potencia')" ondblclick="trava('potencia')">
+                    Gerador de Potências.
+                    <a href="./potencias/" target="_blank"><div class="link"></div></a>
+                </li>
+                <li onmouseenter="escreve('tabuada')" ondblclick="trava('tabuada')">
+                    Gerador de Tabuada.
+                    <a href="./tabuada/" target="_blank"><div class="link"></div></a>
+                </li>
+            </ul>
+            <img src="public/midia/logo-white.jpg" alt="Logo" id="logo">
         </div>
-    </section>
+        
+        <div id="msg">Ponha o cursor no que deseja para o preview, dê um clique duplo para travá-lo/destravá-lo.</div>
+        <div id="content">
+            
+        </div>
+    </div>
     <script src="index.js"></script>
     <script>
         var container = document.getElementById("container")
         var content = document.getElementById("content")
         var menu = document.getElementById("menu-lateral")
-        var msg = document.getElementById("msg")
         window.onload=function(){
             //Redimensiona o elemento #msg
             msg.style.width=`calc(${container.clientWidth}px - 271px )`
             //Redimensiona o elemento #content
             content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
             content.style.width=`${msg.clientWidth}px`
+            menu.style.height=`${container.clientHeight}px`
         }
-        window.onresize=function(){
+        window.onresize = function(){
             //Redimensiona o elemento #msg
             msg.style.width=`calc(${container.clientWidth}px - 271px )`
             //Redimensiona o elemento #content
             content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
             content.style.width=`${msg.clientWidth}px`
+            menu.style.height=`${container.clientHeight}px`
         }
     </script>
 </body>
