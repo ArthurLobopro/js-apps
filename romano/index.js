@@ -1,4 +1,5 @@
-let string = 'I'
+const res = document.getElementById('res')
+const romano = document.getElementById('rom')
 const valores = { I: 1, V: 5, X:10, L:50, C: 100, D: 500, M: 1000 }
 const algarismos = ['I','V','X','L','C','D','M']
 const valida = (array) =>{
@@ -27,7 +28,10 @@ const soma = array => {
         if(array[i]<array[i+1]){ total -= array[i] }
     }
 }
+let id = 0
+romano.onkeyup = () => romano.value = String(romano.value).toUpperCase()
 function convert() {
+    const string = String(romano.value).toUpperCase()
     let numbers = string.split('')
     let teste,codeError
     [teste,codeError] = valida(numbers)
@@ -35,8 +39,17 @@ function convert() {
         for(i in numbers){
             numbers[i]=valores[numbers[i]]
         }
-        let total = soma(numbers)
-        console.log(total)
+        let dec = soma(numbers)
+        let content = `
+        <div class="res" id="div${id}">
+            <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
+            Romano:<br> ${string}<br>
+            Decimal:<br> ${dec}
+        </div>`
+        res.innerHTML+=content
+        res.style.display='flex'
+        romano.value=''
+        id++
     }else{
         switch (codeError) {
             case 0:
@@ -48,4 +61,3 @@ function convert() {
         }
     }
 }
-convert()

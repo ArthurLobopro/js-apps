@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="../public/js/main.js"></script>
+    <script src="index.js" defer></script>
     <title>Conversor de Algarismos Romanos</title>
 </head>
 <body>
     <section id="menu">
-        Algarismos Romanos: <input type="text" id="rom">
-        <input type="button" value="Converter">
+        Algarismos Romanos: <input type="text" id="rom" onkeydown="auto_submit(event)">
+        <input type="button" id="submit-button" value="Converter" onclick="convert()">
     </section>
     <section id="res"></section>
+    <footer>&copy;Arthur Lobo</footer>
 </body>
 </html>
