@@ -30,7 +30,7 @@ const functions= {
     },
     desconto: function() {
         const caminho = './desconto/'
-        const text = 'Calculadora de Desconto.'
+        const text = 'Calculadora de Desconto'
         this.escreve_res(caminho,text)
     },
     distancia: function (){
@@ -42,6 +42,11 @@ const functions= {
             const caminho = "./hex_rgb/"
             const text = "Conversor HEX/RGB"
             this.escreve_res(caminho,text)
+    },
+    romano: function(){
+        const caminho = "./romano/"
+        const text = "Conversor Romano/Decimal"
+        this.escreve_res(caminho,text)
     },
     velocidade: function (){
             const caminho = "./velocidade/"
