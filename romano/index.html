@@ -6,18 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/main.css">
     <link rel="stylesheet" href="index.css">
-    <script src="../public/js/main.js"></script>
-    <script src="index.js" defer></script>
     <title>Conversor de Algarismos Romanos</title>
 </head>
 <body>
     <section id="menu">
         <div id="data-rom">
-            Algarismos Romanos: <input type="text" id="rom" onkeydown="auto_submit(event)">
+            Algarismos Romanos: <input type="text" id="rom">
             <input type="button" id="rom-button" value="Converter">
         </div>
         <div id="data-dec" class="hidden">
-            Número Decimal: <input type="number" id="dec">
+            Número Decimal: <input type="number" min="1" id="dec">
             <input type="button" id="dec-button" value="Converter">
         </div>
         <div id="selecao">
@@ -30,5 +28,6 @@
     </section>
     <section id="res"></section>
     <footer>&copy;Arthur Lobo</footer>
+    <script src="index.js" type="module"></script>
 </body>
 </html>

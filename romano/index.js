@@ -1,15 +1,17 @@
+//Variáveis globais
 const res = document.getElementById('res')
 const romano = document.getElementById('rom')
 const dec = document.getElementById('dec')
 const valores = { I: 1, V: 5, X:10, L:50, C: 100, D: 500, M: 1000 }
 const algarismos = ['I','V','X','L','C','D','M']
+let id = 0
 const valida = array =>{
-    for(i of array){
+    for(let i of array){
         if(algarismos.indexOf(i)==-1){ return [false,0] }
     }
     array=array.join('')
     console.log(array)
-    for(i of algarismos){
+    for(let i of algarismos){
         let char = i+i+i+i
         if(array.indexOf(char) !== -1){ return [false,1] }
     }
@@ -18,7 +20,7 @@ const valida = array =>{
 const soma = array => {
     array.push('end')
     let total = 0
-    for(i in array){
+    for(let i in array){
         //for in retorna uma string e não um número, de modo que é preciso converte-lo
         i = Number(i)
         if(array[i+1] === 'end'){
@@ -29,29 +31,37 @@ const soma = array => {
         if(array[i]<array[i+1]){ total -= array[i] }
     }
 }
+const addEvent = () => {
+    let div = document.querySelectorAll('.res .circle')
+    for(let i of div){
+        i.onclick = event =>{
+           let element = document.getElementById(`div${event.target.dataset.id}`)
+           res.removeChild(element)
+        }
+    }
+}
 const escreve = (content,input)=>{
-    res.innerHTML+=content
+    res.innerHTML+=`
+    <div class="res" id="div${id}">
+        <div class="circle" data-id="${id}"><img src="../public/midia/close-icon.png" data-id="${id}"></div>
+        ${content}
+    </div>`
+    addEvent()
     res.style.display='flex'
     input.value=''
     id++
 }
-let id = 0
 function rom_to_dec() {
     const string = String(romano.value).toUpperCase()
     let numbers = string.split('')
     let teste,codeError
     [teste,codeError] = valida(numbers)
     if(teste){
-        for(i in numbers){
+        for(let i in numbers){
             numbers[i]=valores[numbers[i]]
         }
         let dec = soma(numbers)
-        let content = `
-        <div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
-            Romano:<br> ${string}<br>
-            Decimal:<br> ${dec}
-        </div>`
+        let content = `Romano:<br> ${string}<br>\nDecimal:<br> ${dec}`
         escreve(content,romano)
     }else{
         switch (codeError) {
@@ -71,19 +81,19 @@ const numeros = {
     '4':{ '1':'M', '2':'MM','3':'MMM' }
 }
 function dec_to_rom(){
-    let rom = String(dec.value).split('')
-    for(i in rom){
-        rom[i]=numeros[rom.length - Number(i)][rom[i]]
+    if (Number(dec.value)>0) {
+        let rom = String(dec.value).split('')
+        for(let i in rom){
+            rom[i]=numeros[rom.length - Number(i)][rom[i]]
+        }
+        let content = `Decimal:<br> ${dec.value}<br>\nRomano:<br> ${rom.join('')}`
+        escreve(content,dec)
     }
-    let content = `
-    <div class="res" id="div${id}">
-        <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
-        Decimal:<br> ${dec.value}<br>
-        Romano:<br> ${rom.join('')}
-    </div>`
-    escreve(content,dec)
+    else{
+        alert('Não há como escrever 0 ou números negativos em algarismos romanos')
+    }
 }
-// Detecção de Cliques
+// Detecção de Eventos
 const radio = document.querySelectorAll('#selecao input')
 const rom_data = document.getElementById('data-rom')
 const dec_data = document.getElementById('data-dec')
@@ -93,7 +103,7 @@ const troca = () => {
     rom_data.classList.toggle('hidden')
     dec_data.classList.toggle('hidden')
 }
-for(i of radio){ i.onclick = troca }
+for(let i of radio){ i.onclick = troca }
 button_rom.onclick = rom_to_dec
 button_dec.onclick = dec_to_rom
 romano.onkeydown = event =>{
