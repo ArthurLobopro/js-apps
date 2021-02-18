@@ -1,3 +1,4 @@
+import { addEvent,circle, id } from "../public/js/modules.js";
 const numero=document.getElementById("num")
 const inicio=document.getElementById("inicio")
 const fim=document.getElementById("fim")
@@ -10,7 +11,6 @@ numero.onkeydown = call
 inicio.onkeydown = call
 fim.onkeydown = call
 button.onclick = () => gerar()
-let id = 0
 function gerar(){
     let resposta=""
     if(numero.value.length == 0){
@@ -26,15 +26,16 @@ function gerar(){
             fim=inicio
             inicio=ajudante
         }
-        resposta+=`<div class="res" id="div${id}">
-        <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>`
+        resposta+=`<div class="res" id="div${id.id}">
+        ${circle(id.id)}`
         for(i;i<=f;i++){
             resposta+=`${num} x ${i} = ${num*i}<br>`
         }
-        resposta+=`<div>`
+        resposta+=`</div>`
         res.innerHTML+=resposta
+        addEvent()
         res.style.display="inline-block"
         numero.value=""
-        id++
+        id.increase()
     }
 }
