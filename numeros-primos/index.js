@@ -19,6 +19,11 @@ function gerar() {
     for( i of range(inicio,fim)){
         if(isPrimo(i)){ primos.push(i) }
     }
-    res.innerHTML=`${primos.join(', ')}.`
+    let content = `
+    <div class='res'>
+        Intervalo: ${inicio}-${fim}<br>
+        Sequência: ${primos.join(', ')}.
+    </div>`
+    res.innerHTML+=content
     res.style.display='flex'
 }
