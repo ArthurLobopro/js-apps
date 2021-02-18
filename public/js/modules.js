@@ -10,7 +10,10 @@ const addEvent = () => {
            let element = document.getElementById(`div${event.target.dataset.id}`)
            res.removeChild(element)
            let a = res.innerHTML
-            if(a.indexOf('</div>')==-1){ id.reset()}
+            if(a.indexOf('</div>')==-1){ 
+                id.reset()
+                res.style.display='none'
+            }
         }
     }
 }
