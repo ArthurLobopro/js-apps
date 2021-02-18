@@ -20,7 +20,12 @@ body {
 #res{
     width: 95%;
     padding: 10px;
+    flex-wrap: wrap;
 }
 .res{
-    width: 100%;
+    width: auto;
+    border: 1px solid rgb(127, 34, 170);
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px 5px 10px;
 }
