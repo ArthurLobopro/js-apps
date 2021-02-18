@@ -1,3 +1,4 @@
+import { addEvent,circle } from "../public/js/modules.js";
 //Variáveis globais
 const res = document.getElementById('res')
 const romano = document.getElementById('rom')
@@ -31,19 +32,10 @@ const soma = array => {
         if(array[i]<array[i+1]){ total -= array[i] }
     }
 }
-const addEvent = () => {
-    let div = document.querySelectorAll('.res .circle')
-    for(let i of div){
-        i.onclick = event =>{
-           let element = document.getElementById(`div${event.target.dataset.id}`)
-           res.removeChild(element)
-        }
-    }
-}
 const escreve = (content,input)=>{
     res.innerHTML+=`
     <div class="res" id="div${id}">
-        <div class="circle" data-id="${id}"><img src="../public/midia/close-icon.png" data-id="${id}"></div>
+        ${circle(id)}
         ${content}
     </div>`
     addEvent()
