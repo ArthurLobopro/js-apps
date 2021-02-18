@@ -12,8 +12,21 @@
 </head>
 <body>
     <section id="menu">
-        Algarismos Romanos: <input type="text" id="rom" onkeydown="auto_submit(event)">
-        <input type="button" id="submit-button" value="Converter" onclick="convert()">
+        <div id="data-rom">
+            Algarismos Romanos: <input type="text" id="rom" onkeydown="auto_submit(event)">
+            <input type="button" id="rom-button" value="Converter">
+        </div>
+        <div id="data-dec" class="hidden">
+            Número Decimal: <input type="number" id="dec">
+            <input type="button" id="dec-button" value="Converter">
+        </div>
+        <div id="selecao">
+            Conversões: <br>
+            <div>
+                <label><input type="radio" name="convert" value="data-rom" checked> Romano para Decimal.</label>
+                <label><input type="radio" name="convert" value="data-dec"> Decimal para Romano.</label>
+            </div>
+        </div>
     </section>
     <section id="res"></section>
     <footer>&copy;Arthur Lobo</footer>

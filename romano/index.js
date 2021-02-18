@@ -1,8 +1,9 @@
 const res = document.getElementById('res')
 const romano = document.getElementById('rom')
+const dec = document.getElementById('dec')
 const valores = { I: 1, V: 5, X:10, L:50, C: 100, D: 500, M: 1000 }
 const algarismos = ['I','V','X','L','C','D','M']
-const valida = (array) =>{
+const valida = array =>{
     for(i of array){
         if(algarismos.indexOf(i)==-1){ return [false,0] }
     }
@@ -28,9 +29,14 @@ const soma = array => {
         if(array[i]<array[i+1]){ total -= array[i] }
     }
 }
+const escreve = (content,input)=>{
+    res.innerHTML+=content
+    res.style.display='flex'
+    input.value=''
+    id++
+}
 let id = 0
-romano.onkeyup = () => romano.value = String(romano.value).toUpperCase()
-function convert() {
+function rom_to_dec() {
     const string = String(romano.value).toUpperCase()
     let numbers = string.split('')
     let teste,codeError
@@ -46,10 +52,7 @@ function convert() {
             Romano:<br> ${string}<br>
             Decimal:<br> ${dec}
         </div>`
-        res.innerHTML+=content
-        res.style.display='flex'
-        romano.value=''
-        id++
+        escreve(content,romano)
     }else{
         switch (codeError) {
             case 0:
@@ -61,3 +64,42 @@ function convert() {
         }
     }
 }
+const numeros = {
+    '1':{ '0':'','1': 'I', '2': 'II', '3': 'III', '4':'IV', '5': 'V', '6': 'VI', '7': 'VII', '8': 'VIII', '9': 'IX' },
+    '2':{ '1': 'X', '2': 'XX', '3': 'XXX', '4': 'XL', '5': 'L', '6': 'LX', '7': 'LXX', '8': 'LXXX', '9': 'XC' },
+    '3':{ '1': 'C','2': 'CC', '3':'CCC', '4':'CD', '5':'D', '6':'DC', '7':'DCC', '8':'DCCC', '9':'CM' } ,
+    '4':{ '1':'M', '2':'MM','3':'MMM' }
+}
+function dec_to_rom(){
+    let rom = String(dec.value).split('')
+    for(i in rom){
+        rom[i]=numeros[rom.length - Number(i)][rom[i]]
+    }
+    let content = `
+    <div class="res" id="div${id}">
+        <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
+        Decimal:<br> ${dec.value}<br>
+        Romano:<br> ${rom.join('')}
+    </div>`
+    escreve(content,dec)
+}
+// Detecção de Cliques
+const radio = document.querySelectorAll('#selecao input')
+const rom_data = document.getElementById('data-rom')
+const dec_data = document.getElementById('data-dec')
+const button_rom = document.getElementById('rom-button')
+const button_dec = document.getElementById('dec-button')
+const troca = () => {
+    rom_data.classList.toggle('hidden')
+    dec_data.classList.toggle('hidden')
+}
+for(i of radio){ i.onclick = troca }
+button_rom.onclick = rom_to_dec
+button_dec.onclick = dec_to_rom
+romano.onkeydown = event =>{
+    if(event.key === 'Enter'){ rom_to_dec() }
+}
+dec.onkeydown = event =>{
+    if(event.key === 'Enter'){ dec_to_rom() }
+}
+romano.onkeyup = () => romano.value = String(romano.value).toUpperCase()

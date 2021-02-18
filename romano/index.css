@@ -1,29 +1,63 @@
-body{
-    background-color: #219653;
+body {
+  background-color: #219653;
 }
-#menu{
-    width: max-content;
-    padding: 10px 30px;
-    height: max-content;
+
+#menu {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px 30px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
-#res{
-    width: 90%;
-    display: none;
-    flex-wrap: wrap;
+
+#res {
+  width: 90%;
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
-.res{
-    border:2px solid blue;
-    padding: 5px 5px 5px 10px;
-    text-align: left;
-    margin: 10px 5px;
-    width: max-content;
+
+.res {
+  border: 2px solid blue;
+  padding: 5px 5px 5px 10px;
+  text-align: left;
+  margin: 10px 5px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
-.circle{
-    margin: -4px -4px auto 5px;
+
+.circle {
+  margin: -4px -4px auto 5px;
 }
-input[type="text"]{
-    padding-left: 4px;
+
+.hidden {
+  display: none;
 }
-input:focus{
-    outline: 1px;
+
+#selecao {
+  margin: 10px auto auto;
 }
+
+#selecao div label:last-child {
+  margin-left: 20px;
+}
+
+input {
+  width: 100px;
+}
+
+input[type="text"] {
+  padding-left: 4px;
+}
+
+input[type='button'], input[type='radio'] {
+  width: auto;
+}
+
+input:focus {
+  outline: 1px;
+}
+/*# sourceMappingURL=index.css.map */

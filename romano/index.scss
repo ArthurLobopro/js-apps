@@ -1,0 +1,44 @@
+body{
+    background-color: #219653;
+}
+#menu{
+    width: max-content;
+    padding: 10px 30px;
+    height: max-content;
+}
+#res{
+    width: 90%;
+    display: none;
+    flex-wrap: wrap;
+}
+.res{
+    border:2px solid blue;
+    padding: 5px 5px 5px 10px;
+    text-align: left;
+    margin: 10px 5px;
+    width: max-content;
+}
+.circle{
+    margin: -4px -4px auto 5px;
+}
+.hidden{
+    display: none;
+}
+#selecao{
+    margin: 10px auto auto;
+    & div label:last-child{
+        margin-left: 20px;
+    }
+}
+input{
+    width: 100px;
+    &[type="text"]{
+        padding-left: 4px;
+    }
+    &[type='button'],&[type='radio']{
+        width: auto;
+    }
+    &:focus{
+        outline: 1px;
+    }
+}
