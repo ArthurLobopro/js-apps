@@ -1,11 +1,14 @@
+import { addEvent,circle, id } from "../public/js/modules.js"
+//Variáveis globais
 let mediaNumbers = []
 const num = document.getElementById("num")
 const select = document.getElementById('numbers')
 const res = document.getElementById('res')
 const preview = document.getElementById('preview')
+const preview_class = document.querySelector('#preview div .preview')
 const add = document.getElementById('add')
 const left = document.getElementById('left')
-var id = 0
+//Funções
 function adiciona(){
     let number = Number(num.value)
     mediaNumbers.push(number)
@@ -23,34 +26,37 @@ function calculaMedia(){
     }
     let media = soma/mediaNumbers.length
     let content = `
-    <div>
-        <div class="preview">
-            Valores: ${String(mediaNumbers).replaceAll(',',' - ')}<br>
-            Número de Valores: ${mediaNumbers.length}<br>
-            Somatório dos Valores: ${soma}<br>
-            Média: ${media}
-        </div><br>
-        <button onclick="preview.innerHTML=''">Adicionar mais valores.</button> <button onclick="addToHistory()">Adicionar ao Histórico.</button>
-    </div>`
-    preview.innerHTML=content
+        Valores: ${String(mediaNumbers).replaceAll(',',' - ')}<br>
+        Número de Valores: ${mediaNumbers.length}<br>
+        Somatório dos Valores: ${soma}<br>
+        Média: ${media}`
+    preview_class.innerHTML=content
+    preview.style.visibility='visible'
 }
 function addToHistory(){
     let string = document.querySelector('.preview').innerHTML
-    let content = `<div class="res" id="div${id}">
-    <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>${string}</div>`
+    let content = `<div class="res" id="div${id.id}">${circle(id.id)}${string}</div>`
     res.innerHTML+=content
+    addEvent()
     res.style.display='inline-block'
-    id++
-    preview.innerHTML=""
+    id.increase()
+    preview_class.innerHTML=""
+    preview.style.visibility='hidden'
     select.innerHTML=""
     mediaNumbers = []
     left.style.display='none'
 }
 function autoAdd(event){
-    if(event.key == 'Enter'){
-        add.click()
-    }
+    if(event.key == 'Enter'){ add.click() }
 }
-function addMoreValues(){
-    preview.innerHTML=""
+// Detecção de eventos
+num.onkeydown = autoAdd
+add.onclick = () => (num.value.length==0)? alert('Digite um número para adicionar!') : adiciona()
+const calc_button = document.getElementById('calc')
+const addMore = document.getElementById('add-more')
+const ath = document.getElementById('ath')
+calc_button.onclick = calculaMedia
+addMore.onclick = () => {
+    preview.style.visibility='hidden'
 }
+ath.onclick = addToHistory
