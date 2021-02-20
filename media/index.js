@@ -38,7 +38,7 @@ function addToHistory(){
     let content = `<div class="res" id="div${id.id}">${circle(id.id)}${string}</div>`
     res.innerHTML+=content
     addEvent()
-    res.style.display='inline-block'
+    res.style.display='flex'
     id.increase()
     preview_class.innerHTML=""
     preview.style.visibility='hidden'
