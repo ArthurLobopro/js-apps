@@ -56,14 +56,16 @@ section {
 #res {
   margin: 0 auto 15px;
   display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #msg {
   margin: auto;
+  width: 100%;
 }
 
 .res {
-  float: left;
   text-align: left;
 }
 

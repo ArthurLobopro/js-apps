@@ -10,7 +10,6 @@ const valida = array =>{
         if(algarismos.indexOf(i)==-1){ return [false,0] }
     }
     array=array.join('')
-    console.log(array)
     for(let i of algarismos){
         let char = i+i+i+i
         if(array.indexOf(char) !== -1){ return [false,1] }
