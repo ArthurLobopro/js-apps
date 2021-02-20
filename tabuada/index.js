@@ -34,7 +34,7 @@ function gerar(){
         resposta+=`</div>`
         res.innerHTML+=resposta
         addEvent()
-        res.style.display="inline-block"
+        res.style.display="flex"
         numero.value=""
         id.increase()
     }
