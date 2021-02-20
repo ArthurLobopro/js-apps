@@ -24,7 +24,6 @@ body{
 }
 #res{
     width: 85%;
-    min-height: 250px;
     padding: 5px 10px;
 }
 .res{
@@ -38,6 +37,9 @@ body{
 }
 .circle{
     margin: -3px -3px auto auto;
+}
+.hidden{
+    display: none;
 }
 img{
     margin: auto;

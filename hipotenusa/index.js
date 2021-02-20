@@ -1,96 +1,80 @@
-function troca(num){
-    let input1 = document.querySelector(".input1")
-    let input2 = document.querySelector(".input2")
-    let unity = document.getElementById("unity").value
-    let content 
-    if(num==1){
-        content=
-        `Cateto 1: <input type="number" id="cat1" min="0" onkeydown="auto_submit(event)"><br>
-        Cateto 2: <input type="number" id="cat2" min="0" onkeydown="auto_submit(event)">`
-        input1.innerHTML=content
-        content=`Unidade de Medida:
-            <select id="unity">
-                <option value="m">m</option>
-                <option value="cm">cm</option>
-                <option value="cm">mm</option>
-            </select><br>
-            <input type="button" ${id_button} value="Calcular" onclick="calcula_hipotenusa()">`
-        input2.innerHTML=content
-    }
-    if(num==2){
-        content=
-        `Hipotenusa: <input type="number" id="hip" min="0" onkeydown="auto_submit(event)"><br>
-        Cateto: <input type="number" id="cat" min="0" onkeydown="auto_submit(event)">`
-        input1.innerHTML=content
-        content=`Unidade de Medida:
-            <select id="unity">
-                <option value="m">m</option>
-                <option value="cm">cm</option>
-                <option value="cm">mm</option>
-            </select><br>
-            <input type="button" ${id_button} value="Calcular" onclick="calcula_cateto()">` 
-        input2.innerHTML=content
-    }
-    document.getElementById("unity").value=unity
+import { addEvent,circle, id } from "../public/js/modules.js"
+const get = id => document.getElementById(id)
+const res= get("res")
+const cateto1 = get("cat1")
+const cateto2 = get("cat2")
+const cateto = get("cat")
+const hipotenusa = get("hip")
+const escreve = (content,input)=>{
+    res.innerHTML+=`
+    <div class="res" id="div${id.id}">
+        ${circle(id.id)}
+        ${content}
+    </div>`
+    addEvent()
+    res.style.display='flex'
+    for(let i of input){ i.value='' }
+    id.increase()
 }
-var res= document.getElementById("res")
-var id = 0
-function calcula_hipotenusa() {
-    let cateto1 = document.getElementById("cat1").value
-    let cateto2 = document.getElementById("cat2").value
-    if(cateto2.lenght==0 || cateto1.lenght==0){
+function calc_hip(){
+    let cat1 = cateto1.value
+    let cat2 = cateto2.value
+    if(cat1.lenght==0 || cat2.lenght==0){
         alert("Estão faltando informações, certifique-se de que forneceu os dois catetos.")
-    }else if(Number(cateto1)<=0 || Number(cateto2)<=0){
+    }else if(Number(cat1)<=0 || Number(cat2)<=0){
         alert("As medidas dos catetos não podem ser 0 ou negativas! Verifique as informações e tente novamente.")
     }else{
-        cateto1=Number(cateto1)
-        cateto2=Number(cateto2)
-        let unity = document.getElementById("unity").value
-        let hipotenusa = Math.sqrt(cateto1**2 + cateto2**2)
-        let content= `
-                <div class="res" id="div${id}">
-                    <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
-                    Cateto 1: ${cateto1+unity}<br>
-                    Cateto 2: ${cateto2+unity}<br>
-                    Hipotenusa: ${hipotenusa+unity}
-                </div>`
-        res.innerHTML+=content
-        res.style.display="inline-block"
-        id++
-        zerar(1)
+        cat1=Number(cat1)
+        cat2=Number(cat2)
+        let unity = get("unity").value
+        let hipotenusa = Math.sqrt(cat1**2 + cat2**2)
+        let content= `Cateto 1: ${cat1+unity}<br>\nCateto 2: ${cat2+unity}<br>\nHipotenusa: ${hipotenusa+unity}`
+        escreve(content,[cateto1,cateto2])
     }
 }
-function calcula_cateto(){
-    let cateto = document.getElementById("cat").value
-    let hipotenusa = document.getElementById("hip").value
-    if(cateto.lenght==0 || hipotenusa.lenght==0){
+function calc_cat(){
+    let cat = cateto.value
+    let hip = hipotenusa.value
+    if(cat.lenght==0 || hip.lenght==0){
         alert("Estão faltando informações, certifique-se de que forneceu os dois catetos.")
-    }else if(Number(cateto)<=0 || Number(hipotenusa)<=0){
+    }else if(Number(cat)<=0 || Number(hip)<=0){
         alert("As medidas do cateto não podem ser 0 ou negativas! Verifique as informações e tente novamente.")
     }else{
-        cateto=Number(cateto)
-        hipotenusa=Number(hipotenusa)
-        let unity = document.getElementById("unity").value
-        let cateto2 = Math.sqrt(hipotenusa**2 - cateto**2)
-        let content= `
-                <div class="res" id="div${id}">
-                    <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
-                    Cateto fornecido: ${cateto+unity}<br>
-                    Hipotenusa: ${hipotenusa+unity}<br>
-                    Cateto descoberto: ${cateto2+unity}<br>
-                </div>`
-        res.innerHTML+=content
-        res.style.display="inline-block"
-        id++
-        zerar(2)
+        cat=Number(cat)
+        hip=Number(hip)
+        let unity = get("unity").value
+        let cateto2 = Math.sqrt(hip**2 - cat**2)
+        let content= `Cateto fornecido: ${cat+unity}<br>\nHipotenusa: ${hip+unity}<br>\nCateto descoberto: ${cateto2+unity}<br>`
+        escreve(content,[cateto,hipotenusa])
     }
 }
-function zerar(num){
-    if(num==1){
-        document.getElementById("cat1").value=""
-        document.getElementById("cat2").value=""
-    }else{
-        document.getElementById("cat").value=""
-        document.getElementById("hip").value=""
+// Detecção de Eventos
+const submit_button = get('submit-button')
+const radio = document.querySelectorAll('.input3 input')
+const troca = event => {
+    const opt1 = get('opt1')
+    const opt2 = get('opt2')
+    const func = event.target.dataset.f
+    if(func == 'hip' && opt1.classList.contains('hidden') == true){
+        opt1.classList.toggle('hidden')
+        opt2.classList.toggle('hidden')
+        submit_button.onclick = calc_hip
+    }
+    if(func == 'cat' && opt2.classList.contains('hidden') == true){
+        opt1.classList.toggle('hidden')
+        opt2.classList.toggle('hidden')
+        submit_button.onclick = calc_cat
     }
 }
+const call = event => {
+    if(event.key === 'Enter'){ 
+        (event.target.id == 'cat1') ? cateto2.focus() :  
+            (event.target.id == 'hip')  ? cateto.focus()  : submit_button.click()
+    }
+} 
+cateto1.onkeydown = call
+cateto2.onkeydown = call
+cateto.onkeydown = call
+hipotenusa.onkeydown = call
+submit_button.onclick = calc_hip
+for(let i of radio){ i.onclick= troca }
