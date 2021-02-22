@@ -19,4 +19,9 @@ const addEvent = () => {
 }
 const circle = id => `<div class="circle" data-id="${id}"><img src="../public/midia/close-icon.png" data-id="${id}"></div>`
 const id = new ID()
-export { addEvent, circle, id }
+const range = (min,max,pass = 1) => {
+    let array = []
+    for(let i = min;i<max;i+=pass){ array.push(i) }
+    return array
+}
+export { addEvent, circle, id , range}
