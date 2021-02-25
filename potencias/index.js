@@ -1,39 +1,45 @@
-var res = document.getElementById("res")
-var id = 0
+import { addEvent,circle, id } from "../public/js/modules.js"
+const res = document.getElementById("res")
+const num = document.getElementById("num")
+const inicio = document.getElementById("inicio")
+const fim = document.getElementById("fim")
 function verificar(){
-    let num=document.getElementById("num")
-    let inicio=document.getElementById("inicio")
-    let fim=document.getElementById("fim")
     if(num.value.length == 0){
         alert("Por favor insira um número para continuar")
     }else if(inicio.value.length == 0 || fim.value.length == 0){
         alert("Por favor insira um início e fim para continuar")
     }else if(inicio.value<0 || fim.value<0){
         if(confirm("Por erros da linguagem usada no programa as potências negativas podem vir erradas (geralmente em multiplos de 10) realmente quer gerar as potências mesmo com possíveis erros?")){
-            potencia(num, inicio, fim)
+            potencia(num.value)
         }
     }else{
-        potencia(num, inicio, fim)
+        potencia(num.value)
     }
 }
-function potencia(num, inicio, fim){
+function potencia(num){
     let resposta=""
-    num=Number(num.value)
-    inicio=Number(inicio.value)
-    fim=Number(fim.value)
-    if(inicio>fim){
-        let ajudante=fim
-        fim=inicio
-        inicio=ajudante
+    num=Number(num)
+    let ini = Number(inicio.value)
+    let f=Number(fim.value)
+    if(ini>f){
+        [ini,f] = [f,ini]
     }
-    resposta+=`<div class="res" id="div${id}">
-    <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>`
-    for(let i=inicio;i<=fim;i++){
+    resposta+=`<div class="res" id="div${id.id}">
+    ${circle(id.id)}`
+    for(let i=ini;i<=f;i++){
         resposta+=`${num}<sup>${i}</sup> = ${num**i}<br>`
     }
     resposta+=`<div>`
     res.innerHTML+=resposta
-    res.style.display="inline-block"
-    id++
+    res.style.display="flex"
+    id.increase()
+    addEvent()
     document.getElementById("num").value=""
 }
+const subimt_button = document.getElementById("submit-button")
+const auto_submit = event => { if(event.key == "Enter"){ verificar() }}
+
+subimt_button.onclick = verificar
+num.onkeydown = auto_submit
+inicio.onkeydown = auto_submit
+fim.onkeydown = auto_submit
