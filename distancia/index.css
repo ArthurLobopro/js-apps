@@ -20,17 +20,12 @@ section{
     width: 400px;
     margin: 30px auto;
 }
-#historico{
-    display:none;
-    padding: 15px;
-    height: auto;
-    width: 85%;
-    margin: auto;
-    text-align: center;
-}
 #res{
-    display: inline-block;
-    margin-top: 3px;
+    display: none;
+    padding: 10px 15px 15px;
+    margin-top: 0 auto 10px;
+    width:85%;
+    height: max-content;
 }
 .row{
     display: list-item;
@@ -48,7 +43,11 @@ tr{
     border: 2px solid skyblue;
     padding: 3px;
     width: max-content;
+    height: max-content;
     border-radius: 5px;
-    float: left;
-    margin: 5px 5px 0 0;
+    margin: 8px 5px 0 0;
+}
+.circle{
+    float: none;
+    margin: auto;
 }
