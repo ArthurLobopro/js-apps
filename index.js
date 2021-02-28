@@ -84,19 +84,24 @@ const functions= {
         }
     },
 }
-var nome_backup_escreve
-function escreve(nome){
-    if(nome_backup_escreve!=nome){
+// Deteção de eventos
+// Funções
+const nome_backup = {
+    escreve: '',
+    trava: ''
+}
+const escreve = event =>{
+    let nome  = event.target.dataset.name
+    if(nome_backup.escreve != nome){
         if(travado===false){
             functions[nome]()
         }
-    nome_backup_escreve=nome
     }
+    nome_backup.escreve = nome
 }
-var nome_backup_trava
-//Usada apenas na função trava
-function trava(nome){
-    if(nome_backup_trava==nome){
+const trava = event => {
+    let nome = event.target.dataset.name
+    if(nome_backup.trava==nome){
         travado=(!travado)
     }else{
         if(travado==false){
@@ -108,5 +113,13 @@ function trava(nome){
             travado=true
         }
     }
-    nome_backup_trava=nome
+    nome_backup.trava=nome
+}
+// Chamadas
+const list = document.querySelectorAll("#lista li")
+for(let i of list){
+    i.onmouseenter = escreve
+}
+for(let i of list){
+    i.ondblclick = trava
 }
