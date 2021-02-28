@@ -8,6 +8,7 @@ Atualmente são essas as aplicações feitas e hospedadas aqui:
 <details>
     <summary>Conversores</summary>
     <ul>
+        <li>Conversor de Algarismos Romanos.
         <li>Conversor de Bases Numéricas.
         <li>Conversor de Distância.
         <li>Conversor de Cores Hexadecimal/RGB.
