@@ -13,7 +13,7 @@
     box-shadow: 5px 5px 10px black;
 }
 body{
-    background-color: rgb(71, 71, 253);
+    background-color: rgb(17, 27, 162);
 }
 #res{
     padding: 10px;
@@ -21,11 +21,11 @@ body{
 }
 .res{
     border: 2px solid black;
-    width: auto;
+    width: max-content;
     padding: 5px 3px 0 10px;
     margin: 10px 5px 0 0;
     text-align: left;
 }
 .circle{
-    margin: -2px 0 15px 5px;
+    margin: -4px -2px 0 0;
 }

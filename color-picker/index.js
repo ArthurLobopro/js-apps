@@ -1,10 +1,12 @@
-const upimg = document.getElementById('upimg')
-const canvasDiv= document.getElementById('canvasDiv')
-const canvas = document.getElementById('mycanvas')
+import { addEvent,circle, id, get } from "../public/js/modules.js"
+import { rgb_to_hex } from "../public/js/hex-rgb.js"
+
+const upimg = get('upimg')
+const canvasDiv= get('canvasDiv')
+const canvas = get('mycanvas')
 const ctx = canvas.getContext('2d')
-const invi = document.getElementById('invi')
-const res = document.getElementById('res')
-var id = 0
+const invi = get('invi')
+const res = get('res')
 function drawImage(img,w,h){
     let image = new Image()
     image.src=img
@@ -24,10 +26,10 @@ function getImage() {
     let reader = new FileReader()
     let img
     reader.readAsDataURL(file)
-    reader.onprogress = function(event){
+    reader.onprogress = () => {
         console.log(`Carregados ${event.loaded} de ${event.total}`)
     }
-    reader.onerror = function(){
+    reader.onerror = () => {
         console.log('erro')
     }
     reader.onload = function (event){ 
@@ -36,9 +38,9 @@ function getImage() {
         img.src=event.target.result
         let w
         let h
-        img.onload = function () {
-            w=this.width
-            h=this.height
+        img.onload = function() {
+            w= this.width
+            h= this.height
             console.log(w + 'x' + h)
             if(w>500 || h>800){
                 canvas.width = Math.ceil(w/2)
@@ -55,44 +57,34 @@ function getImage() {
     }
     canvas.style.display='block'
 }
-upimg.onchange = function(){
-    getImage()
-}
-canvas.onclick = function(event){
+//Detecção de eventos
+
+document.querySelector('button').onclick = () => upimg.click()
+ctx.fillStyle='#FFFFFF'
+ctx.fillRect(0,0,100,100)
+
+upimg.onchange = getImage
+canvas.onclick = event => {
+    let r,g,b
     [r,g,b] = color(event)
     let rgb = `rgb(${r}, ${g}, ${b})`
     res.innerHTML+=`
-    <div class="res" id="div${id}">
-        <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
+    <div class="res" id="div${id.id}">
+        ${circle(id.id)}
         <div class="color" style="background-color: ${rgb};"></div><br>
         RGB: ${rgb}<br>
-        HEX: #${acha_hex(r)}${acha_hex(g)}${acha_hex(b)}
+        HEX: ${rgb_to_hex(r,g,b)}
     </div>`
-    id++
-    res.style.display="inline-block"
+    id.increase()
+    addEvent()
+    res.style.display="flex"
 }
-canvas.onmousemove = function(event){
+canvas.onmousemove = event => {
+    let r,g,b
     [r,g,b] = color(event)
     let rgb = `rgb(${r}, ${g}, ${b})`
-    const divcolor = document.getElementById('color')
+    const divcolor = get('color')
     divcolor.style.backgroundColor=rgb
     divcolor.style.border='1px solid black'
-    document.getElementById('rgb').innerHTML=`${rgb}<br>#${acha_hex(r)}${acha_hex(g)}${acha_hex(b)}`
-}
-window.addEventListener('DOMContentLoaded',() => {
-    document.querySelector('button').onclick = () => upimg.click()
-    ctx.fillStyle='#FFFFFF'
-    ctx.fillRect(0,0,100,100)
-})
-function acha_hex(num){
-    const hex = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
-    for(i=0;i<16;i++){
-        for(j=0;j<16;j++){
-            if((i*16+j*1)==num){
-                i = hex[i]
-                j = hex[j]
-                return String(i+j)
-            }
-        }
-    }
+    get('rgb').innerHTML=`${rgb}<br>${rgb_to_hex(r,g,b)}`
 }

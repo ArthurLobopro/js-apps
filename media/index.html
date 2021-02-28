@@ -11,17 +11,22 @@
     <h1>Calculador de Média</h1>
     <section id="menu">
         <div id="input">
-            Digite um número:<input type="number" id="num" onkeydown="autoAdd(event)"> 
-            <input type="button" value="Adicionar" id="add" onclick="(num.value.length==0)? alert('Digite um número para adicionar!') : adiciona()">
+            Digite um número:<input type="number" id="num"> 
+            <input type="button" value="Adicionar" id="add">
         </div>
         <div id="left">
             <select  id="numbers" size="10"></select><br>
-            <input type="button" value="Calcular Média" onclick="calculaMedia()">
+            <input type="button" value="Calcular Média" id="calc">
         </div>
-        <div id="preview"></div>
+        <div id="preview">
+            <div>
+                <div class="preview"></div><br>
+                <button id="add-more">Adicionar mais valores.</button>
+                <button id="ath">Adicionar ao Histórico.</button>
+            </div>
+        </div>
     </section>
     <section id="res"><span id="msg">Médias Calculadas:</span><br></section>
-    <script src="../public/js/main.js"></script>
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
 </body>
 </html>

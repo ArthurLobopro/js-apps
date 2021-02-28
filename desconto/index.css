@@ -1,10 +1,5 @@
 body{
-    /* background-color: rgb(99, 168, 67);  */
-    /*background-color:rgb(144, 44, 44);*/
-    /*background-color:rgb(54, 196, 153)*/
-    /* background-color: rgb(84, 59, 59); */
     background-color: rgb(28, 151, 114);
-    text-align: initial;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -13,34 +8,41 @@ body{
 #menu{
     width: 300px;
     height: 200px;
-    padding-left: 30px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Roboto Slab';
-
 }
 input{
     width: 70px;
 }
-.wspw{
-    white-space: pre-wrap;
+label{
+    text-align: left;
+}
+#num{
+    margin-left: 5px;
 }
 input[type='button']{
-    margin: 5px auto;
+    margin: 5px auto 0px;
 }
 #res{
     width: 80%;
     min-width: 300px;
+    padding: 10px 15px 10px;
+    text-align: unset;
+}
+.tal{
+    text-align: left;
 }
 .res{
     border: 2px solid black;
-    width: auto;
-    padding: 5px;
-    float: left;
+    width: max-content;
+    padding: 5px 5px 5px 10px;
     margin: 5px;
-    padding-left: 10px;
     text-align: left;
     border-radius: 3px;
+}
+.circle{
+    margin: -4px -4px 10px 0;
 }

@@ -1,71 +1,61 @@
+import { addEvent,circle, id } from "../public/js/modules.js"
+const get = id => document.getElementById(id)
+const unity_select = get("unity")
+const num_input = get("num")
+const res = get("res")
 function calcular(){
-    let unity = document.getElementById("unity").value
-    let num = document.getElementById("num").value
-    let metro
+    let num = num_input.value
+    const functions = {
+        km: () => resposta(num*1000),
+        hm: () => resposta(num*100),
+        dam: () => resposta(num*10),
+        m: () => resposta(num),
+        dm: () => resposta(num/10),
+        cm: () => resposta(num/100),
+        mm: () => resposta(num/1000)
+    }
     if(num.length==0){
         alert("Digite um número para começar!")
     }else{
         num=Number(num)
-        switch(unity){
-            case "km":
-                metro=num*1000
-                resposta(metro)
-                break
-            case "hm":
-                metro=num*100
-                resposta(metro)
-                break
-            case "dam":
-                metro=num*10
-                resposta(metro)
-                break
-            case "m":
-                resposta(num)
-                break
-            case "dm":
-                metro=num/10
-                resposta(metro)
-                break
-            case "cm":
-                metro=num/100
-                resposta(metro)
-                break
-            case "mm":
-                metro=num/1000
-                resposta(metro)
-                break
-            default :
-                alert("Parece que ocorreu um erro, nenhuma unidade detectada!")
-                break
-        }
+        functions[unity_select.value]()
     }
 }
 function resposta(metro){
     let unidade=["km", "hm", "dam", "m", "dm", "cm", "mm"]
-    let res=""
-    res = `<div class="res">
-                <table>`
+    let constent=""
+    constent = `
+    <div class="res" id="div${id.id}">
+        ${circle(id.id)}
+        <table>`
     let num = 1000
-    for(i=0;i<7;i++){
+    for(let i=0;i<7;i++){
         if(document.getElementById(unidade[i]).checked){
-            res+=`<tr>
+            constent+=`<tr>
                     <td class="row">${unidade[i]}</td>
                     <td class="row">${metro/num}</td>
                   </tr>`
         }
         num/=10
     }
-    res += `</table></div>`
-    document.getElementById("res").innerHTML+=res
-    document.getElementById("historico").style.display="block"
+    constent += `</table></div>`
+    res.innerHTML+=constent
+    res.style.display="flex"
+    addEvent()
+    id.increase()
 }
 function bloqueia(){
     let unidade=["km", "hm", "dam", "m", "dm", "cm", "mm"]
-    let unity = String(document.getElementById("unity").value)
+    let unity = String(unity_select.value)
     unity=unity.toLowerCase()
-    for(i=0;i<7;i++){
-        document.getElementById(unidade[i]).disabled=false
+    for(let i=0;i<7;i++){
+        get(unidade[i]).disabled=false
     }
-    document.getElementById(unity).checked=true
-    document.getElementById(unity).disabled=true
+    get(unity).checked=true
+    get(unity).disabled=true
 }
+//Detecção de eventos
+const submit_button = get("submit-button")
+unity_select.onchange = bloqueia
+submit_button.onclick = calcular
+num_input.onkeydown = event => { if(event.key == 'Enter'){ calcular() } }

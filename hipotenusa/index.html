@@ -14,8 +14,14 @@
             <img src="./triangulo.png" alt="Triangulo Retangulo"><br>
             <div id="dados">
                 <div class="input1">
-                    Cateto 1: <input type="number" id="cat1" min="0" onkeydown="auto_submit(event)"><br>
-                    Cateto 2: <input type="number" id="cat2" min="0" onkeydown="auto_submit(event)">
+                    <div id="opt1">
+                        Cateto 1: <input type="number" id="cat1" min="0"><br>
+                        Cateto 2: <input type="number" id="cat2" min="0">
+                    </div>
+                    <div id="opt2" class="hidden">
+                        Hipotenusa: <input type="number" id="hip" min="0"><br>
+                        Cateto: <input type="number" id="cat" min="0">
+                    </div>
                 </div>
                 <div class="input2">
                     Unidade de Medida:
@@ -24,21 +30,20 @@
                         <option value="cm" checked>cm</option>
                         <option value="cm">mm</option>
                     </select><br>
-                    <input type="button" id="submit-button" value="Calcular" onclick="calcula_hipotenusa()">
+                    <input type="button" id="submit-button" value="Calcular">
                 </div>
                 <div class="input3">
                     Conversão: <br>
-                    <input type="radio" name="tipo" id="tipo1" onclick="troca(1)" checked><label for="tipo1"> Descobrir a Hipotenusa.</label>
-                    <input type="radio" name="tipo" id="tipo2" onclick="troca(2)"> <label for="tipo2">Descobrir um cateto.</label>
+                    <label><input type="radio" data-f="hip" name="tipo" checked>Calcular a Hipotenusa.</label>
+                    <label><input type="radio" data-f="cat" name="tipo">Calcular um cateto.</label>
                 </div>
             </div>
         </div>
     </section>
     <section id="res">
-        <span>Para limpar o histórico aperte F5 ou recarregue a página.</span><br>
+        <span id="msg">Cálculos feitos:</span><br>
     </section>
     <footer>&copy;Arthur Lobo</footer>
-    <script src="index.js"></script>
-    <script src="../public/js/main.js"></script>
+    <script src="index.js" type="module"></script>
 </body>
 </html>

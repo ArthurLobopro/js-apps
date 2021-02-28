@@ -42,12 +42,13 @@ section{
 #res{
     margin: 0 auto 15px;
     display: none;
+    flex-wrap: wrap;
 }
 #msg{
     margin: auto; 
+    width: 100%;
 }
 .res{
-    float: left;
     text-align: left;
 }
 

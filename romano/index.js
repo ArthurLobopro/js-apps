@@ -1,16 +1,15 @@
+import { addEvent,circle, id } from "../public/js/modules.js";
 //Variáveis globais
 const res = document.getElementById('res')
 const romano = document.getElementById('rom')
 const dec = document.getElementById('dec')
 const valores = { I: 1, V: 5, X:10, L:50, C: 100, D: 500, M: 1000 }
 const algarismos = ['I','V','X','L','C','D','M']
-let id = 0
 const valida = array =>{
     for(let i of array){
         if(algarismos.indexOf(i)==-1){ return [false,0] }
     }
     array=array.join('')
-    console.log(array)
     for(let i of algarismos){
         let char = i+i+i+i
         if(array.indexOf(char) !== -1){ return [false,1] }
@@ -31,25 +30,16 @@ const soma = array => {
         if(array[i]<array[i+1]){ total -= array[i] }
     }
 }
-const addEvent = () => {
-    let div = document.querySelectorAll('.res .circle')
-    for(let i of div){
-        i.onclick = event =>{
-           let element = document.getElementById(`div${event.target.dataset.id}`)
-           res.removeChild(element)
-        }
-    }
-}
 const escreve = (content,input)=>{
     res.innerHTML+=`
-    <div class="res" id="div${id}">
-        <div class="circle" data-id="${id}"><img src="../public/midia/close-icon.png" data-id="${id}"></div>
+    <div class="res" id="div${id.id}">
+        ${circle(id.id)}
         ${content}
     </div>`
     addEvent()
     res.style.display='flex'
     input.value=''
-    id++
+    id.increase()
 }
 function rom_to_dec() {
     const string = String(romano.value).toUpperCase()

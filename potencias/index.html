@@ -15,20 +15,19 @@
     <section id="menu">
         <div id="grid">
             <div style="line-height: 1.5;">
-                Número: <input type="number" id="num" autofocus onkeydown="auto_submit(event)"><br>
-                <input type="button" id="submit-button" value="Gerar Potências" onclick="verificar()">
+                Número: <input type="number" id="num" autofocus><br>
+                <input type="button" id="submit-button" value="Gerar Potências">
             </div>
             <div id="opcao-2">
-                Início: <input type="number" id="inicio" value="0" onkeydown="auto_submit(event)"><br>
-                Fim: <input type="number" id="fim" value="10" onkeydown="auto_submit(event)">
+                Início: <input type="number" id="inicio" value="0" ><br>
+                Fim: <input type="number" id="fim" value="10">
             </div>
         </div>
     </section>
     <section id="res">
-        <span id="msg">Para limpar o histórico aperte F5 ou recarregue a página</span><br>
+        <span id="msg">Potências geradas:</span><br>
     </section>
     <footer>&copy;Arthur Lobo</footer>
-    <script src="index.js"></script>
-    <script src="../public/js/main.js"></script>
+    <script src="index.js" type="module"></script>
 </body>
 </html>

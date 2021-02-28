@@ -2,7 +2,7 @@ body{
     text-align: center;
     width: auto;
     min-width: 630px;
-    background-color: #00CED1;
+    background-color: #2D9CDB;
     color: black;
 }
 sup{
@@ -11,9 +11,7 @@ sup{
     font-family: monospace;
 }
 .res{
-    float: left;
-    width: auto;
-    height: auto;
+    width: max-content;
     padding: 3px;
     padding-bottom: 0px;
     margin: 5px;
@@ -25,20 +23,20 @@ sup{
 }
 .formas{
     border: 2px solid black;
-    margin: auto;
+    margin: 10px auto auto;
+    height: 90px;
 }
 #menu{
     display: flex;
-    margin: auto;
-    margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 10px;
-    width: 500px;
-    height: 200px;
-    visibility: hidden;
+    max-width: 500px;
+    width: 100%;
 }
 #input{
     text-align: center;
-    margin: auto;
+    margin: 10px auto auto;
     padding: 10px;
     line-height: 1.5;
     width: 300px;
@@ -54,14 +52,19 @@ sup{
 }
 #res{
     display: none;
+    width: 85%;
+    padding: 10px 15px 10px;
 }
 input[type="number"]{
     width: 100px;
 }
 .center{
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .ac{
     width: calc(100% - 36px);
@@ -71,4 +74,7 @@ input[type="number"]{
 }
 .circle{
     margin: -2px -2px auto auto;
+}
+.w100{
+    width: 100%;
 }
