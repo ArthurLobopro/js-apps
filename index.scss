@@ -49,9 +49,11 @@ ul{
     overflow-y: auto;
     overflow-x: hidden;
 }
-object{
+iframe{
     width: 100%;
-    height:calc(100% - 1px);
+    //height:calc(100% - 1px);
+    height: 100%;
+    border: none;
 }
 li{
     border: solid rgba(60,64,67,0.302);

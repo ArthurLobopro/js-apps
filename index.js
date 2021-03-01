@@ -3,86 +3,86 @@ var content = document.getElementById("content")
 const nome= document.getElementById("nome")
 const msg = document.getElementById("msg")
 const functions= {
-    area: function (){
+    area: () => {
             const caminho = "./area/"
             const text = 'Calculador de Área'
-            this.escreve_res(caminho,text,955)
+            escreve_res(caminho,text,955)
         },
-    hip: function (){
+    hip: () => {
             const caminho = "./hipotenusa/"
             const text = "Calculador de Hipotenusa"
-            this.escreve_res(caminho,text)
+            escreve_res(caminho,text)
     },
-    media: function (){
+    media: () => {
             const caminho = "./media/"
             const text = "Calculadora de Média"
-            this.escreve_res(caminho,text)
+            escreve_res(caminho,text)
     },
-    bases: function (){
+    bases: () => {
             const caminho = "./bases/"
             const text = "Conversor de  Bases"
-            this.escreve_res(caminho,text,955)
+            escreve_res(caminho,text,955)
     },
-    conversorImg: function (){
+    conversorImg: () => {
         const caminho = './conversor-img/'
         const text = 'Conversor de Imagens'
-        this.escreve_res(caminho,text)
+        escreve_res(caminho,text)
     },
-    desconto: function() {
+    desconto: () => {
         const caminho = './desconto/'
         const text = 'Calculadora de Desconto'
-        this.escreve_res(caminho,text)
+        escreve_res(caminho,text)
     },
-    distancia: function (){
+    distancia: () => {
             const caminho = "./distancia/"
             const text = "Conversor de Distância"
-            this.escreve_res(caminho,text)
+            escreve_res(caminho,text)
     },
-    rgb_hex: function (){
+    rgb_hex: () => {
             const caminho = "./hex_rgb/"
             const text = "Conversor HEX/RGB"
-            this.escreve_res(caminho,text)
+            escreve_res(caminho,text)
     },
-    romano: function(){
+    romano: () => {
         const caminho = "./romano/"
         const text = "Conversor Romano/Decimal"
-        this.escreve_res(caminho,text)
+        escreve_res(caminho,text)
     },
-    velocidade: function (){
+    velocidade: () => {
             const caminho = "./velocidade/"
             const text = "Conversor de Velocidade"
-            this.escreve_res(caminho,text)
+            escreve_res(caminho,text)
     },
-    bascara: function (){
+    bascara: () => {
             const caminho = "./bascara/"
             const text = "Equação de 2° Grau"
-            this.escreve_res(caminho,text)
+            escreve_res(caminho,text)
     },
-    potencia: function (){
+    potencia: () => {
             const caminho = "./potencias/"
             const text = "Gerador de Potências"
-            this.escreve_res(caminho,text)
+            escreve_res(caminho,text)
     },
-    tabuada: function (){
+    tabuada: () => {
             const caminho = "./tabuada/"
             const text = "Gerador de Tabuada"
-            this.escreve_res(caminho,text)
+            escreve_res(caminho,text)
     },
-    picker: function () {
+    picker: () => {
         const caminho = "./color-picker/"
-            const text = "Seletor de cores"
-            this.escreve_res(caminho,text)
-    },
-    escreve_res(caminho,texto,minWid=810){
-        if (document.body.clientWidth>=1000) {
-            const text = `<object data="${caminho}" type="text/html"></object>`
-            content.innerHTML= text
-            document.body.style.minWidth=`${minWid}px`
-            msg.innerHTML=`Você está vendo <a href='${caminho}'>${texto}</a>`
-            content.style.opacity='1'
-            content.style.backgroundImage='none'
-        }
-    },
+        const text = "Seletor de cores"
+        escreve_res(caminho,text)
+    }
+}
+function escreve_res(caminho,texto,minWid=810){
+    if (document.body.clientWidth>=1000) {
+        const text = `<iframe src="${caminho}"></iframe>`
+        content.innerHTML= text
+        document.body.style.minWidth=`${minWid}px`
+        msg.innerHTML=`Você está vendo <a href='${caminho}'>${texto}</a>`
+        content.style.opacity='1'
+        content.style.backgroundImage='none'
+    }
 }
 // Deteção de eventos
 // Funções
