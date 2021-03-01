@@ -84,11 +84,12 @@
             
         </div>
     </div>
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
     <script>
-        var container = document.getElementById("container")
-        var content = document.getElementById("content")
-        var menu = document.getElementById("menu-lateral")
+        const msg = document.getElementById("msg")
+        const container = document.getElementById("container")
+        const content = document.getElementById("content")
+        const menu = document.getElementById("menu-lateral")
         window.onload=function(){
             //Redimensiona o elemento #msg
             msg.style.width=`calc(${container.clientWidth}px - 271px )`

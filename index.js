@@ -1,7 +1,8 @@
-var travado =false
-var content = document.getElementById("content")
-const nome= document.getElementById("nome")
-const msg = document.getElementById("msg")
+const get = id => document.getElementById(id)
+let travado =false
+const content = get("content")
+const nome= get("nome")
+const msg = get("msg")
 const functions= {
     area:{
         caminho: "./area/",
@@ -64,8 +65,16 @@ function escreve_res(nome){
     let caminho, text
     ( {caminho, text } =  functions[nome])
     if (document.body.clientWidth>=1000) {
-        const iframe = `<iframe src="${caminho}"></iframe>`
-        content.innerHTML= iframe
+        let iframes = document.querySelectorAll("iframe")
+        for(let i of iframes){
+            i.style.display="none"
+        }
+        if(get(nome) == undefined){
+            const iframe = `<iframe src="${caminho}" id="${nome}"></iframe>`
+            content.innerHTML+= iframe
+        }else{
+            get(nome).style.display=""
+        }
         msg.innerHTML=`Você está vendo <a href='${caminho}'>${text}</a>`
         content.style.opacity='1'
         content.style.backgroundImage='none'
@@ -92,11 +101,11 @@ const trava = event => {
         travado=(!travado)
     }else{
         if(travado==false){
-            functions[nome]()
+            escreve_res(nome)
             travado=true
         }else{
             travado=false
-            functions[nome]()
+            escreve_res(nome)
             travado=true
         }
     }
