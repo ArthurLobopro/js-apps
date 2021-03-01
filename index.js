@@ -3,83 +3,70 @@ var content = document.getElementById("content")
 const nome= document.getElementById("nome")
 const msg = document.getElementById("msg")
 const functions= {
-    area: () => {
-            const caminho = "./area/"
-            const text = 'Calculador de Área'
-            escreve_res(caminho,text,955)
-        },
-    hip: () => {
-            const caminho = "./hipotenusa/"
-            const text = "Calculador de Hipotenusa"
-            escreve_res(caminho,text)
+    area:{
+        caminho: "./area/",
+        text: 'Calculador de Área'
     },
-    media: () => {
-            const caminho = "./media/"
-            const text = "Calculadora de Média"
-            escreve_res(caminho,text)
+    hip:{
+        caminho: "./hipotenusa/",
+        text: "Calculador de Hipotenusa"
     },
-    bases: () => {
-            const caminho = "./bases/"
-            const text = "Conversor de  Bases"
-            escreve_res(caminho,text,955)
+    media:{
+        caminho: "./media/",
+        text: "Calculadora de Média"
     },
-    conversorImg: () => {
-        const caminho = './conversor-img/'
-        const text = 'Conversor de Imagens'
-        escreve_res(caminho,text)
+    bases:{
+        caminho: "./bases/",
+        text: "Conversor de  Bases"
     },
-    desconto: () => {
-        const caminho = './desconto/'
-        const text = 'Calculadora de Desconto'
-        escreve_res(caminho,text)
+    conversorImg:{
+        caminho: './conversor-img/',
+        text: 'Conversor de Imagens'
     },
-    distancia: () => {
-            const caminho = "./distancia/"
-            const text = "Conversor de Distância"
-            escreve_res(caminho,text)
+    desconto:{
+        caminho: './desconto/',
+        text: 'Calculadora de Desconto'
     },
-    rgb_hex: () => {
-            const caminho = "./hex_rgb/"
-            const text = "Conversor HEX/RGB"
-            escreve_res(caminho,text)
+    distancia:{
+        caminho: "./distancia/",
+        text: "Conversor de Distância"
     },
-    romano: () => {
-        const caminho = "./romano/"
-        const text = "Conversor Romano/Decimal"
-        escreve_res(caminho,text)
+    rgb_hex:{
+            caminho: "./hex_rgb/",
+            text: "Conversor HEX/RGB"
     },
-    velocidade: () => {
-            const caminho = "./velocidade/"
-            const text = "Conversor de Velocidade"
-            escreve_res(caminho,text)
+    romano:{
+        caminho: "./romano/",
+        text: "Conversor Romano/Decimal"
     },
-    bascara: () => {
-            const caminho = "./bascara/"
-            const text = "Equação de 2° Grau"
-            escreve_res(caminho,text)
+    velocidade:{
+            caminho: "./velocidade/",
+            text: "Conversor de Velocidade"
     },
-    potencia: () => {
-            const caminho = "./potencias/"
-            const text = "Gerador de Potências"
-            escreve_res(caminho,text)
+    bascara:{
+        caminho: "./bascara/",
+        text: "Equação de 2° Grau"
     },
-    tabuada: () => {
-            const caminho = "./tabuada/"
-            const text = "Gerador de Tabuada"
-            escreve_res(caminho,text)
+    potencia:{
+        caminho: "./potencias/",
+        text: "Gerador de Potências"
     },
-    picker: () => {
-        const caminho = "./color-picker/"
-        const text = "Seletor de cores"
-        escreve_res(caminho,text)
+    tabuada:{
+        caminho: "./tabuada/",
+        text: "Gerador de Tabuada"
+    },
+    picker:{
+        caminho: "./color-picker/",
+        text: "Seletor de cores"
     }
 }
-function escreve_res(caminho,texto,minWid=810){
+function escreve_res(nome){
+    let caminho, text
+    ( {caminho, text } =  functions[nome])
     if (document.body.clientWidth>=1000) {
-        const text = `<iframe src="${caminho}"></iframe>`
-        content.innerHTML= text
-        document.body.style.minWidth=`${minWid}px`
-        msg.innerHTML=`Você está vendo <a href='${caminho}'>${texto}</a>`
+        const iframe = `<iframe src="${caminho}"></iframe>`
+        content.innerHTML= iframe
+        msg.innerHTML=`Você está vendo <a href='${caminho}'>${text}</a>`
         content.style.opacity='1'
         content.style.backgroundImage='none'
     }
@@ -94,7 +81,7 @@ const escreve = event =>{
     let nome  = event.target.dataset.name
     if(nome_backup.escreve != nome){
         if(travado===false){
-            functions[nome]()
+            escreve_res(nome)
         }
     }
     nome_backup.escreve = nome
