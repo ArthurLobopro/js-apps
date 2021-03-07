@@ -1,16 +1,11 @@
-import { addEvent,circle, id } from "../public/js/modules.js"
-const get = id => document.getElementById(id)
+import { addEvent,make_div, get } from "../public/js/modules.js"
 const res= get("res")
 const cateto1 = get("cat1")
 const cateto2 = get("cat2")
 const cateto = get("cat")
 const hipotenusa = get("hip")
 const escreve = (content,input)=>{
-    res.innerHTML+=`
-    <div class="res" id="div${id.id}">
-        ${circle(id.id)}
-        ${content}
-    </div>`
+    res.innerHTML+=make_div(content)
     addEvent()
     res.style.display='flex'
     for(let i of input){ i.value='' }

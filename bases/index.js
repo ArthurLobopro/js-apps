@@ -1,7 +1,6 @@
-import { addEvent,circle, id } from "../public/js/modules.js"
+import { addEvent,make_div,get } from "../public/js/modules.js"
 import * as convert from "../public/js/bases.js"
 const hexn = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
-const get = id => document.getElementById(id)
 let current_function = 'dec_to_bin'
 
 //Conversão decimal para binário
@@ -105,11 +104,7 @@ function oct_to_hex() {
 function escreve_res(content, sigla) {
     let res = get("res")
     res.style.display = "flex"
-    res.innerHTML += `
-    <div class="res" id="div${id.id}">
-        ${circle(id.id)}
-        ${content}
-     </div>`
+    res.innerHTML += make_div(content)
     addEvent()
     zerar(sigla)
     id.increase()

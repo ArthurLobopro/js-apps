@@ -1,4 +1,4 @@
-import { addEvent,circle, id, get } from "../public/js/modules.js"
+import { addEvent,make_div, get } from "../public/js/modules.js"
 const res = get("res")
 function calcular(){
     let a=Number(a_input.value)
@@ -21,13 +21,9 @@ function calcular(){
         }else{
             string=`Raiz:Inexistente<br>X: Inexistente`
         }
-        res.innerHTML+=`
-        <div class="res" id="div${id.id}">
-            ${circle(id.id)}
-            A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>${string}
-        </div>`
+        let content = `A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>${string}`
+        res.innerHTML+=make_div(content)
         res.style="background-color: white;box-shadow: 5px 5px 10px black;display: flex;"
-        id.increase()
         addEvent()
         zerar()   
     }
