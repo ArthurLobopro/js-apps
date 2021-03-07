@@ -1,112 +1,136 @@
-var travado =false
-var content = document.getElementById("content")
-const nome= document.getElementById("nome")
-const msg = document.getElementById("msg")
+const get = id => document.getElementById(id)
+let travado =false
+const content = get("content")
+const nome= get("nome")
+const msg = get("msg")
 const functions= {
-    area: function (){
-            const caminho = "./area/"
-            const text = 'Calculador de Área'
-            this.escreve_res(caminho,text,955)
-        },
-    hip: function (){
-            const caminho = "./hipotenusa/"
-            const text = "Calculador de Hipotenusa"
-            this.escreve_res(caminho,text)
+    area:{
+        caminho: "./area/",
+        text: 'Calculador de Área'
     },
-    media: function (){
-            const caminho = "./media/"
-            const text = "Calculadora de Média"
-            this.escreve_res(caminho,text)
+    hip:{
+        caminho: "./hipotenusa/",
+        text: "Calculador de Hipotenusa"
     },
-    bases: function (){
-            const caminho = "./bases/"
-            const text = "Conversor de  Bases"
-            this.escreve_res(caminho,text,955)
+    media:{
+        caminho: "./media/",
+        text: "Calculadora de Média"
     },
-    conversorImg: function (){
-        const caminho = './conversor-img/'
-        const text = 'Conversor de Imagens'
-        this.escreve_res(caminho,text)
+    bases:{
+        caminho: "./bases/",
+        text: "Conversor de  Bases"
     },
-    desconto: function() {
-        const caminho = './desconto/'
-        const text = 'Calculadora de Desconto'
-        this.escreve_res(caminho,text)
+    conversorImg:{
+        caminho: './conversor-img/',
+        text: 'Conversor de Imagens'
     },
-    distancia: function (){
-            const caminho = "./distancia/"
-            const text = "Conversor de Distância"
-            this.escreve_res(caminho,text)
+    desconto:{
+        caminho: './desconto/',
+        text: 'Calculadora de Desconto'
     },
-    rgb_hex: function (){
-            const caminho = "./hex_rgb/"
-            const text = "Conversor HEX/RGB"
-            this.escreve_res(caminho,text)
+    distancia:{
+        caminho: "./distancia/",
+        text: "Conversor de Distância"
     },
-    romano: function(){
-        const caminho = "./romano/"
-        const text = "Conversor Romano/Decimal"
-        this.escreve_res(caminho,text)
+    rgb_hex:{
+            caminho: "./hex_rgb/",
+            text: "Conversor HEX/RGB"
     },
-    velocidade: function (){
-            const caminho = "./velocidade/"
-            const text = "Conversor de Velocidade"
-            this.escreve_res(caminho,text)
+    romano:{
+        caminho: "./romano/",
+        text: "Conversor Romano/Decimal"
     },
-    bascara: function (){
-            const caminho = "./bascara/"
-            const text = "Equação de 2° Grau"
-            this.escreve_res(caminho,text)
+    velocidade:{
+            caminho: "./velocidade/",
+            text: "Conversor de Velocidade"
     },
-    potencia: function (){
-            const caminho = "./potencias/"
-            const text = "Gerador de Potências"
-            this.escreve_res(caminho,text)
+    bascara:{
+        caminho: "./bascara/",
+        text: "Equação de 2° Grau"
     },
-    tabuada: function (){
-            const caminho = "./tabuada/"
-            const text = "Gerador de Tabuada"
-            this.escreve_res(caminho,text)
+    potencia:{
+        caminho: "./potencias/",
+        text: "Gerador de Potências"
     },
-    picker: function () {
-        const caminho = "./color-picker/"
-            const text = "Seletor de cores"
-            this.escreve_res(caminho,text)
+    tabuada:{
+        caminho: "./tabuada/",
+        text: "Gerador de Tabuada"
     },
-    escreve_res(caminho,texto,minWid=810){
-        if (document.body.clientWidth>=1000) {
-            const text = `<object data="${caminho}" type="text/html"></object>`
-            content.innerHTML= text
-            document.body.style.minWidth=`${minWid}px`
-            msg.innerHTML=`Você está vendo <a href='${caminho}'>${texto}</a>`
-            content.style.opacity='1'
-            content.style.backgroundImage='none'
-        }
-    },
-}
-var nome_backup_escreve
-function escreve(nome){
-    if(nome_backup_escreve!=nome){
-        if(travado===false){
-            functions[nome]()
-        }
-    nome_backup_escreve=nome
+    picker:{
+        caminho: "./color-picker/",
+        text: "Seletor de cores"
     }
 }
-var nome_backup_trava
-//Usada apenas na função trava
-function trava(nome){
-    if(nome_backup_trava==nome){
+function escreve_res(nome){
+    let caminho, text
+    ( {caminho, text } =  functions[nome])
+    if (document.body.clientWidth>=1000) {
+        let iframes = document.querySelectorAll("iframe")
+        for(let i of iframes){
+            i.style.display="none"
+        }
+        if(get(nome) == undefined){
+            const iframe = `<iframe src="${caminho}" id="${nome}"></iframe>`
+            content.innerHTML+= iframe
+        }else{
+            get(nome).style.display=""
+        }
+        msg.innerHTML=`Você está vendo <a href='${caminho}'>${text}</a>`
+        content.style.opacity='1'
+        content.style.backgroundImage='none'
+    }
+}
+// Deteção de eventos
+// Funções
+const nome_backup = {
+    escreve: '',
+    trava: ''
+}
+const escreve = event =>{
+    let nome  = event.target.dataset.name
+    if(nome_backup.escreve != nome){
+        if(travado===false){
+            escreve_res(nome)
+        }
+    }
+    nome_backup.escreve = nome
+}
+const trava = event => {
+    let nome = event.target.dataset.name
+    if(nome_backup.trava==nome){
         travado=(!travado)
     }else{
         if(travado==false){
-            functions[nome]()
+            escreve_res(nome)
             travado=true
         }else{
             travado=false
-            functions[nome]()
+            escreve_res(nome)
             travado=true
         }
     }
-    nome_backup_trava=nome
+    nome_backup.trava=nome
 }
+// Chamadas
+const list = document.querySelectorAll("#lista li")
+for(let i of list){
+    i.onmouseenter = escreve
+}
+for(let i of list){
+    i.ondblclick = trava
+}
+// Adição de elementos em segundo plano
+setTimeout(() => {
+    const itens = [
+        "area","hip","media","bases","conversorImg","desconto","distancia","rgb_hex","romano","velocidade","bascara","potencia","tabuada","picker"
+    ]
+    itens.forEach((value) => {
+        const iframe = document.createElement("iframe")
+        iframe.src = functions[value].caminho
+        iframe.id = value
+        iframe.style.display="none"
+        if(get(value) == undefined){
+            content.appendChild(iframe)
+        }
+    })
+}, 2000)

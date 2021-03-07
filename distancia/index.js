@@ -1,5 +1,4 @@
-import { addEvent,circle, id } from "../public/js/modules.js"
-const get = id => document.getElementById(id)
+import { addEvent,make_div, get } from "../public/js/modules.js"
 const unity_select = get("unity")
 const num_input = get("num")
 const res = get("res")
@@ -23,23 +22,20 @@ function calcular(){
 }
 function resposta(metro){
     let unidade=["km", "hm", "dam", "m", "dm", "cm", "mm"]
-    let constent=""
-    constent = `
-    <div class="res" id="div${id.id}">
-        ${circle(id.id)}
-        <table>`
+    let content=""
+    content = `<table>`
     let num = 1000
     for(let i=0;i<7;i++){
         if(document.getElementById(unidade[i]).checked){
-            constent+=`<tr>
+            content+=`<tr>
                     <td class="row">${unidade[i]}</td>
                     <td class="row">${metro/num}</td>
                   </tr>`
         }
         num/=10
     }
-    constent += `</table></div>`
-    res.innerHTML+=constent
+    content += `</table>`
+    res.innerHTML+=make_div(content)
     res.style.display="flex"
     addEvent()
     id.increase()

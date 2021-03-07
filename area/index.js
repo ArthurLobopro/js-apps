@@ -1,16 +1,12 @@
-import { addEvent,circle, id ,get } from "../public/js/modules.js";
+import { addEvent,make_div ,get } from "../public/js/modules.js";
 const res= get("res")
 let medida = "mm"
 function contrutorRes(nome,string,largura=50,infoAdImg=""){
-        res.innerHTML+=`
-        <div class="res" id="div${id.id}">
-            ${circle(id.id)}
-            <div class="ac"><img src="img/${nome}.png" width="${largura}px" heigth="50px" ${infoAdImg}></div>
-            ${string}<sup>2</sup>
-        </div>`
+        let content = `<div class="ac"><img src="img/${nome}.png" width="${largura}px" heigth="50px" ${infoAdImg}></div>
+        ${string}<sup>2</sup>`
+        res.innerHTML+=make_div(content)
         res.style.display='flex'
         addEvent()
-        id.increase()
         zerar(nome)
 }
 const construtorInput = nome => {

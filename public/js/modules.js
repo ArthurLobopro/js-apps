@@ -1,30 +1,32 @@
 //Variáveis
-class ID {
-    id = 0
-    increase(){ this.id+=1 }
-    reset(){ this.id=0 }
-}
-const id = new ID()
+const circle = `<div class="circle"><img src="../public/midia/close-icon.png"></div>`
 //Funções
 const addEvent = () => {
     let div = document.querySelectorAll('.res .circle')
     for(let i of div){
         i.onclick = event =>{
-           let element = document.getElementById(`div${event.target.dataset.id}`)
-           res.removeChild(element)
-           let a = res.innerHTML
+            let target = event.target
+            target = target.tagName == "IMG" ? target.parentElement : target
+            let element = target.parentElement
+            res.removeChild(element)
+            let a = res.innerHTML
             if(a.indexOf('</div>')==-1){ 
-                id.reset()
                 res.style.display='none'
             }
         }
     }
 }
-const circle = id => `<div class="circle" data-id="${id}"><img src="../public/midia/close-icon.png" data-id="${id}"></div>`
 const range = (min,max,pass = 1) => {
     let array = []
     for(let i = min;i<max;i+=pass){ array.push(i) }
     return array
 }
+const make_div = str => {
+    return `
+    <div class="res">
+        ${circle}
+        ${str}
+    </div>`
+}
 const get = id => document.getElementById(id)
-export { addEvent, circle, id , range, get}
+export { addEvent, make_div, range, get}

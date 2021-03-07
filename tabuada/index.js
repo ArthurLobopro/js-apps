@@ -1,4 +1,4 @@
-import { addEvent,circle, id } from "../public/js/modules.js";
+import { addEvent,make_div } from "../public/js/modules.js";
 const numero=document.getElementById("num")
 const inicio=document.getElementById("inicio")
 const fim=document.getElementById("fim")
@@ -12,7 +12,7 @@ inicio.onkeydown = call
 fim.onkeydown = call
 button.onclick = () => gerar()
 function gerar(){
-    let resposta=""
+    let str=""
     if(numero.value.length == 0){
         alert("Por favor insira um número para continuar")
     }else if(inicio.value.length == 0 || fim.value.length == 0){
@@ -26,16 +26,12 @@ function gerar(){
             fim=inicio
             inicio=ajudante
         }
-        resposta+=`<div class="res" id="div${id.id}">
-        ${circle(id.id)}`
         for(i;i<=f;i++){
-            resposta+=`${num} x ${i} = ${num*i}<br>`
+            str+=`${num} x ${i} = ${num*i}<br>`
         }
-        resposta+=`</div>`
-        res.innerHTML+=resposta
+        res.innerHTML+=make_div(str)
         addEvent()
         res.style.display="flex"
         numero.value=""
-        id.increase()
     }
 }

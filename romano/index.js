@@ -1,8 +1,8 @@
-import { addEvent,circle, id } from "../public/js/modules.js";
+import { addEvent,make_div,get } from "../public/js/modules.js";
 //Variáveis globais
-const res = document.getElementById('res')
-const romano = document.getElementById('rom')
-const dec = document.getElementById('dec')
+const res = get('res')
+const romano = get('rom')
+const dec = get('dec')
 const valores = { I: 1, V: 5, X:10, L:50, C: 100, D: 500, M: 1000 }
 const algarismos = ['I','V','X','L','C','D','M']
 const valida = array =>{
@@ -31,15 +31,10 @@ const soma = array => {
     }
 }
 const escreve = (content,input)=>{
-    res.innerHTML+=`
-    <div class="res" id="div${id.id}">
-        ${circle(id.id)}
-        ${content}
-    </div>`
+    res.innerHTML+=make_div(content)
     addEvent()
     res.style.display='flex'
     input.value=''
-    id.increase()
 }
 function rom_to_dec() {
     const string = String(romano.value).toUpperCase()
@@ -85,10 +80,10 @@ function dec_to_rom(){
 }
 // Detecção de Eventos
 const radio = document.querySelectorAll('#selecao input')
-const rom_data = document.getElementById('data-rom')
-const dec_data = document.getElementById('data-dec')
-const button_rom = document.getElementById('rom-button')
-const button_dec = document.getElementById('dec-button')
+const rom_data = get('data-rom')
+const dec_data = get('data-dec')
+const button_rom = get('rom-button')
+const button_dec = get('dec-button')
 const troca = () => {
     rom_data.classList.toggle('hidden')
     dec_data.classList.toggle('hidden')

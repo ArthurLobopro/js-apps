@@ -1,4 +1,4 @@
-import { addEvent,circle, id, get } from "../public/js/modules.js"
+import { addEvent,make_div, get } from "../public/js/modules.js"
 import { rgb_to_hex } from "../public/js/hex-rgb.js"
 
 const upimg = get('upimg')
@@ -68,14 +68,11 @@ canvas.onclick = event => {
     let r,g,b
     [r,g,b] = color(event)
     let rgb = `rgb(${r}, ${g}, ${b})`
-    res.innerHTML+=`
-    <div class="res" id="div${id.id}">
-        ${circle(id.id)}
-        <div class="color" style="background-color: ${rgb};"></div><br>
-        RGB: ${rgb}<br>
-        HEX: ${rgb_to_hex(r,g,b)}
-    </div>`
-    id.increase()
+    let content = ` 
+    <div class="color" style="background-color: ${rgb};"></div><br>
+    RGB: ${rgb}<br>
+    HEX: ${rgb_to_hex(r,g,b)}`
+    res.innerHTML+=make_div(content)
     addEvent()
     res.style.display="flex"
 }

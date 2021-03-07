@@ -1,8 +1,8 @@
-import { addEvent,circle, id } from "../public/js/modules.js"
-const res = document.getElementById("res")
-const num = document.getElementById("num")
-const inicio = document.getElementById("inicio")
-const fim = document.getElementById("fim")
+import { addEvent,make_div,get } from "../public/js/modules.js"
+const res = get("res")
+const num = get("num")
+const inicio = get("inicio")
+const fim = get("fim")
 function verificar(){
     if(num.value.length == 0){
         alert("Por favor insira um número para continuar")
@@ -17,26 +17,22 @@ function verificar(){
     }
 }
 function potencia(num){
-    let resposta=""
+    let str=""
     num=Number(num)
     let ini = Number(inicio.value)
     let f=Number(fim.value)
     if(ini>f){
         [ini,f] = [f,ini]
     }
-    resposta+=`<div class="res" id="div${id.id}">
-    ${circle(id.id)}`
     for(let i=ini;i<=f;i++){
-        resposta+=`${num}<sup>${i}</sup> = ${num**i}<br>`
+        str+=`${num}<sup>${i}</sup> = ${num**i}<br>`
     }
-    resposta+=`<div>`
-    res.innerHTML+=resposta
+    res.innerHTML+=make_div(str)
     res.style.display="flex"
-    id.increase()
     addEvent()
-    document.getElementById("num").value=""
+    get("num").value=""
 }
-const subimt_button = document.getElementById("submit-button")
+const subimt_button = get("submit-button")
 const auto_submit = event => { if(event.key == "Enter"){ verificar() }}
 
 subimt_button.onclick = verificar

@@ -1,6 +1,5 @@
-import { addEvent,circle, id, range } from "../public/js/modules.js"
+import { addEvent,make_div, range, get } from "../public/js/modules.js"
 import { hex_to_dec, dec_to_hex } from "../public/js/bases.js"
-const get = id => document.getElementById(id)
 const res = get("res")
 const nome = get("nome")
 const r = get("r")
@@ -68,24 +67,19 @@ function acha_nome(){
     escreve(`#${hex_string}`,content,3)             
 }
 function escreve(cor,string,num){
-    res.innerHTML+=`
-    <div class="res" id="div${id.id}">
-        ${circle(id.id)}
-        <div class="color" style="background-color: ${cor};"></div><br>
-        ${string}
-    </div>`
+    string= `<div class="color" style="background-color: ${cor};"></div><br>\n${string}`
+    res.innerHTML+=make_div(string)
     addEvent()
-    id.increase()
     res.style.display="flex"
     zerar(num)
 }
 function zerar(num){
     if(num==1){
-        document.getElementById("hex").value=""
+        get("hex").value=""
     }else if(num==2){
-        document.getElementById("r").value=""
-        document.getElementById("g").value=""
-        document.getElementById("b").value=""
+        get("r").value=""
+        get("g").value=""
+        get("b").value=""
     }else{
         document.getElementsByTagName("option")[0].selected=true
     }

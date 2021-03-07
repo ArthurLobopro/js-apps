@@ -1,13 +1,13 @@
-import { addEvent,circle, id } from "../public/js/modules.js"
+import { addEvent,make_div, get } from "../public/js/modules.js"
 //Variáveis globais
 let mediaNumbers = []
-const num = document.getElementById("num")
-const select = document.getElementById('numbers')
-const res = document.getElementById('res')
-const preview = document.getElementById('preview')
+const num = get("num")
+const select = get('numbers')
+const res = get('res')
+const preview = get('preview')
 const preview_class = document.querySelector('#preview div .preview')
-const add = document.getElementById('add')
-const left = document.getElementById('left')
+const add = get('add')
+const left = get('left')
 //Funções
 function adiciona(){
     let number = Number(num.value)
@@ -35,11 +35,9 @@ function calculaMedia(){
 }
 function addToHistory(){
     let string = document.querySelector('.preview').innerHTML
-    let content = `<div class="res" id="div${id.id}">${circle(id.id)}${string}</div>`
-    res.innerHTML+=content
+    res.innerHTML+=make_div(string)
     addEvent()
     res.style.display='flex'
-    id.increase()
     preview_class.innerHTML=""
     preview.style.visibility='hidden'
     select.innerHTML=""
@@ -52,9 +50,9 @@ function autoAdd(event){
 // Detecção de eventos
 num.onkeydown = autoAdd
 add.onclick = () => (num.value.length==0)? alert('Digite um número para adicionar!') : adiciona()
-const calc_button = document.getElementById('calc')
-const addMore = document.getElementById('add-more')
-const ath = document.getElementById('ath')
+const calc_button = get('calc')
+const addMore = get('add-more')
+const ath = get('ath')
 calc_button.onclick = calculaMedia
 addMore.onclick = () => {
     preview.style.visibility='hidden'
