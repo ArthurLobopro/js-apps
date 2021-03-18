@@ -17,7 +17,7 @@ const functions= {
         text: "Calculadora de Média"
     },
     bases:{
-        caminho: "./bases/",
+        caminho: "./programs/bases/",
         text: "Conversor de  Bases"
     },
     conversorImg:{
