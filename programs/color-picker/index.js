@@ -1,5 +1,5 @@
-import { addEvent,make_div, get } from "../public/js/modules.js"
-import { rgb_to_hex } from "../public/js/hex-rgb.js"
+import { addEvent,make_div, get } from "../../public/js/modules.js"
+import { rgb_to_hex } from "../../public/js/hex-rgb.js"
 
 const upimg = get('upimg')
 const canvasDiv= get('canvasDiv')
