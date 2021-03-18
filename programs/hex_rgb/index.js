@@ -1,5 +1,5 @@
-import { addEvent,make_div, range, get } from "../public/js/modules.js"
-import { hex_to_dec, dec_to_hex } from "../public/js/bases.js"
+import { addEvent,make_div, range, get } from "../../public/js/modules.js"
+import { hex_to_dec, dec_to_hex } from "../../public/js/bases.js"
 const res = get("res")
 const nome = get("nome")
 const r = get("r")
