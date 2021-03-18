@@ -1,5 +1,5 @@
-import { addEvent,make_div,get } from "../public/js/modules.js"
-import * as convert from "../public/js/bases.js"
+import { addEvent,make_div,get } from "../../public/js/modules.js"
+import * as convert from "../../public/js/bases.js"
 const hexn = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
 let current_function = 'dec_to_bin'
 
