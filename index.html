@@ -84,6 +84,28 @@
             
         </div>
     </div>
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
+    <script>
+        const msg = document.getElementById("msg")
+        const container = document.getElementById("container")
+        const content = document.getElementById("content")
+        const menu = document.getElementById("menu-lateral")
+        window.onload=function(){
+            //Redimensiona o elemento #msg
+            msg.style.width=`calc(${container.clientWidth}px - 271px )`
+            //Redimensiona o elemento #content
+            content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
+            content.style.width=`${msg.clientWidth}px`
+            menu.style.height=`${container.clientHeight}px`
+        }
+        window.onresize = function(){
+            //Redimensiona o elemento #msg
+            msg.style.width=`calc(${container.clientWidth}px - 271px )`
+            //Redimensiona o elemento #content
+            content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
+            content.style.width=`${msg.clientWidth}px`
+            menu.style.height=`${container.clientHeight}px`
+        }
+    </script>
 </body>
 </html>
