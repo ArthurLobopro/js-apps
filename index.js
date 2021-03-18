@@ -5,7 +5,7 @@ const nome= get("nome")
 const msg = get("msg")
 const functions= {
     area:{
-        caminho: "./area/",
+        caminho: "./programs/area/",
         text: 'Calculador de Área'
     },
     hip:{

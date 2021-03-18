@@ -1,5 +1,5 @@
 //Variáveis
-const circle = `<div class="circle"><img src="../public/midia/close-icon.png"></div>`
+const circle = `<div class="circle"><img src="../../public/midia/close-icon.png"></div>`
 //Funções
 const addEvent = () => {
     let div = document.querySelectorAll('.res .circle')
