@@ -1,4 +1,4 @@
-import { addEvent,make_div, get } from "../public/js/modules.js"
+import { addEvent,make_div, get } from "../../public/js/modules.js"
 //Variáveis globais
 let mediaNumbers = []
 const num = get("num")
