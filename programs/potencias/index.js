@@ -1,4 +1,4 @@
-import { addEvent,make_div,get } from "../public/js/modules.js"
+import { addEvent,make_div,get } from "../../public/js/modules.js"
 const res = get("res")
 const num = get("num")
 const inicio = get("inicio")
