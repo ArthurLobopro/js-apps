@@ -45,7 +45,7 @@ const functions= {
             text: "Conversor de Velocidade"
     },
     bascara:{
-        caminho: "./bascara/",
+        caminho: "./programs/bascara/",
         text: "Equação de 2° Grau"
     },
     potencia:{
