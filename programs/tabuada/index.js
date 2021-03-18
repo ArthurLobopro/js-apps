@@ -1,4 +1,4 @@
-import { addEvent,make_div } from "../public/js/modules.js";
+import { addEvent,make_div } from "../../public/js/modules.js";
 const numero=document.getElementById("num")
 const inicio=document.getElementById("inicio")
 const fim=document.getElementById("fim")
