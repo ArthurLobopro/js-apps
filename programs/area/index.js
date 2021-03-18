@@ -1,4 +1,4 @@
-import { addEvent,make_div ,get } from "../public/js/modules.js";
+import { addEvent,make_div ,get } from "../../public/js/modules.js";
 const res= get("res")
 let medida = "mm"
 function contrutorRes(nome,string,largura=50,infoAdImg=""){
