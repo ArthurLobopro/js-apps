@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Binário</title>
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header><h1>Conversor de bases</h1></header>
+   <section id="menu">
+        <div class="tacenter">Converter <span id="de">Decimal</span> &rightarrow; <span id="para">Binário</span> :</div>
+        <div class="flex">
+            <div class="mg-auto">
+                <div>
+                    <span id="type">Decimal: </span>
+                    <span id="input-de">
+                        <input type="number" min="0" id="decimal">
+                        <input type="text" min="0" pattern="[0-1]{1,}" id="binario" style="display: none;">
+                        <input type="text" min="0" pattern="[0-7]{1,}" id="octal" style="display: none;">
+                        <input type="text" min="0" pattern="[0-9a-fA-F]{1,}" id="hexa" style="display: none;">
+                    </span>
+                </div>
+                <div id="convert">
+                    <input type="button" id="submit-button" value="Converter">
+                </div>
+            </div>
+       </div>
+       <div id="menu-grid">
+           <div id="divde">
+               Converter de: <br>
+                <label>
+                   <input type="radio" name="de" value="decimal" checked>Decimal
+                </label><br>
+                <label>
+                   <input type="radio" name="de" value="binario">Binário
+                </label><br>
+                <label>
+                    <input type="radio" name="de" value="octal">Octal
+                </label><br>
+                <label>
+                    <input type="radio" name="de" value="hexa">Hexadecimal
+                </label>
+           </div>
+           <div id="divpara">
+                Para: <br>
+                <label>
+                   <input type="radio" name="para" value="decimal"disabled>Decimal
+                </label><br>
+                <label>
+                   <input type="radio" name="para" value="binario" checked>Binário
+                </label><br>
+                <label>
+                    <input type="radio" name="para" value="octal">Octal
+                </label><br>
+                <label>
+                    <input type="radio" name="para" value="hexa">Hexadecimal
+                </label>
+           </div>
+       </div>
+   </section>
+    <section id="res">
+        <span id="msg">Conversões Feitas:</span><br>
+    </section>
+    <footer>&copy;Arthur Lobo</footer>
+	<script src="index.js" type="module"></script>
+</body>
+</html>

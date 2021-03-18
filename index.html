@@ -15,63 +15,63 @@
                     <summary>Calculadoras</summary>
                     <li data-name="area">
                         Calculador de Área.
-                        <a href="./area/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/area/" target="_blank"><div class="link"></div></a>
                     </li>
                     <li data-name="desconto">
                         Calculadora de desconto.
-                        <a href="./desconto/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/desconto/" target="_blank"><div class="link"></div></a>
                     </li>
                     <li data-name="hip">
                         Calculadora de Hipotenusa.
-                        <a href="./hipotenusa/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/hipotenusa/" target="_blank"><div class="link"></div></a>
                     </li>
                     <li data-name="media">
                         Calculadora de Média.
-                        <a href="./media/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/media/" target="_blank"><div class="link"></div></a>
                     </li>
                 </details>
                 <details>
                     <summary>Conversores</summary>
                     <li data-name="bases">
                     Conversor de Bases.
-                    <a href="./bases/" target="_blank"><div class="link"></div></a>
+                    <a href="./programs/bases/" target="_blank"><div class="link"></div></a>
                     </li>
                     <li data-name="conversorImg">
                         Conversor de Imagens.
-                        <a href="./conversor-img/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/conversor-img/" target="_blank"><div class="link"></div></a>
                     </li>
                     <li data-name="distancia">
                         Conversor de Distância.
-                        <a href="./distancia/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/distancia/" target="_blank"><div class="link"></div></a>
                     </li>
                     <li data-name="rgb_hex">
                         Conversor HEX/RGB.
-                        <a href="./hex_rgb/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/hex_rgb/" target="_blank"><div class="link"></div></a>
                     </li>
                     <li data-name="romano">
                         Conversor Romano/Dec.
-                        <a href="./romano/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/romano/" target="_blank"><div class="link"></div></a>
                     </li>
                     <li data-name="velocidade">
                         Conversor de Velocidade.
-                        <a href="./velocidade/" target="_blank"><div class="link"></div></a>
+                        <a href="./programs/velocidade/" target="_blank"><div class="link"></div></a>
                     </li>
                 </details>
                 <li data-name="picker">
                     Color Picker.
-                    <a href="./color-picker/" target="_blank"><div class="link"></div></a>
+                    <a href="./programs/color-picker/" target="_blank"><div class="link"></div></a>
                 </li>
                 <li data-name="bascara">
                     Equação de 2º Grau.
-                    <a href="./bascara/" target="_blank"><div class="link"></div></a>
+                    <a href="./programs/bascara/" target="_blank"><div class="link"></div></a>
                 </li>
                 <li data-name="potencia">
                     Gerador de Potências.
-                    <a href="./potencias/" target="_blank"><div class="link"></div></a>
+                    <a href="./programs/potencias/" target="_blank"><div class="link"></div></a>
                 </li>
                 <li data-name="tabuada">
                     Gerador de Tabuada.
-                    <a href="./tabuada/" target="_blank"><div class="link"></div></a>
+                    <a href="./programs/tabuada/" target="_blank"><div class="link"></div></a>
                 </li>
             </ul>
             <div id="logo">
@@ -84,6 +84,28 @@
             
         </div>
     </div>
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
+    <script>
+        const msg = document.getElementById("msg")
+        const container = document.getElementById("container")
+        const content = document.getElementById("content")
+        const menu = document.getElementById("menu-lateral")
+        window.onload=function(){
+            //Redimensiona o elemento #msg
+            msg.style.width=`calc(${container.clientWidth}px - 271px )`
+            //Redimensiona o elemento #content
+            content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
+            content.style.width=`${msg.clientWidth}px`
+            menu.style.height=`${container.clientHeight}px`
+        }
+        window.onresize = function(){
+            //Redimensiona o elemento #msg
+            msg.style.width=`calc(${container.clientWidth}px - 271px )`
+            //Redimensiona o elemento #content
+            content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
+            content.style.width=`${msg.clientWidth}px`
+            menu.style.height=`${container.clientHeight}px`
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Conversor de Algarismos Romanos</title>
+</head>
+<body>
+    <section id="menu">
+        <div id="data-rom">
+            Algarismos Romanos: <input type="text" id="rom">
+            <input type="button" id="rom-button" value="Converter">
+        </div>
+        <div id="data-dec" class="hidden">
+            Número Decimal: <input type="number" min="1" id="dec">
+            <input type="button" id="dec-button" value="Converter">
+        </div>
+        <div id="selecao">
+            Conversões: <br>
+            <div>
+                <label><input type="radio" name="convert" value="data-rom" checked> Romano para Decimal.</label>
+                <label><input type="radio" name="convert" value="data-dec"> Decimal para Romano.</label>
+            </div>
+        </div>
+    </section>
+    <section id="res">
+        <span id="msg">Histórico de Conversões:</span><br>
+    </section>
+    <footer>&copy;Arthur Lobo</footer>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

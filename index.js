@@ -5,59 +5,59 @@ const nome= get("nome")
 const msg = get("msg")
 const functions= {
     area:{
-        caminho: "./area/",
+        caminho: "area/",
         text: 'Calculador de Área'
     },
     hip:{
-        caminho: "./hipotenusa/",
+        caminho: "hipotenusa/",
         text: "Calculador de Hipotenusa"
     },
     media:{
-        caminho: "./media/",
+        caminho: "media/",
         text: "Calculadora de Média"
     },
     bases:{
-        caminho: "./bases/",
+        caminho: "bases/",
         text: "Conversor de  Bases"
     },
     conversorImg:{
-        caminho: './conversor-img/',
+        caminho: 'conversor-img/',
         text: 'Conversor de Imagens'
     },
     desconto:{
-        caminho: './desconto/',
+        caminho: 'desconto/',
         text: 'Calculadora de Desconto'
     },
     distancia:{
-        caminho: "./distancia/",
+        caminho: "distancia/",
         text: "Conversor de Distância"
     },
     rgb_hex:{
-            caminho: "./hex_rgb/",
+            caminho: "hex_rgb/",
             text: "Conversor HEX/RGB"
     },
     romano:{
-        caminho: "./romano/",
+        caminho: "romano/",
         text: "Conversor Romano/Decimal"
     },
     velocidade:{
-            caminho: "./velocidade/",
+            caminho: "velocidade/",
             text: "Conversor de Velocidade"
     },
     bascara:{
-        caminho: "./bascara/",
+        caminho: "bascara/",
         text: "Equação de 2° Grau"
     },
     potencia:{
-        caminho: "./potencias/",
+        caminho: "potencias/",
         text: "Gerador de Potências"
     },
     tabuada:{
-        caminho: "./tabuada/",
+        caminho: "tabuada/",
         text: "Gerador de Tabuada"
     },
     picker:{
-        caminho: "./color-picker/",
+        caminho: "color-picker/",
         text: "Seletor de cores"
     }
 }
@@ -126,7 +126,7 @@ setTimeout(() => {
     ]
     itens.forEach((value) => {
         const iframe = document.createElement("iframe")
-        iframe.src = functions[value].caminho
+        iframe.src = `./programs/${functions[value].caminho}`
         iframe.id = value
         iframe.style.display="none"
         if(get(value) == undefined){

@@ -1,0 +1,26 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Calculadora de desconto</title>
+</head>
+<body>
+    <h1>Calculadora de desconto.</h1>
+    <section id="menu">
+        <div class="input">
+            <div class="tal">
+                <label>Valor: R$ <input type="text" pattern="[0-9.,]{0,}" id="num"></label><br>
+                <label>Desconto: <input type="number" id="desc">%</label><br>
+            </div>
+            <input type="button" value="Calcular" id="submit-button">
+        </div>
+    </section>
+    <section id="res">
+        <span id="msg">Cálculos Feitos:</span>
+    </section>
+    <footer>&copy; Arthur Lobo</footer>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

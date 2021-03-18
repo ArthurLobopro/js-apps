@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Calculador de Hipotenusa</title>
+</head>
+<body>
+    <h1>Calculador de Hipotenusa <br>e catetos</h1>
+    <section id="menu">
+        <div class="mauto">
+            <img src="./triangulo.png" alt="Triangulo Retangulo"><br>
+            <div id="dados">
+                <div class="input1">
+                    <div id="opt1">
+                        Cateto 1: <input type="number" id="cat1" min="0"><br>
+                        Cateto 2: <input type="number" id="cat2" min="0">
+                    </div>
+                    <div id="opt2" class="hidden">
+                        Hipotenusa: <input type="number" id="hip" min="0"><br>
+                        Cateto: <input type="number" id="cat" min="0">
+                    </div>
+                </div>
+                <div class="input2">
+                    Unidade de Medida:
+                    <select id="unity">
+                        <option value="m">m</option>
+                        <option value="cm" checked>cm</option>
+                        <option value="cm">mm</option>
+                    </select><br>
+                    <input type="button" id="submit-button" value="Calcular">
+                </div>
+                <div class="input3">
+                    Conversão: <br>
+                    <label><input type="radio" data-f="hip" name="tipo" checked>Calcular a Hipotenusa.</label>
+                    <label><input type="radio" data-f="cat" name="tipo">Calcular um cateto.</label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="res">
+        <span id="msg">Cálculos feitos:</span><br>
+    </section>
+    <footer>&copy;Arthur Lobo</footer>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
