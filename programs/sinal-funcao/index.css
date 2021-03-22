@@ -1,0 +1,21 @@
+body{
+    background-color: #27AE60;;
+}
+#menu{
+    height: max-content;
+    width: max-content;
+    padding: 15px 10px;
+}
+input[type="number"]{
+    width: 50px;
+}
+#res{
+    padding: 5px 10px 10px;
+}
+.res{
+    border: 2px solid black;
+    width: max-content;
+    padding: 5px 3px 0 10px;
+    margin: 10px 5px 0 0;
+    text-align: left;
+}
