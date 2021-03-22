@@ -1,9 +1,9 @@
-import { addEvent,make_div } from "../../public/js/modules.js";
-const numero=document.getElementById("num")
-const inicio=document.getElementById("inicio")
-const fim=document.getElementById("fim")
-const res=document.getElementById("res")
-const button = document.getElementById('submit-button')
+import { addEvent,make_div, get } from "../../public/js/modules.js"
+const numero= get("num")
+const inicio= get("inicio")
+const fim= get("fim")
+const res= get("res")
+const button = get('submit-button')
 const call = (event)=>{
     if(event.key == 'Enter'){ gerar() }
 }
