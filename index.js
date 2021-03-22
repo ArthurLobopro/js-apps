@@ -66,6 +66,7 @@ function escreve_res(nome){
     ( {caminho, text } =  functions[nome])
     if (document.body.clientWidth>=1000) {
         let iframes = document.querySelectorAll("iframe")
+        caminho = `./programs/${caminho}`
         for(let i of iframes){
             i.style.display="none"
         }
