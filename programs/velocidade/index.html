@@ -13,13 +13,17 @@
     <section id="menu">
         <div id="centro-menu">
             <div id="input">
-                Km/h: <input type="number" id="kmh" onkeydown="auto_submit(event)"> 
-                <input type="button" id="submit-button" onclick="km_para_ms()" value="Converter">
+                <span id="input_type">Km/h:</span> <input type="number" id="num"> 
+                <input type="button" id="submit-button"value="Converter">
             </div>
             <div>
                 Converter:<br>
-                <input type="radio" onclick="troca_convert(1)" id="1" checked><label for="1">De Km/h para m/s</label><br>
-                <input type="radio" onclick="troca_convert(2)" id="2"><label for="2">De m/s para Km/h</label>
+                <label>
+                    <input type="radio" name="conversao" data-text="Km/h:" data-func="km_para_ms" checked> De Km/h para m/s
+                </label><br>
+                <label>
+                    <input type="radio" name="conversao" data-text="M/s:" data-func="ms_para_km"> De m/s para Km/h
+                </label>
             </div>
         </div>
     </section>
@@ -27,7 +31,6 @@
         <span id="msg">Conversões feitas:</span><br>
     </section>
     <footer>&copy;Arthur Lobo</footer>
-    <script src="../public/js/main.js"></script>
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
 </body>
 </html>

@@ -1,57 +1,61 @@
-var res= document.getElementById("res")
-var id = 0
-function troca_convert(num){
-    let input = document.getElementById("input")
-    switch(num){
-        case 1:
-            input.innerHTML=`Km/h: <input type="number" id="kmh" onkeydown="auto_submit(event)">
-            <input type="button" ${id_button}onclick="km_para_ms()" value="Converter">`
-            break
-        case 2:
-            input.innerHTML=`M/s: <input type="number"  id="ms" onkeydown="auto_submit(event)">
-            <input type="button" ${id_button} onclick="ms_para_km()" value="Converter">`
+import { addEvent,make_div, get } from "../../public/js/modules.js";
+
+//variaveis globais
+const res= get("res")
+const functions = {
+    km_para_ms:()=>{
+        let kmh = get("num")
+        if(kmh.value.length==0){
+            alert("Insira um número para continuar!")
+        }else{
+            kmh=Number(kmh.value)
+            let ms=kmh/3.6
+            let content = ` Km/h: ${kmh} km/h <br> M/s: ${ms} m/s`
+            res.innerHTML += make_div(content)
+            addEvent()
+            res.style.display="flex"
+            zerar()
+        }
+    },
+    ms_para_km: ()=>{
+        let ms = get("num")
+        if(ms.value.length==0){
+            alert("Insira um número para continuar!")
+        }else{
+            ms=Number(ms.value)
+            let kmh=ms*3.6
+            let content = ` M/s: ${ms} m/s <br> Km/h: ${kmh} km/h`
+            res.innerHTML += make_div(content)
+            addEvent()
+            res.style.display="flex"
+            zerar()
+        }
     }
 }
-function km_para_ms(){
-    let kmh = document.getElementById("kmh")
-    if(kmh.value.length==0){
-        alert("Insira um número para continuar!")
-    }else{
-        kmh=Number(kmh.value)
-        let ms=kmh/3.6
-        res.innerHTML+=`
-        <div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
-            Km/h: ${kmh} km/h<br>
-            M/s: ${ms} m/s
-        </div>`
-        id++
-        res.style.display="inline-block"
-        zerar(1)
-    }
+let current_function = functions.km_para_ms
+
+function troca_convert(event){
+    const value = event.target.dataset.func
+    const text = event.target.dataset.text
+    current_function = functions[value]
+    submit_button.onclick = current_function
+    get("input_type").innerText = text
 }
-function ms_para_km(){
-    let ms = document.getElementById("ms")
-    if(ms.value.length==0){
-        alert("Insira um número para continuar!")
-    }else{
-        ms=Number(ms.value)
-        let kmh=ms*3.6
-        res.innerHTML+=`
-        <div class="res" id="div${id}">
-            <div class="circle" onclick="remove_div(${id})"><img src="../public/midia/close-icon.png"></div>
-            M/s: ${ms} m/s <br>
-            Km/h: ${kmh} km/h
-        </div>`
-        id++
-        res.style.display="inline-block"
-        zerar(2)
-    }
+
+function zerar(){
+    get('num').value = ''
 }
-function zerar(num){
-    if(num==1){
-        document.getElementById("kmh").value=""
-    }else{
-        document.getElementById("ms").value=""
-    }
+
+//Detecção de eventos
+const num_input = get("num")
+num_input.onkeydown = event => {
+    if(event.key == "Enter"){ submit_button.click() }
+}
+
+const submit_button = get("submit-button")
+submit_button.onclick = current_function
+
+const troca_inputs = document.querySelectorAll(`input[type="radio"]`)
+for(let e of troca_inputs){
+    e.onclick = troca_convert
 }
