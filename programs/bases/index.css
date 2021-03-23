@@ -1,3 +1,5 @@
+@import url("../../public/css/res-blue.css");
+
 section{
     box-shadow: 5px 5px 10px;
     border-radius: 7px;
@@ -41,13 +43,6 @@ label{
 .ml15px{
     margin-left: 15px;
 }
-.res{
-    border:2px solid blue;
-    padding: 5px 6px 5px 10px;
-    text-align: left;
-    margin: 10px 5px;
-    width: max-content;
-}
 #res{
     padding: 5px;
     width: 90%;
@@ -59,7 +54,4 @@ label{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-.circle{
-    margin: -4px -5px auto 5px;
 }
