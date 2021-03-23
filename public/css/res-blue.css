@@ -1,0 +1,10 @@
+.res{
+    border: 2px solid blue;
+    width: max-content;
+    padding: 5px;
+    margin: 5px;
+    padding-left: 10px;
+}
+.res .circle{
+    margin: -4px -4px auto auto;
+}
