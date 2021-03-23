@@ -4,3 +4,9 @@
     font-style: normal;
     font-weight: 400;
 }
+@font-face {
+    font-family: 'Kreon';
+    src: url('../../fontes/Kreon-Light.ttf');
+    font-style: normal;
+    font-weight: 300;
+}
