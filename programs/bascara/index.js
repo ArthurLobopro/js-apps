@@ -1,5 +1,45 @@
 import { addEvent,make_div, get } from "../../public/js/modules.js"
 const res = get("res")
+
+const situações = {
+    ">0":{
+        ">0": {
+            ">0":"f(x)>0 para x < x1 ou x > x2" ,
+            "=0":"f(x)=0 para x = x1 ou x = x2",
+            "<0":"f(x)<0 para x1 < x < x2"
+        },
+        "<0": {
+            ">0":"f(x)>0 para x1 < x < x2" ,
+            "=0":"f(x)=0 para x = x1 ou x = x2",
+            "<0":"f(x)<0 para x < x1 ou x > x2"
+        }
+    },
+    "=0":{
+        ">0":{
+            ">0":"f(x)>0 para todo x $ne; x1" ,
+            "=0":"f(x)=0 para todo x = x1 = x2",
+            "<0":"Não existe x &isin; R tal que f(x)<0"
+        },
+        "<0":{
+            ">0": "Não existe x &isin; R tal que f(x)>0",
+            "=0":"f(x)=0 para todo x = x1 = x2",
+            "<0":"f(x)<0 para todo x $ne; x1" 
+        }
+    },
+    "<0":{
+        ">0": {
+            ">0": "f(x)>0 para todo x &isin; R",
+            "=0": "Não existe x &isin; R tal que f(x)=0",
+            "<0": "Não existe x &isin; R tal que f(x)<0"
+        },
+        "<0":{
+            ">0": "Não existe x &isin; R tal que f(x)>0",
+            "=0": "Não existe x &isin; R tal que f(x)=0",
+            "<0": "f(x)<0 para todo x &isin; R"
+        }
+    }
+}
+
 function calcular(){
     let a=Number(a_input.value)
     let b=Number(b_input.value)
@@ -9,19 +49,29 @@ function calcular(){
     }else{
         let delta =(b*b)-4*a*c
         let raiz=Math.sqrt(delta)
-        let x1,x2
         let string
+        let content
         if (raiz>0){
+            let x1, x2
             x1=(-(b)-raiz)/(a*2)
             x2=(-(b)+raiz)/(a*2)
             string =`Raiz: ${raiz}<br>X: ${x1} ou ${x2}`   
         }else if(raiz==0){
-            x1=-(b)/(a*2)
-            string=`Raiz: ${raiz}<br>X: ${x1}`
+            let x=-(b)/(a*2)
+            string=`Raiz: ${raiz}<br>X: ${x}`
         }else{
             string=`Raiz:Inexistente<br>X: Inexistente`
         }
-        let content = `A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>${string}`
+        content = `A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>${string}<br>`
+        if(get("fazer_analise").checked){
+            let d_value = delta === 0 ? "=0" :
+            delta > 0 ? ">0" : "<0"
+            let a_value = a > 0 ? ">0" : "<0"
+            const v = [">0","=0","<0"]
+            for(let i of v){
+                content+=`${situações[d_value][a_value][i]}<br>`
+            }
+        }
         res.innerHTML+=make_div(content)
         res.style="background-color: white;box-shadow: 5px 5px 10px black;display: flex;"
         addEvent()
