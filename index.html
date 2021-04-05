@@ -86,26 +86,14 @@
     </div>
     <script src="index.js" type="module"></script>
     <script>
-        const msg = document.getElementById("msg")
-        const container = document.getElementById("container")
-        const content = document.getElementById("content")
         const menu = document.getElementById("menu-lateral")
+        const list = document.querySelector("#menu-lateral > ul")
         window.onload=function(){
-            //Redimensiona o elemento #msg
-            msg.style.width=`calc(${container.clientWidth}px - 271px )`
-            //Redimensiona o elemento #content
-            content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
-            content.style.width=`${msg.clientWidth}px`
-            menu.style.height=`${container.clientHeight}px`
+            list.style.maxHeight = `${menu.clientHeight - 275}px`
         }
         window.onresize = function(){
-            //Redimensiona o elemento #msg
-            msg.style.width=`calc(${container.clientWidth}px - 271px )`
-            //Redimensiona o elemento #content
-            content.style.height=`calc(${container.clientHeight}px - ${msg.clientHeight}px)`
-            content.style.width=`${msg.clientWidth}px`
-            menu.style.height=`${container.clientHeight}px`
+            list.style.maxHeight = `${menu.clientHeight - 275}px`
         }
-    </script>
+    </script> 
 </body>
 </html>
