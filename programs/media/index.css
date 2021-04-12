@@ -51,6 +51,9 @@ select{
     height: max-content;
     max-width: 250px;
 }
-.circle{
+.res .circle{
     margin: -3px -3px auto auto;
+}
+#msg .circle{
+    margin: -6px ​-6px auto ;
 }
