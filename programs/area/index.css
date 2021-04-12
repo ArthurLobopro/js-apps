@@ -72,8 +72,11 @@ input[type="number"]{
     height: 55px;
     padding: 0 0 0 18px;
 }
-.circle{
+.res .circle{
     margin: -2px -2px auto auto;
+}
+#msg .circle{
+    margin: -6px -11px auto 5px;
 }
 .w100{
     width: 100%;
