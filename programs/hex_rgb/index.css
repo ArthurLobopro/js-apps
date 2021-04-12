@@ -30,3 +30,6 @@ body{
 input[type="number"]{
     width: 40px;
 }
+#msg .circle{
+    margin: 3px 3px auto 0;
+}
