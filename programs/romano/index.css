@@ -34,8 +34,12 @@ body {
   width: max-content;
 }
 
-.circle {
+.res .circle {
   margin: -4px -4px auto 5px;
+}
+
+#msg .circle {
+  margin: -1px 4px 0 0;
 }
 
 .hidden {
