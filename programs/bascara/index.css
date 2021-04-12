@@ -33,6 +33,9 @@ body{
     font-family: 'Kreon', sans-serif;
     font-weight: 400;
 }
-.circle{
+.res .circle{
     margin: -4px -2px 0 0;
+}
+#msg .circle{
+    margin: -6px -6px auto 0;
 }

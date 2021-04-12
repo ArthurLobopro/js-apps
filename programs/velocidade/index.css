@@ -29,8 +29,11 @@ body{
     padding-left: 10px;
     text-align: left;
 }
-.circle{
+.res .circle{
     margin: -4px -4px auto 5px;
+}
+#msg .circle{
+    margin: -2px 3px 0 0;
 }
 #centro-menu{
     margin: auto;

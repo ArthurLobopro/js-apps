@@ -47,7 +47,10 @@ tr{
     border-radius: 5px;
     margin: 8px 5px 0 0;
 }
-.circle{
+.res .circle{
     float: none;
     margin: auto;
+}
+#msg .circle{
+    margin: -6px -10px 0 0;
 }

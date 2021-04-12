@@ -26,6 +26,7 @@ button{
 }
 #main{
     margin: auto;
+    height: max-content;
     width: max-content;
     display: flex;
     justify-content: center;
@@ -40,6 +41,7 @@ button{
     justify-content: center;
     flex-direction: column;
     margin: 10px auto;
+    display: none;
 }
 #invi{
     display: none;
@@ -66,4 +68,7 @@ button{
     height: auto;
     margin: 10px auto;
     padding: 10px 15px;
+}
+#msg .circle{
+    margin: -6px -10px 0 0;
 }

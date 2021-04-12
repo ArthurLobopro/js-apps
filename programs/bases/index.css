@@ -55,3 +55,6 @@ label{
     justify-content: center;
     flex-wrap: wrap;
 }
+#msg .circle{
+    margin: 0;
+}

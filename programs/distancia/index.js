@@ -38,7 +38,7 @@ function resposta(metro){
     res.innerHTML+=make_div(content)
     res.style.display="flex"
     addEvent()
-    id.increase()
+    num_input.value = ""
 }
 function bloqueia(){
     let unidade=["km", "hm", "dam", "m", "dm", "cm", "mm"]

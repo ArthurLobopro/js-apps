@@ -12,6 +12,7 @@ function drawImage(img,w,h){
     image.src=img
     image.onload = function(){
         ctx.drawImage(image, 0, 0, w,h)
+        get("preview").style.display="block"
     }
 }
 function color(event) {
