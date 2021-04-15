@@ -64,7 +64,7 @@ document.querySelector('button').onclick = () => upimg.click()
 ctx.fillStyle='#FFFFFF'
 ctx.fillRect(0,0,100,100)
 
-upimg.onchange = getImage
+upimg.oninput = getImage
 canvas.onclick = event => {
     let r,g,b
     [r,g,b] = color(event)
