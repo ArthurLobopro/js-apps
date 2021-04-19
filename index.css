@@ -230,10 +230,6 @@ summary {
   padding-left: 15px;
 }
 
-summary::-webkit-details-marker {
-  display: none;
-}
-
 summary:focus {
   outline: none;
 }
