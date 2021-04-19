@@ -22,7 +22,9 @@ setTimeout(() => {
     ]
     itens.forEach((value) => {
         const iframe = document.createElement("iframe")
-        iframe.src = `./programs/${programs[value].caminho}`
+        let caminho
+        ({caminho} = programs.gets(value))
+        iframe.src = caminho
         iframe.id = value
         iframe.style.display="none"
         if(get(value) == undefined){

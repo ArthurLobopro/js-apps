@@ -54,6 +54,11 @@ const programs = {
     picker:{
         caminho: "color-picker/",
         text: "Seletor de cores"
+    },
+    gets(name){
+        const caminho = `./programs/${this[name].caminho}`
+        const text = this[name].text
+        return { caminho, text }
     }
 }
 export { programs }
