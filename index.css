@@ -228,6 +228,7 @@ summary {
           align-items: center;
   font-size: 19px;
   padding-left: 15px;
+  cursor: pointer;
 }
 
 summary:focus {
@@ -237,7 +238,6 @@ summary:focus {
 details {
   width: 100%;
   border-bottom: 1px solid rgba(60, 64, 67, 0.302);
-  cursor: pointer;
 }
 
 details summary::before {

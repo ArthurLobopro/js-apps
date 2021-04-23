@@ -162,6 +162,7 @@ summary{
     align-items: center;
     font-size: 19px;
     padding-left: 15px;
+    cursor: pointer;
     &:focus{
         outline: none;
     }
@@ -169,7 +170,6 @@ summary{
 details{
     width: 100%;
     border-bottom: 1px solid rgba(60,64,67,0.302);
-    cursor: pointer;
     & summary::before{
         content: url('public/midia/rigth-arrow.png');
         width: 16px;
