@@ -16,14 +16,14 @@ const situações = {
     },
     "=0":{
         ">0":{
-            ">0":"f(x)>0 para todo x $ne; x1" ,
+            ">0":"f(x)>0 para todo x &ne; x1" ,
             "=0":"f(x)=0 para todo x = x1 = x2",
             "<0":"Não existe x &isin; R tal que f(x)<0"
         },
         "<0":{
             ">0": "Não existe x &isin; R tal que f(x)>0",
             "=0":"f(x)=0 para todo x = x1 = x2",
-            "<0":"f(x)<0 para todo x $ne; x1" 
+            "<0":"f(x)<0 para todo x &ne; x1" 
         }
     },
     "<0":{
@@ -51,25 +51,30 @@ function calcular(){
         let raiz=Math.sqrt(delta)
         let string
         let content
+        let x1, x2
         if (raiz>0){
-            let x1, x2
             x1=(-(b)-raiz)/(a*2)
             x2=(-(b)+raiz)/(a*2)
             string =`Raiz: ${raiz}<br>X: ${x1} ou ${x2}`   
         }else if(raiz==0){
-            let x=-(b)/(a*2)
-            string=`Raiz: ${raiz}<br>X: ${x}`
+            x1=-(b)/(a*2)
+            x2 = x1
+            string=`Raiz: ${raiz}<br>X: ${x1}`
         }else{
             string=`Raiz:Inexistente<br>X: Inexistente`
         }
+
         content = `A: ${a}<br>B: ${b}<br>C: ${c}<br>Δ= ${delta}<br>${string}<br>`
+        
         if(get("fazer_analise").checked){
             let d_value = delta === 0 ? "=0" :
             delta > 0 ? ">0" : "<0"
             let a_value = a > 0 ? ">0" : "<0"
             const v = [">0","=0","<0"]
             for(let i of v){
-                content+=`${situações[d_value][a_value][i]}<br>`
+                content+=`${
+                    String(situações[d_value][a_value][i]).replace("x1",x1).replace("x2",x2)
+                }<br>`
             }
         }
         res.innerHTML+=make_div(content)
