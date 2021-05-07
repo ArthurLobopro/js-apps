@@ -22,8 +22,8 @@ function color(event) {
     let data = pix.data
     return [ data[0], data[1], data[2]]
 } 
-function getImage() {
-    let file = upimg.files.item(0)
+function getImage(file) {
+    file = file ?? upimg.files.item(0)
     let reader = new FileReader()
     let img
     reader.readAsDataURL(file)
@@ -85,4 +85,14 @@ canvas.onmousemove = event => {
     divcolor.style.backgroundColor=rgb
     divcolor.style.border='1px solid black'
     get('rgb').innerHTML=`${rgb}<br>${rgb_to_hex(r,g,b)}`
+}
+
+document.onpaste = event => {
+    let files = event.clipboardData.files
+    if(files.length >=1){
+        let file = files.item(0)
+        if(file.type.search("image") != -1){
+            getImage(file)
+        }
+    }
 }
