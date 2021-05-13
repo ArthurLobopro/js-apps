@@ -1,57 +1,70 @@
-const programs = {
-    area:{
+const programs = [
+    {
+        name: "area",
         caminho: "area/",
         text: 'Calculador de Área'
     },
-    hip:{
+    {
+        name: "hip",
         caminho: "hipotenusa/",
         text: "Calculador de Hipotenusa"
     },
-    media:{
+    {
+        name: "media",
         caminho: "media/",
         text: "Calculadora de Média"
     },
-    bases:{
+    {
+        name: "bases",
         caminho: "bases/",
         text: "Conversor de  Bases"
     },
-    conversorImg:{
+    {
+        name: "conversorImg",
         caminho: 'conversor-img/',
         text: 'Conversor de Imagens'
     },
-    desconto:{
+    {
+        name: "desconto",
         caminho: 'desconto/',
         text: 'Calculadora de Desconto'
     },
-    distancia:{
+    {
+        name: "distancia",
         caminho: "distancia/",
         text: "Conversor de Distância"
     },
-    rgb_hex:{
-            caminho: "hex_rgb/",
-            text: "Conversor HEX/RGB"
+    {
+        name: "rgb_hex",
+        caminho: "hex_rgb/",
+        text: "Conversor HEX/RGB"
     },
     romano:{
         caminho: "romano/",
         text: "Conversor Romano/Decimal"
     },
-    velocidade:{
-            caminho: "velocidade/",
-            text: "Conversor de Velocidade"
+    {
+        name: "velocidade",
+        caminho: "velocidade/",
+        text: "Conversor de Velocidade"
     },
-    bascara:{
+    {
+        name: "bascara",
         caminho: "bascara/",
         text: "Equação de 2° Grau"
     },
-    potencia:{
+    {
+        name: "potencia",
         caminho: "potencias/",
         text: "Gerador de Potências"
     },
-    tabuada:{
+    {
+        name: "tabuada",
         caminho: "tabuada/",
         text: "Gerador de Tabuada"
     },
-    picker:{
+    {
+        name: "picker",
         caminho: "color-picker/",
         text: "Seletor de cores"
     },
