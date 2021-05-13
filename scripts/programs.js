@@ -39,7 +39,8 @@ const programs = [
         caminho: "hex_rgb/",
         text: "Conversor HEX/RGB"
     },
-    romano:{
+    {
+        name: "romano",
         caminho: "romano/",
         text: "Conversor Romano/Decimal"
     },
@@ -67,11 +68,16 @@ const programs = [
         name: "picker",
         caminho: "color-picker/",
         text: "Seletor de cores"
-    },
-    gets(name){
-        const caminho = `./programs/${this[name].caminho}`
-        const text = this[name].text
-        return { caminho, text }
-    }
+    }   
+]
+
+const programsGets = function(programName) {
+    return programs.find( program => {
+        const { name } = program
+        if (programName == name) {
+            return program
+        }
+    })
 }
-export { programs }
+
+export { programsGets }
