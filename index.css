@@ -229,6 +229,10 @@ summary {
   font-size: 19px;
   padding-left: 15px;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 summary:focus {

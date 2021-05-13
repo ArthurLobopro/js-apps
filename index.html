@@ -11,68 +11,12 @@
     <div id="container">
         <div id="menu-lateral">
             <ul id="lista">
-                <details>
+                <details id="calculadoras">
                     <summary>Calculadoras</summary>
-                    <li data-name="area">
-                        Calculador de Área.
-                        <a href="./programs/area/" target="_blank"><div class="link"></div></a>
-                    </li>
-                    <li data-name="desconto">
-                        Calculadora de desconto.
-                        <a href="./programs/desconto/" target="_blank"><div class="link"></div></a>
-                    </li>
-                    <li data-name="hip">
-                        Calculadora de Hipotenusa.
-                        <a href="./programs/hipotenusa/" target="_blank"><div class="link"></div></a>
-                    </li>
-                    <li data-name="media">
-                        Calculadora de Média.
-                        <a href="./programs/media/" target="_blank"><div class="link"></div></a>
-                    </li>
                 </details>
-                <details>
+                <details id="conversores">
                     <summary>Conversores</summary>
-                    <li data-name="bases">
-                    Conversor de Bases.
-                    <a href="./programs/bases/" target="_blank"><div class="link"></div></a>
-                    </li>
-                    <li data-name="conversorImg">
-                        Conversor de Imagens.
-                        <a href="./programs/conversor-img/" target="_blank"><div class="link"></div></a>
-                    </li>
-                    <li data-name="distancia">
-                        Conversor de Distância.
-                        <a href="./programs/distancia/" target="_blank"><div class="link"></div></a>
-                    </li>
-                    <li data-name="rgb_hex">
-                        Conversor HEX/RGB.
-                        <a href="./programs/hex_rgb/" target="_blank"><div class="link"></div></a>
-                    </li>
-                    <li data-name="romano">
-                        Conversor Romano/Dec.
-                        <a href="./programs/romano/" target="_blank"><div class="link"></div></a>
-                    </li>
-                    <li data-name="velocidade">
-                        Conversor de Velocidade.
-                        <a href="./programs/velocidade/" target="_blank"><div class="link"></div></a>
-                    </li>
                 </details>
-                <li data-name="picker">
-                    Color Picker.
-                    <a href="./programs/color-picker/" target="_blank"><div class="link"></div></a>
-                </li>
-                <li data-name="bascara">
-                    Equação de 2º Grau.
-                    <a href="./programs/bascara/" target="_blank"><div class="link"></div></a>
-                </li>
-                <li data-name="potencia">
-                    Gerador de Potências.
-                    <a href="./programs/potencias/" target="_blank"><div class="link"></div></a>
-                </li>
-                <li data-name="tabuada">
-                    Gerador de Tabuada.
-                    <a href="./programs/tabuada/" target="_blank"><div class="link"></div></a>
-                </li>
             </ul>
             <div id="logo">
                 <img src="public/midia/logo-white.jpg" alt="Logo">
@@ -86,14 +30,13 @@
     </div>
     <script src="index.js" type="module"></script>
     <script>
-        const menu = document.getElementById("menu-lateral")
-        const list = document.querySelector("#menu-lateral > ul")
-        window.onload=function(){
+        const rezize = () => {
+            const menu = document.getElementById("menu-lateral")
+            const list = document.querySelector("#menu-lateral > ul")
             list.style.maxHeight = `${menu.clientHeight - 275}px`
         }
-        window.onresize = function(){
-            list.style.maxHeight = `${menu.clientHeight - 275}px`
-        }
+        window.onload= rezize
+        window.onresize = rezize
     </script> 
 </body>
 </html>

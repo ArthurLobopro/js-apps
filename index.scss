@@ -163,6 +163,7 @@ summary{
     font-size: 19px;
     padding-left: 15px;
     cursor: pointer;
+    user-select: none;
     &:focus{
         outline: none;
     }

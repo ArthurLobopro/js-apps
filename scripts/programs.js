@@ -1,64 +1,100 @@
-const programs = {
-    area:{
+const programs = [
+    //Calculadoras:
+    {
+        name: "area",
         caminho: "area/",
-        text: 'Calculador de Área'
+        text: 'Calculadora de Área',
+        type: "calculadora"
     },
-    hip:{
-        caminho: "hipotenusa/",
-        text: "Calculador de Hipotenusa"
-    },
-    media:{
-        caminho: "media/",
-        text: "Calculadora de Média"
-    },
-    bases:{
-        caminho: "bases/",
-        text: "Conversor de  Bases"
-    },
-    conversorImg:{
-        caminho: 'conversor-img/',
-        text: 'Conversor de Imagens'
-    },
-    desconto:{
+    {
+        name: "desconto",
         caminho: 'desconto/',
-        text: 'Calculadora de Desconto'
+        text: 'Calculadora de Desconto',
+        type: "calculadora"
     },
-    distancia:{
+    {
+        name: "hip",
+        caminho: "hipotenusa/",
+        text: "Calculadora de Hipotenusa",
+        type: "calculadora"
+    },
+    {
+        name: "media",
+        caminho: "media/",
+        text: "Calculadora de Média",
+        type: "calculadora"
+    },
+    //Conversores:
+    {
+        name: "bases",
+        caminho: "bases/",
+        text: "Conversor de  Bases",
+        type: "conversor"
+    },
+    {
+        name: "distancia",
         caminho: "distancia/",
-        text: "Conversor de Distância"
+        text: "Conversor de Distância",
+        type: "conversor"
     },
-    rgb_hex:{
-            caminho: "hex_rgb/",
-            text: "Conversor HEX/RGB"
+    {
+        name: "rgb_hex",
+        caminho: "hex_rgb/",
+        text: "Conversor HEX/RGB",
+        type: "conversor"
     },
-    romano:{
+    {
+        name: "conversorImg",
+        caminho: 'conversor-img/',
+        text: 'Conversor de Imagens',
+        type: "conversor"
+    },
+    {
+        name: "romano",
         caminho: "romano/",
-        text: "Conversor Romano/Decimal"
+        text: "Conversor Romano/Decimal",
+        type: "conversor"
     },
-    velocidade:{
-            caminho: "velocidade/",
-            text: "Conversor de Velocidade"
+    {
+        name: "velocidade",
+        caminho: "velocidade/",
+        text: "Conversor de Velocidade",
+        type: "conversor"
     },
-    bascara:{
+    //Outros
+    {
+        name: "bascara",
         caminho: "bascara/",
-        text: "Equação de 2° Grau"
+        text: "Equação de 2° Grau",
+        type: "outros"
     },
-    potencia:{
+    {
+        name: "potencia",
         caminho: "potencias/",
-        text: "Gerador de Potências"
+        text: "Gerador de Potências",
+        type: "outros"
     },
-    tabuada:{
+    {
+        name: "tabuada",
         caminho: "tabuada/",
-        text: "Gerador de Tabuada"
+        text: "Gerador de Tabuada",
+        type: "outros"
     },
-    picker:{
+    {
+        name: "picker",
         caminho: "color-picker/",
-        text: "Seletor de cores"
-    },
-    gets(name){
-        const caminho = `./programs/${this[name].caminho}`
-        const text = this[name].text
-        return { caminho, text }
-    }
+        text: "Seletor de cores",
+        type: "outros"
+    },  
+]
+
+const programsGets = function(programName) {
+    return programs.find( program => {
+        const { name } = program
+        if (programName == name) {
+            return program
+        }
+    })
 }
-export { programs }
+
+export { programsGets, programs }
