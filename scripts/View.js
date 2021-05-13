@@ -35,6 +35,19 @@ function renderConversores() {
     return html.join('')
 }
 
+function renderOutros() {
+    
+    const outros = programs.reduce( (outros, program) => {
+        if(program.type == "outros"){
+            outros.push(program)
+        }
+        return outros
+    }, [] )
+
+    const html = outros.map( make_btn )
+    return html.join('')
+}
+
 
 function renderBtns() {
     const get = id => document.getElementById(id)
