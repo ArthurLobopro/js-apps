@@ -1,8 +1,15 @@
 const programs = [
+    //Calculadoras:
     {
         name: "area",
         caminho: "area/",
         text: 'Calculadora de Área',
+        type: "calculadora"
+    },
+    {
+        name: "desconto",
+        caminho: 'desconto/',
+        text: 'Calculadora de Desconto',
         type: "calculadora"
     },
     {
@@ -17,23 +24,12 @@ const programs = [
         text: "Calculadora de Média",
         type: "calculadora"
     },
+    //Conversores:
     {
         name: "bases",
         caminho: "bases/",
         text: "Conversor de  Bases",
         type: "conversor"
-    },
-    {
-        name: "conversorImg",
-        caminho: 'conversor-img/',
-        text: 'Conversor de Imagens',
-        type: "conversor"
-    },
-    {
-        name: "desconto",
-        caminho: 'desconto/',
-        text: 'Calculadora de Desconto',
-        type: "calculadora"
     },
     {
         name: "distancia",
@@ -48,6 +44,12 @@ const programs = [
         type: "conversor"
     },
     {
+        name: "conversorImg",
+        caminho: 'conversor-img/',
+        text: 'Conversor de Imagens',
+        type: "conversor"
+    },
+    {
         name: "romano",
         caminho: "romano/",
         text: "Conversor Romano/Decimal",
@@ -59,12 +61,7 @@ const programs = [
         text: "Conversor de Velocidade",
         type: "conversor"
     },
-    {
-        name: "picker",
-        caminho: "color-picker/",
-        text: "Seletor de cores",
-        type: "outros"
-    },  
+    //Outros
     {
         name: "bascara",
         caminho: "bascara/",
@@ -83,6 +80,12 @@ const programs = [
         text: "Gerador de Tabuada",
         type: "outros"
     },
+    {
+        name: "picker",
+        caminho: "color-picker/",
+        text: "Seletor de cores",
+        type: "outros"
+    },  
 ]
 
 const programsGets = function(programName) {
