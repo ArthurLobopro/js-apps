@@ -2,13 +2,13 @@ const programs = [
     {
         name: "area",
         caminho: "area/",
-        text: 'Calculador de Área',
+        text: 'Calculadora de Área',
         type: "calculadora"
     },
     {
         name: "hip",
         caminho: "hipotenusa/",
-        text: "Calculador de Hipotenusa",
+        text: "Calculadora de Hipotenusa",
         type: "calculadora"
     },
     {
