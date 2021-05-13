@@ -60,6 +60,12 @@ const programs = [
         type: "conversor"
     },
     {
+        name: "picker",
+        caminho: "color-picker/",
+        text: "Seletor de cores",
+        type: "outros"
+    },  
+    {
         name: "bascara",
         caminho: "bascara/",
         text: "Equação de 2° Grau",
@@ -77,12 +83,6 @@ const programs = [
         text: "Gerador de Tabuada",
         type: "outros"
     },
-    {
-        name: "picker",
-        caminho: "color-picker/",
-        text: "Seletor de cores",
-        type: "outros"
-    }   
 ]
 
 const programsGets = function(programName) {
