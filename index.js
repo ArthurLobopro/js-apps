@@ -1,5 +1,6 @@
 import { programsGets } from "./scripts/programs.js"
 import { escreve, trava } from "./scripts/troca.js"
+import renderBtns from "./scripts/View.js";
 
 const get = id => document.getElementById(id)
 const content = get("content")
@@ -7,6 +8,7 @@ const nome= get("nome")
 const msg = get("msg")
 
 // Chamadas
+renderBtns()
 const list = document.querySelectorAll("#lista li")
 for(let i of list){
     i.onmouseenter = escreve
@@ -14,7 +16,6 @@ for(let i of list){
 for(let i of list){
     i.ondblclick = trava
 }
-
 // Adição de elementos em segundo plano
 setTimeout(() => {
     const itens = [
