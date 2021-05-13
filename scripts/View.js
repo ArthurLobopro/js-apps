@@ -19,9 +19,29 @@ function renderCalculadoras() {
     }, [])
     
     const html = calculadoras.map( make_btn )
-    document.getElementById('calcs').innerHTML += html.join('')
+    return html.join('')
+}
+
+function renderConversores() {
+    
+    const conversores = programs.reduce( (conversores, program) => {
+        if(program.type == "conversor"){
+            conversores.push(program)
+        }
+        return conversores
+    }, [] )
+
+    const html = conversores.map( make_btn )
+    return html.join('')
 }
 
 
+function renderBtns() {
+    const get = id => document.getElementById(id)
 
-export { renderCalculadoras }
+    get('calculadoras').innerHTML += renderCalculadoras()
+    get('conversores').innerHTML += renderConversores()
+
+}
+
+export default renderBtns
