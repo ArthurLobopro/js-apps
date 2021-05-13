@@ -1,4 +1,4 @@
-import { programs } from "./programs.js"
+import { programsGets } from "./programs.js"
 
 const nome_backup = {
     escreve: '',
@@ -36,15 +36,14 @@ const trava = event => {
 }
 
 function escreve_res(nome){
-    let caminho, text
-    ( {caminho, text } =  programs.gets(nome))
+    let { caminho, text } = programsGets(nome)
     if (document.body.clientWidth>=1000) {
         let iframes = document.querySelectorAll("iframe")
         for(let i of iframes){
             i.style.display="none"
         }
         if(get(nome) == undefined){
-            const iframe = `<iframe src="${caminho}" id="${nome}"></iframe>`
+            const iframe = `<iframe src="programs/${caminho}" id="${nome}"></iframe>`
             content.innerHTML+= iframe
         }else{
             get(nome).style.display=""
