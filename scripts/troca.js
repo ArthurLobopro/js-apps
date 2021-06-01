@@ -48,7 +48,7 @@ function escreve_res(nome){
         }else{
             get(nome).style.display=""
         }
-        msg.innerHTML=`Você está vendo <a href='${caminho}'>${text}</a>`
+        msg.innerHTML=`Você está vendo <a href='programs/${caminho}'>${text}</a>`
         content.style.opacity='1'
         content.style.backgroundImage='none'
     }
