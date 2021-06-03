@@ -56,6 +56,12 @@ const programs = [
         type: "conversor"
     },
     {
+        name:"temperaturas",
+        caminho: "temperaturas/",
+        text: "Conversor de Temperaturas",
+        type: "conversor"
+    },
+    {
         name: "velocidade",
         caminho: "velocidade/",
         text: "Conversor de Velocidade",
