@@ -28,14 +28,14 @@ const dec_to_hex = dec => {
 const hex_to_dec = hex => {
     const numbers = { A: 10, B: 11, C: 12, D:13, E: 14, F: 15 }
     hex = String(hex).toUpperCase().split('').reverse()
-    for(let i in hex){ 
-        hex[i]= (Number( hex[i]) >=0 && Number(hex[i]) <=9 ) ? Number(hex[i]) : numbers[hex[i]]
-    }
+    hex.forEach( (char, i) => {
+        hex[i]= (Number(char) == char ) ? Number(char) : numbers[hex[i]]
+    });
     let mult = 1, dec = 0
-    for(let i of hex){
-        dec+=mult*Number(i)
-        mult*= 16
-    }
+    hex.forEach( value => {
+        dec += mult * Number(value)
+        mult *= 16
+    })
     return dec
 }
 
