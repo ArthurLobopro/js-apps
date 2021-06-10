@@ -1,11 +1,11 @@
+import { $$, $ } from "./my-jquery/main.js"
+const res = $$('#res')
 //Funções usadas
 const addCleanListener = () => {
-    const removeAll = document.getElementById("remove-All")
+    const removeAll = $$("#remove-All")
     removeAll.onclick = event => {
         const divs = document.querySelectorAll(".res")
-        for(let e of divs){
-            res.removeChild(e)
-        }
+        divs.forEach( e => res.removeChild(e))
         res.style.display='none'
     }
 }
@@ -16,19 +16,19 @@ const addCleanListener = () => {
 const circle = `<div class="circle"><img src="../../public/midia/close-icon.png"></div>`
 //Funções
 const addEvent = () => {
-    let div = document.querySelectorAll('.res > .circle')
-    for(let i of div){
-        i.onclick = event =>{
+    const divs = $('.res > .circle')
+    divs.forEach( e => {
+        e.onclick = event =>{
             let target = event.target
             target = target.tagName == "IMG" ? target.parentElement : target
             let element = target.parentElement
             res.removeChild(element)
-            let divs = document.querySelectorAll(".res")
+            let divs = $$(".res")
             if(divs.length === 0){ 
                 res.style.display='none'
             }
         }
-    }
+    })
     addCleanListener()
 }
 const range = (min,max,pass = 1) => {
