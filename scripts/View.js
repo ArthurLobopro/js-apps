@@ -1,4 +1,5 @@
 import { programs } from "./programs.js";
+import { $$ } from "../public/js/my-jquery/main.js"
 
 function make_btn(prog){
     const { name, caminho, text} = prog
@@ -23,12 +24,9 @@ function renderByType(type) {
 
 
 function renderBtns() {
-    const get = id => document.getElementById(id)
-
-    get('calculadoras').innerHTML += renderByType('calculadora')
-    get('conversores').innerHTML += renderByType('conversor')
-    get('lista').innerHTML += renderByType('outros')
-
+    $$('#calculadoras').innerHTML += renderByType('calculadora')
+    $$('#conversores').innerHTML += renderByType('conversor')
+    $$('#lista').innerHTML += renderByType('outros')
 }
 
 export default renderBtns
