@@ -1,11 +1,11 @@
 import { programsGets } from "./programs.js"
+import { $$, $ } from "../public/js/my-jquery/main.js"
 
 const nome_backup = {
     escreve: '',
     trava: ''
 }
 
-const get = id => document.getElementById(id)
 let travado = false
 
 const escreve = event =>{
@@ -38,19 +38,17 @@ const trava = event => {
 function escreve_res(nome){
     let { caminho, text } = programsGets(nome)
     if (document.body.clientWidth>=1000) {
-        let iframes = document.querySelectorAll("iframe")
-        for(let i of iframes){
-            i.style.display="none"
-        }
-        if(get(nome) == undefined){
+        const content = $('#content')
+        let iframes = $("iframe")
+        iframes.css('display','none')
+        if($$(`#${nome}`) == undefined){
             const iframe = `<iframe src="programs/${caminho}" id="${nome}"></iframe>`
-            content.innerHTML+= iframe
+            content[0].innerHTML+= iframe
         }else{
-            get(nome).style.display=""
+            $(`#${nome}`).css('display', '')
         }
         msg.innerHTML=`Você está vendo <a href='programs/${caminho}'>${text}</a>`
-        content.style.opacity='1'
-        content.style.backgroundImage='none'
+        content.css('opacity','1').css('background-image', 'none')
     }
 }
 
