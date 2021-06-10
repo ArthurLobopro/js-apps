@@ -57,10 +57,20 @@ class ElementsFunctions extends Array{
     css(propriedade, valor){
         const format = prop => prop.replaceAll(/(-[a-z])/g, s => s.replace('-','').toUpperCase())
 
-        this.forEach( e => {
-            e.style[format(propriedade)] = valor
+        if(typeof propriedade === "string" || propriedade instanceof String){
+            this.forEach( e => {
+                e.style[format(propriedade)] = valor
+            })
+            return this
+        }
+
+        Object.entries(propriedade).forEach(([key,value]) => {
+            this.forEach( e => {
+                e.style[format(key)] = value
+            })
         })
-        return this
+
+        return this 
     }
 }
 
