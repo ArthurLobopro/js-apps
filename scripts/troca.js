@@ -48,7 +48,7 @@ function escreve_res(nome){
             $(`#${nome}`).css('display', '')
         }
         msg.innerHTML=`Você está vendo <a href='programs/${caminho}'>${text}</a>`
-        content.css('opacity','1').css('background-image', 'none')
+        content.css({opacity: 1,backgroundImage: 'none'})
     }
 }
 
