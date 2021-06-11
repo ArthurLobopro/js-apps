@@ -6,34 +6,36 @@
     <link rel="stylesheet" href="../../public/css/main.css">
     <link rel="stylesheet" href="index.css">
     <title>Calculador de média.</title>
+    <script src="index.js" type="module"></script>
 </head>
 <body>
-    <h1>Calculador de Média</h1>
-    <section id="menu">
-        <div id="input">
-            Digite um número:<input type="number" id="num"> 
-            <input type="button" value="Adicionar" id="add">
-        </div>
-        <div id="left">
-            <select  id="numbers" size="10"></select><br>
-            <input type="button" value="Calcular Média" id="calc">
-        </div>
-        <div id="preview">
-            <div>
-                <div class="preview"></div><br>
-                <button id="add-more">Adicionar mais valores.</button>
-                <button id="ath">Adicionar ao Histórico.</button>
+    <div id="container">
+        <h1>Calculador de Média</h1>
+        <section id="menu">
+            <div id="input">
+                Digite um número:<input type="number" id="num">
+                <input type="button" value="Adicionar" id="add">
             </div>
-        </div>
-    </section>
-    <section id="res">
-        <span id="msg">
-            Médias Calculadas:
-            <div class="circle" id="remove-All">
-                <img src="../../public/midia/close-icon.png">
+            <div id="left">
+                <select  id="numbers" size="10"></select><br>
+                <input type="button" value="Calcular Média" id="calc">
             </div>
-        </span><br>
-    </section>
-    <script src="index.js" type="module"></script>
+            <div id="preview">
+                <div>
+                    <div class="preview"></div><br>
+                    <button id="add-more">Adicionar mais valores.</button>
+                    <button id="ath">Adicionar ao Histórico.</button>
+                </div>
+            </div>
+        </section>
+        <section id="res">
+            <span id="msg">
+                Médias Calculadas:
+                <div class="circle" id="remove-All">
+                    <img src="../../public/midia/close-icon.png">
+                </div>
+            </span><br>
+        </section>
+    </div>
 </body>
 </html>

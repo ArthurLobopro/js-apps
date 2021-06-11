@@ -7,29 +7,31 @@
     <link rel="stylesheet" href="../../public/css/main.css">
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="conta-gotas.png">
+    <script src="index.js" type="module"></script>
 </head>
 <body>
-    <h1>Selecionador de Cores</h1>
-    <section id="main">
-        <button>Selecionar Imagem</button>
-        <input type="file" id="upimg" accept="image/*"> <br>
-        <div id="canvasDiv">
-            <canvas id="mycanvas" width="100px" height="100px"></canvas>
-        </div>
-        <div id="preview">
-            <div id='color'></div><br>
-            <span id="rgb"></span>
-        </div>
-    </section>
-    <section id="res">
-        <span id="msg">
-            Cores selecionadas.
-            <div class="circle" id="remove-All">
-                <img src="../../public/midia/close-icon.png">
+    <div id="container">
+        <h1>Selecionador de Cores</h1>
+        <section id="main">
+            <button>Selecionar Imagem</button>
+            <input type="file" id="upimg" accept="image/*"> <br>
+            <div id="canvasDiv">
+                <canvas id="mycanvas" width="100px" height="100px"></canvas>
             </div>
-        </span><br>
-    </section>
-    <footer>&copy;Arthur Lobo</footer>
-    <script src="index.js" type="module"></script>
+            <div id="preview">
+                <div id='color'></div><br>
+                <span id="rgb"></span>
+            </div>
+        </section>
+        <section id="res">
+            <span id="msg">
+                Cores selecionadas.
+                <div class="circle" id="remove-All">
+                    <img src="../../public/midia/close-icon.png">
+                </div>
+            </span><br>
+        </section>
+        <footer>&copy;Arthur Lobo</footer>
+    </div>
 </body>
 </html>

@@ -6,26 +6,28 @@
     <link rel="stylesheet" href="../../public/css/main.css">
     <link rel="stylesheet" href="index.css">
     <title>Gerador de Números Primos</title>
+    <script src="index.js" type="module"></script>
 </head>
 <body>
-    <h1>Gerador de Números primos</h1>
-    <section id="menu">
-        <label>
-            Início: <input type="number" id="inicio">
-        </label>
-        <label>
-            Fim: <input type="number" value="100" id="fim">
-        </label>
-        <input type="button" value="Gerar" id="submit" onclick="gerar()">
-    </section>
-    <section id="res">
-        <span id="msg">
-            Números primos gerados:
-            <div class="circle" id="remove-All">
-                <img src="../../public/midia/close-icon.png">
-            </div>
-        </span>
-    </section>
-    <script src="index.js" type="module"></script>
+    <div id="container">
+        <h1>Gerador de Números primos</h1>
+        <section id="menu">
+            <label>
+                Início: <input type="number" id="inicio">
+            </label>
+            <label>
+                Fim: <input type="number" value="100" id="fim">
+            </label>
+            <input type="button" value="Gerar" id="submit" onclick="gerar()">
+        </section>
+        <section id="res">
+            <span id="msg">
+                Números primos gerados:
+                <div class="circle" id="remove-All">
+                    <img src="../../public/midia/close-icon.png">
+                </div>
+            </span>
+        </section>
+    </div>
 </body>
 </html>

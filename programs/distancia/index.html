@@ -6,43 +6,45 @@
     <title>Conversor de Distância</title>
     <link rel="stylesheet" href="../../public/css/main.css">
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" type="module"></script>
 </head>
 <body>
-    <h1>Conversor de Distância</h1>
-    <section id="menu">
-        <div id="dados">
-            Tamanho: <input type="number" id="num"> 
-            <select id="unity">
-                <option value="km">Km</option>
-                <option value="hm">Hm</option>
-                <option value="dam">Dam</option>
-                <option value="m">m</option>
-                <option value="dm">dm</option>
-                <option value="cm">cm</option>
-                <option value="mm">mm</option>
-            </select><br>
-            <div id="check">
-                <br>Converter para:<br>
-                <input type="checkbox" id="km" disabled checked>Km 
-                <input type="checkbox" id="hm" checked>Hm 
-                <input type="checkbox" id="dam" checked>Dam 
-                <input type="checkbox" id="m" checked>m 
-                <input type="checkbox" id="dm" checked>dm 
-                <input type="checkbox" id="cm" checked>cm 
-                <input type="checkbox" id="mm" checked>mm 
+    <div id="container">
+        <h1>Conversor de Distância</h1>
+        <section id="menu">
+            <div id="dados">
+                Tamanho: <input type="number" id="num"> 
+                <select id="unity">
+                    <option value="km">Km</option>
+                    <option value="hm">Hm</option>
+                    <option value="dam">Dam</option>
+                    <option value="m">m</option>
+                    <option value="dm">dm</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                </select><br>
+                <div id="check">
+                    <br>Converter para:<br>
+                    <input type="checkbox" id="km" disabled checked>Km 
+                    <input type="checkbox" id="hm" checked>Hm 
+                    <input type="checkbox" id="dam" checked>Dam 
+                    <input type="checkbox" id="m" checked>m 
+                    <input type="checkbox" id="dm" checked>dm 
+                    <input type="checkbox" id="cm" checked>cm 
+                    <input type="checkbox" id="mm" checked>mm 
+                </div>
+                <input type="button" id="submit-button" value="Enviar">
             </div>
-            <input type="button" id="submit-button" value="Enviar">
-        </div>
-    </section>
-    <section id="res">
-        <span id="msg">
-            Conversões feitas:
-            <div class="circle" id="remove-All">
-                <img src="../../public/midia/close-icon.png">
-            </div>
-        </span>
-    </section>
-    <footer>&copy;Arthur Lobo</footer>
-    <script src="index.js" type="module"></script>
+        </section>
+        <section id="res">
+            <span id="msg">
+                Conversões feitas:
+                <div class="circle" id="remove-All">
+                    <img src="../../public/midia/close-icon.png">
+                </div>
+            </span>
+        </section>
+        <footer>&copy;Arthur Lobo</footer>
+    </div>
 </body>
 </html>

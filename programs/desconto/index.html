@@ -5,27 +5,29 @@
     <link rel="stylesheet" href="../../public/css/main.css">
     <link rel="stylesheet" href="index.css">
     <title>Calculadora de desconto</title>
+    <script src="index.js" type="module"></script>
 </head>
 <body>
-    <h1>Calculadora de desconto.</h1>
-    <section id="menu">
-        <div class="input">
-            <div class="tal">
-                <label>Valor: R$ <input type="text" pattern="[0-9.,]{0,}" id="num"></label><br>
-                <label>Desconto: <input type="number" id="desc">%</label><br>
+    <div id="container">
+        <h1>Calculadora de desconto.</h1>
+        <section id="menu">
+            <div class="input">
+                <div class="tal">
+                    <label>Valor: R$ <input type="text" pattern="[0-9.,]{0,}" id="num"></label><br>
+                    <label>Desconto: <input type="number" id="desc">%</label><br>
+                </div>
+                <input type="button" value="Calcular" id="submit-button">
             </div>
-            <input type="button" value="Calcular" id="submit-button">
-        </div>
-    </section>
-    <section id="res">
-        <span id="msg">
-            Cálculos Feitos:
-            <div class="circle" id="remove-All">
-                <img src="../../public/midia/close-icon.png">
-            </div>
-        </span>
-    </section>
-    <footer>&copy; Arthur Lobo</footer>
-    <script src="index.js" type="module"></script>
+        </section>
+        <section id="res">
+            <span id="msg">
+                Cálculos Feitos:
+                <div class="circle" id="remove-All">
+                    <img src="../../public/midia/close-icon.png">
+                </div>
+            </span>
+        </section>
+        <footer>&copy; Arthur Lobo</footer>
+    </div>
 </body>
 </html>
