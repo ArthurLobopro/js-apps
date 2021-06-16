@@ -1,6 +1,6 @@
 const upimg = document.getElementById('upimg')
 const canvasDiv= document.getElementById('canvasDiv')
-const canvas = document.getElementById('mycanvas')
+const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 const down = document.getElementById('download')
 var id = 0
