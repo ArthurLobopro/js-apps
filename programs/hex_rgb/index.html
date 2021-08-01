@@ -22,17 +22,17 @@
                 B: <input type="number" maxlength="3" min="0" max="255" id="b">
                 <input type="button" id="rgb-button" value="Converter">
             </div>
-            <div>
+            <div id="selects">
                 <select  id="nome">
                     <option value="" checked>Cores HTML</option>
                     <!-- Amarelo Completo -->
-                    <optgroup label="Tons de Amarelo">
+                    <optgroup label="Tons de Amarelo" id="Amarelo">
                         <option value="FFD700">Gold</option>
                         <option value="F0E68C">Khaki</option>
                         <option value="FFFF00">Yellow</option>
                     </optgroup>
                     <!-- Azul Completo -->
-                    <optgroup label="Tons de Azul">
+                    <optgroup label="Tons de Azul" id="Azul">
                         <option value="F0F8FF">Aliceblue</option>
                         <option value="0000FF">Blue</option>
                         <option value="6495ED">CornFlowerBlue</option>
@@ -53,7 +53,7 @@
                         <option value="4682B4">SteelBlue</option>
                     </optgroup>
                     <!-- Cores Claras Completo -->
-                    <optgroup label="Tons Claros">
+                    <optgroup label="Tons Claros" id="Claros">
                         <option value="FAEBD7">Antiquewhite</option>
                         <option value="F0FFFF">Azure</option>
                         <option value="FFE4C4">Bisque</option>
@@ -84,7 +84,7 @@
                         <option value="F5F5F5">WhiteSmoke</option>
                     </optgroup>
                     <!-- Ciano Completo -->
-                    <optgroup label="Tons de Ciano">
+                    <optgroup label="Tons de Ciano" id="Ciano">
                         <option value="00FFFF">Aqua</option>
                         <option value="7FFFD4">Aquamarine</option>
                         <option value="5F9EA0">CadetBlue</option>
@@ -99,7 +99,7 @@
                         <option value="40E0D0">Turquoise</option>
                     </optgroup>
                     <!-- Cinza Completo -->
-                    <optgroup label="Tons de Cinza">
+                    <optgroup label="Tons de Cinza" id="Cinza">
                         <!--Menos que 50-->
                         <option value="000000">Black</option>
                         <option value="A9A9A9">DarkGray</option>
@@ -113,13 +113,13 @@
                         <option value="708090">SlateGray</option>
                     </optgroup>
                     <!-- Laranja Completo -->
-                    <optgroup label="Tons de Laranja">
+                    <optgroup label="Tons de Laranja" id="Laranja">
                         <option value="FF8C00">DarkOrange</option>
                         <option value="FFA500">Orange</option>
                         <option value="FF4500">OrangeRed</option>
                     </optgroup>
                     <!-- Marrom Completo -->
-                    <optgroup label="Tons de Marrom">
+                    <optgroup label="Tons de Marrom" id="Marrom">
                         <option value="A52A2A">Brown</option>
                         <option value="F5F5DC">Beige</option>
                         <option value="DEB887">BurlyWood</option>
@@ -137,7 +137,7 @@
                         <option value="F5DEB3">Wheat</option>
                     </optgroup>
                     <!-- Rosa completo -->
-                    <optgroup label="Tons de Rosa">
+                    <optgroup label="Tons de Rosa" id="Rosa">
                         <option value="DC143C">Crimson</option>
                         <option value="FF1493">DeepPink</option>
                         <option value="FF69B4">HotPink</option>
@@ -149,7 +149,7 @@
                         <option value="FFC0CB">Pink</option>
                     </optgroup>
                     <!-- Roxo Completo -->
-                    <optgroup label="Tons de Roxo">
+                    <optgroup label="Tons de Roxo" id="Roxo">
                         <option value="8A2BE2">BlueViolet</option>
                         <option value="8B008B">DarkMagenta</option>
                         <option value="9932CC">DarkOrchid</option>
@@ -165,7 +165,7 @@
                         <option value="EE82EE">Violet</option>
                     </optgroup>
                     <!-- Verde Completo -->
-                    <optgroup label="Tons de Verde">
+                    <optgroup label="Tons de Verde" id="Verde">
                         <option value="7FFF00">Chartreuse</option>
                         <option value="006400">DarkGreen</option>
                         <option value="556B2F">DarkOliveGreen</option>
@@ -187,7 +187,7 @@
                         <option value="9ACD32">YellowGreen</option>
                     </optgroup>
                     <!-- Vermelho Completo -->
-                    <optgroup label="Tons de Vermelho">
+                    <optgroup label="Tons de Vermelho" id="Vermelho">
                         <option value="FF7F50">Coral</option>
                         <option value="8B0000">DarkRed</option>
                         <option value="E9967A">DarkSalmon</option>
@@ -198,6 +198,21 @@
                         <option value="FA8072">Salmon</option>
                         <option value="FF6347">Tomato</option>
                     </optgroup>
+                </select>
+                <br>
+                <select id="tons">
+                    <option value="" checked>Mostrar Tons</option>
+                    <option value="Amarelo">Tons de Amarelo</option>
+                    <option value="Azul">Tons de Azul</option>
+                    <option value="Claros">Tons Claros</option>
+                    <option value="Ciano">Tons de Ciano</option>
+                    <option value="Cinza">Tons de Cinza</option>
+                    <option value="Laranja">Tons de Laranja</option>
+                    <option value="Marrom">Tons de Marrom</option>
+                    <option value="Rosa">Tons de Rosa</option>
+                    <option value="Roxo">Tons de Roxo</option>
+                    <option value="Verde">Tons de Verde</option>
+                    <option value="Vermelho">Tons Vermelhos</option>
                 </select>
             </div>
         </section>
