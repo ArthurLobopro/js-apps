@@ -41,6 +41,7 @@ function convert_hex() {
         let nome = cores.procuraNome(hex_string.replace('#', ''))
         nome = (nome == undefined) ? '' : `Cor HTML: ${nome}`
         let content = `HEX: #${hex_string}<br>RGB: (${rgb})<br>${nome}`
+        escreve(rgb, content, 1)
     }
 }
 function convert_rgb() {
